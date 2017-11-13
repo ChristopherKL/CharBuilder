@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title">Das ist ein Titel</string>
     <string name="description">und das nicht</string>
-    <string name="title_activity_main_navigation_drawer">MainNavigationDrawer</string>
+    <string name="title_activity_main_navigation_drawer">CharBuilder</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
