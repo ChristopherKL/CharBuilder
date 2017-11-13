@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/peter" />
+            android:src="@drawable/ic_menu_camera" />
 
         <TextView
             android:id="@+id/charName"
