@@ -26,4 +26,15 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="character">Charakter</string>
+
+    <!-- Character Creation Steps -->
+    <string name="cc_obligation">Pflicht</string>
+    <string name="cc_species">Spezies</string>
+    <string name="cc_career">Beruf</string>
+    <string name="cc_specialization">Spezialisierung</string>
+    <string name="cc_experience">Erf. Punkte</string>
+    <string name="cc_attributes">Attribute</string>
+    <string name="cc_motivation">Motivation</string>
+    <string name="cc_appearance">Aussehen</string>
+    <string name="cc_gear">Ausrüstung</string>
 </resources>

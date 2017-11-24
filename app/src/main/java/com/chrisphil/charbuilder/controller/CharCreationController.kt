@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.os.Bundle
+import android.support.design.widget.TabLayout
+import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.Menu
@@ -36,11 +38,41 @@ class CharCreationController : AppCompatActivity() {
         setSupportActionBar(toolbar)
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+        //mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
 
         // Set up the ViewPager with the sections adapter.
-        container.adapter = mSectionsPagerAdapter
+        //container.adapter = mSectionsPagerAdapter
 
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_obligation)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_species)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_career)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_specialization)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_experience)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_attributes)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_motivation)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_appearance)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_gear)))
+
+        char_tab_layout.tabGravity = TabLayout.GRAVITY_FILL
+        char_tab_layout.tabMode = TabLayout.MODE_SCROLLABLE
+
+        val adapter : PageAdapter = PageAdapter(supportFragmentManager,char_tab_layout.tabCount)
+
+        container.adapter = adapter
+        container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(char_tab_layout))
+        char_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                container.currentItem = tab!!.position
+            }
+        })
 
     }
 
@@ -87,6 +119,22 @@ class CharCreationController : AppCompatActivity() {
         dialog.show()
     }
 
+
+    inner class PageAdapter(fm:FragmentManager,tabNum:Int) : FragmentStatePagerAdapter(fm){
+        override fun getItem(position: Int): Fragment {
+            when(position){
+                0 -> return PlaceholderFragment.newInstance(position+1)
+                1 -> return PlaceholderFragment.newInstance(position+1)
+                2 -> return PlaceholderFragment.newInstance(position+1)
+            }
+            return PlaceholderFragment.newInstance(99)
+        }
+
+        override fun getCount(): Int {
+            // Show 3 total pages.
+            return 3
+        }
+    }
 
 
     /**
