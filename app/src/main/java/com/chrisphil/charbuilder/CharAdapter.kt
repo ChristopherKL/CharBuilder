@@ -23,7 +23,7 @@ class CharAdapter (private val charList:List<CharInfo> ) :  RecyclerView.Adapter
     }
 
     override fun  onCreateViewHolder(viewGroup: ViewGroup, i : Int) : CharViewHolder {
-        val itemView : View = LayoutInflater.from(viewGroup.context).inflate(R.layout.content_main,viewGroup,false)
+        val itemView : View = LayoutInflater.from(viewGroup.context).inflate(R.layout.char_list,viewGroup,false)
         return CharViewHolder(itemView)
     }
 

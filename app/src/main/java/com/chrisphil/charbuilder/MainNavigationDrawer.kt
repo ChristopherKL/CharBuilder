@@ -5,9 +5,8 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
+import com.chrisphil.charbuilder.controller.CharListController
 import kotlinx.android.synthetic.main.activity_main_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation_drawer.*
 
@@ -25,14 +24,6 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        var recList = findViewById<RecyclerView>(R.id.cardList) as RecyclerView
-        recList.setHasFixedSize(true)
-        var llm = LinearLayoutManager(this)
-        llm.orientation = LinearLayoutManager.VERTICAL
-        recList.layoutManager = llm
-
-        var ca : CharAdapter = CharAdapter(createList(30))
-        recList.adapter = ca
     }
 
     override fun onBackPressed() {
@@ -47,22 +38,23 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_chars -> {
-                this.title = R.string.characters.toString()
+                this.title = resources.getString(R.string.characters)
+                supportFragmentManager
+                        .beginTransaction()
+                        .add(R.id.content_frame, CharListController.newInstance(), "charListController")
+                        .commit()
             }
             R.id.nav_rulesets -> {
-                this.title = "Regelwerke"
+                this.title = resources.getString(R.string.rulesets)
             }
             R.id.nav_dice -> {
-                this.title = "Würfeltool"
+                this.title = resources.getString(R.string.dices)
             }
             R.id.nav_manage -> {
-                this.title = R.string.action_settings.toString()
+                this.title = resources.getString(R.string.action_settings)
             }
-            R.id.nav_import -> {
-                this.title = "Import"
-            }
-            R.id.nav_export -> {
-                this.title = "Export"
+            R.id.nav_importExport -> {
+                this.title = resources.getString(R.string.importExport)
             }
         }
 
@@ -70,12 +62,5 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
         return true
     }
 
-    private fun createList(size : Int) : List<CharInfo>{
-        var liste : MutableList<CharInfo> = mutableListOf<CharInfo>()
-        for (i in 1..size){
-            var ci : CharInfo = CharInfo("Peter Zwegert" + i,"Star Wars : Am Rande des Imperiums")
-            liste.add(ci)
-        }
-        return liste
-    }
+
 }

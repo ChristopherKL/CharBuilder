@@ -1,11 +1,29 @@
 <resources>
     <string name="app_name">CharBuilder</string>
-    <string name="action_settings">Einstellungen</string>
     <string name="title">Das ist ein Titel</string>
     <string name="description">und das nicht</string>
     <string name="title_activity_main_navigation_drawer">CharBuilder</string>
+    <string name="cancel">Abbrechen</string>
+
+    <!-- Main Navigation Drawer Menu -->
+    <string name="action_settings">Einstellungen</string>
     <string name="characters">Charaktere</string>
+    <string name="rulesets">Regelwerke</string>
+    <string name="importExport">Import/Export</string>
+    <string name="dices">Würfeltool</string>
+
+    <!-- Character Creation Cancel Dialog -->
+    <string name="cancel_dialog_message">Möchten sie die Erstellung wirklich abbrechen?
+        Alle nicht gespeicherten Daten gehen verloren.</string>
+    <string name="cancel_dialog_title">Erstellung abbrechen</string>
+    <string name="cancel_dialog_yes">Ja</string>
+    <string name="cancel_dialog_no">Nein</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_char_creation">CharCreation</string>
+    <string name="title_activity_char_creation_controller">CharCreationController</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="character">Charakter</string>
 </resources>

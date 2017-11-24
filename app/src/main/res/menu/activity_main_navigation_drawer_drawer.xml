@@ -7,31 +7,27 @@
         <item
             android:id="@+id/nav_chars"
             android:icon="@drawable/ic_menu_characterswitch"
-            android:title="Charaktere" />
+            android:title="@string/characters" />
         <item
             android:id="@+id/nav_rulesets"
             android:icon="@drawable/ic_menu_rulesets"
-            android:title="Regelwerke" />
+            android:title="@string/rulesets" />
         <item
             android:id="@+id/nav_dice"
             android:icon="@drawable/ic_menu_dice"
-            android:title="Würfeltool" />
+            android:title="@string/dices" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Einstellungen" />
+            android:title="@string/action_settings" />
     </group>
 
     <item android:title="Speichern">
         <menu>
             <item
-                android:id="@+id/nav_import"
+                android:id="@+id/nav_importExport"
                 android:icon="@drawable/ic_menu_import"
-                android:title="Import" />
-            <item
-                android:id="@+id/nav_export"
-                android:icon="@drawable/ic_menu_export"
-                android:title="Export" />
+                android:title="@string/importExport" />
         </menu>
     </item>
 
