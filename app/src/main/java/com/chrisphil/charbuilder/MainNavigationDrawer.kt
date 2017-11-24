@@ -47,8 +47,7 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_chars -> {
-                // Handle the camera action
-                this.title = "Charaktere"
+                this.title = R.string.characters.toString()
             }
             R.id.nav_rulesets -> {
                 this.title = "Regelwerke"
@@ -57,7 +56,7 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
                 this.title = "Würfeltool"
             }
             R.id.nav_manage -> {
-                this.title = "Einstellungen"
+                this.title = R.string.action_settings.toString()
             }
             R.id.nav_import -> {
                 this.title = "Import"
