@@ -1,5 +1,6 @@
 package com.chrisphil.charbuilder
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -7,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.chrisphil.charbuilder.controller.CharListController
+import com.chrisphil.charbuilder.controller.SettingsController
 import kotlinx.android.synthetic.main.activity_main_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation_drawer.*
 
@@ -30,7 +32,7 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            //super.onBackPressed()
         }
     }
 
@@ -41,7 +43,7 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
                 this.title = resources.getString(R.string.characters)
                 supportFragmentManager
                         .beginTransaction()
-                        .add(R.id.content_frame, CharListController.newInstance(), "charListController")
+                        .replace(R.id.content_frame, CharListController.newInstance(), "charListController")
                         .commit()
             }
             R.id.nav_rulesets -> {
@@ -52,6 +54,10 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
             }
             R.id.nav_manage -> {
                 this.title = resources.getString(R.string.action_settings)
+                supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.content_frame,SettingsController.newInstance(),"settingsController")
+                        .commit()
             }
             R.id.nav_importExport -> {
                 this.title = resources.getString(R.string.importExport)

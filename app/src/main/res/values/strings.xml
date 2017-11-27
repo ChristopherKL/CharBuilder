@@ -23,6 +23,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_char_creation">CharCreation</string>
     <string name="title_activity_char_creation_controller">CharCreationController</string>
+    <string name="title_activity_settings_controller">CharCreationController</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="character">Charakter</string>
@@ -37,4 +38,10 @@
     <string name="cc_motivation">Motivation</string>
     <string name="cc_appearance">Aussehen</string>
     <string name="cc_gear">Ausrüstung</string>
+
+    <!-- Preferences -->
+    <string name="pref_general_title">Allgemein</string>
+    <string name="pref_design_title">Aussehen</string>
+    <string name="pref_design_themelist">Farbe</string>
+    <string name="pref_design_themelist_summary">Das Grundfarbschema der App</string>
 </resources>

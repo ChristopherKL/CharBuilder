@@ -12,7 +12,7 @@
         <activity
             android:name=".MainNavigationDrawer"
             android:label="@string/title_activity_main_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.SettingsTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +22,10 @@
         <activity
             android:name=".controller.CharCreationController"
             android:label="@string/title_activity_char_creation_controller"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".controller.SettingsController"
+            android:label="@string/title_activity_settings_controller"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

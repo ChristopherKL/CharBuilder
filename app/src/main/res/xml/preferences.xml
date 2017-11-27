@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_general_title"
+        android:key="pref_general_title">
+
+        <Preference
+            android:key="pref_key_charslot_buy"
+            android:title="Charslot Kaufen"/>
+        <Preference
+            android:key="pref_key_charslot_buy_lifetime"
+            android:title="Charslot Umlimited Bundle kaufen"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/pref_design_title"
+        android:key="pref_design_title">
+
+        <ListPreference
+            android:title="@string/pref_design_themelist"
+            android:key="pref_design_themelist"
+            android:summary="@string/pref_design_themelist_summary"
+            android:entries="@array/theme_listentries"
+            android:entryValues="@array/theme_listvalues"/>
+    </PreferenceCategory>
+</PreferenceScreen>

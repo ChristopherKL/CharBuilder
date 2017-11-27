@@ -132,7 +132,7 @@ class CharCreationController : AppCompatActivity() {
 
         override fun getCount(): Int {
             // Show 3 total pages.
-            return 3
+            return 9
         }
     }
 
@@ -150,8 +150,7 @@ class CharCreationController : AppCompatActivity() {
         }
 
         override fun getCount(): Int {
-            // Show 3 total pages.
-            return 3
+            return 9
         }
     }
 
