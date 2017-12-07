@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.interfaces.OnDataPass
 
 /**
@@ -16,7 +17,7 @@ class ObligationFragment : Fragment() {
     lateinit var dataPass : OnDataPass
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater?.inflate(R.layout.char_creation_obligation, container, false);
     }
 
     override fun onAttach(context: Context?) {
