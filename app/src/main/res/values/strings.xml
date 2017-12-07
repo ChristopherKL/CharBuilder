@@ -39,6 +39,45 @@
     <string name="cc_appearance">Aussehen</string>
     <string name="cc_gear">Ausrüstung</string>
 
+    <!-- Character Creation Motivation Ambitions-->
+    <string name="ambition">Zielsetzung</string>
+    <string name="ambition_friendship">Freundschaft</string>
+    <string name="ambition_love">Liebe</string>
+    <string name="ambition_freedom">Freiheit</string>
+    <string name="ambition_fame">Berühmtheit</string>
+    <string name="ambition_greed">Gier</string>
+    <string name="ambition_status">Ansehen</string>
+    <string name="ambition_expertise">Expertise</string>
+    <string name="ambition_wanderlust_novelty">Fernweh / Neuheit</string>
+    <string name="ambition_power">Macht</string>
+    <string name="ambition_religion_spirituality">Religion / Spiritualität</string>
+
+    <!-- Character Creation Motivation Cause-->
+    <string name="cause">Beweggrund</string>
+    <string name="cause_religion_spirituality">Religion / Spiritualität</string>
+    <string name="cause_theweak_charity">Die Schwachen / Wohltätigkeit</string>
+    <string name="cause_nonhuman_rights">Nichtmenschliche Rechte</string>
+    <string name="cause_local_politics">Lokale Politik</string>
+    <string name="cause_overthrow_the_empire">Sturz des Imperiums</string>
+    <string name="cause_crime">Kriminalität</string>
+    <string name="cause_emancipation">Gleichberechtigung</string>
+    <string name="cause_droid_rights">Droiden Rechte</string>
+    <string name="cause_capitalism">Kapitalismus</string>
+    <string name="casue_support_the_empire">Unterstüzung des Imperiums</string>
+    
+    <!-- Character Creation Motivation Relationship-->
+    <string name="relationship">Bindung</string>
+    <string name="relation_place_of_origion">Herkunftsort</string>
+    <string name="relation_pet">Haustier</string>
+    <string name="relation_childhood_friend">Kindheitsfreund</string>
+    <string name="relation_comrades">Kameraden</string>
+    <string name="relation_siblings">Geschwister</string>
+    <string name="relation_mentor">Mentor</string>
+    <string name="relation_parents">Eltern</string>
+    <string name="relation_extended_family_clan">Erweiterte Familie / Clan</string>
+    <string name="relation_droid_companion">Droiden Gefährte</string>
+    <string name="relation_former_nemesis">Ehemaliger Erzfeind</string>
+    
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
     <string name="pref_design_title">Aussehen</string>
