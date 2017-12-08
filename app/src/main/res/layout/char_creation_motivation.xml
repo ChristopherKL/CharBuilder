@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</android.support.constraint.ConstraintLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/selected_motivation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/selected_motivation"
+        android:textColor="@color/colorBlack"
+        android:textSize="15dp" 
+        android:textAlignment="center"/>
+    <Button
+        android:id="@+id/random_motivation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/random_motivation_button"
+        android:layout_marginTop="3dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="@string/ambition"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginTop="2dp"
+                    android:textSize="15dp" />
+                <ListView
+                    android:id="@+id/ambition_listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></ListView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="@string/cause"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginTop="2dp"
+                    android:textSize="15dp" />
+                <ListView
+                    android:id="@+id/cause_listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></ListView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="@string/relationship"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginTop="2dp"
+                    android:textSize="15dp" />
+                <ListView
+                    android:id="@+id/relationship_listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></ListView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

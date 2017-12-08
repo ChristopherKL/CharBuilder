@@ -39,6 +39,24 @@
     <string name="cc_appearance">Aussehen</string>
     <string name="cc_gear">Ausrüstung</string>
 
+    <string name="selected_obligation">Ausgewählte Pflicht</string>
+    <string name="random_obligation_button">Zufällige Pflicht</string>
+    <!-- Character Creation Obligation Types-->
+    <string name="obligation_addiction">Sucht</string>
+    <string name="obligation_betrayal">Verrat</string>
+    <string name="obligation_blackmail">Erpressung</string>
+    <string name="obligation_bounty">Kopfgeld</string>
+    <string name="obligation_criminal">Kriminalität</string>
+    <string name="obligation_debt">Schulden</string>
+    <string name="obligation_dutybound">Pflichtbewusstsein</string>
+    <string name="obligation_family">Familie</string>
+    <string name="obligation_favor">Gefälligkeit</string>
+    <string name="obligation_oath">Eid</string>
+    <string name="obligation_obsession">Besessenheit</string>
+    <string name="obligation_responsibility">Verantwortung</string>
+
+    <string name="selected_motivation">Ausgewählte Motivation</string>
+    <string name="random_motivation_button">Zufällige Motivation</string>
     <!-- Character Creation Motivation Ambitions-->
     <string name="ambition">Zielsetzung</string>
     <string name="ambition_friendship">Freundschaft</string>
@@ -63,7 +81,7 @@
     <string name="cause_emancipation">Gleichberechtigung</string>
     <string name="cause_droid_rights">Droiden Rechte</string>
     <string name="cause_capitalism">Kapitalismus</string>
-    <string name="casue_support_the_empire">Unterstüzung des Imperiums</string>
+    <string name="cause_support_the_empire">Unterstüzung des Imperiums</string>
     
     <!-- Character Creation Motivation Relationship-->
     <string name="relationship">Bindung</string>
@@ -77,7 +95,7 @@
     <string name="relation_extended_family_clan">Erweiterte Familie / Clan</string>
     <string name="relation_droid_companion">Droiden Gefährte</string>
     <string name="relation_former_nemesis">Ehemaliger Erzfeind</string>
-    
+
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
     <string name="pref_design_title">Aussehen</string>
