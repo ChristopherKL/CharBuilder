@@ -29,7 +29,7 @@ class MotivationFragment : Fragment() {
     }
 
     private fun chooseAmbition(isSecond : Boolean){
-        val result : Int = Random().nextInt(101)
+        val result : Int = Random().nextInt(100)+1
         when(result){
             in 1..10 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_friendship)
                         else selected_motivation2.text = getString(R.string.ambition_friendship)
@@ -55,7 +55,7 @@ class MotivationFragment : Fragment() {
     }
 
     private fun chooseCause(isSecond : Boolean){
-        val result : Int = Random().nextInt(101)
+        val result : Int = Random().nextInt(100)+1
         when(result){
             in 1..10 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_religion_spirituality)
                         else selected_motivation2.text = getString(R.string.cause_religion_spirituality)
@@ -81,7 +81,7 @@ class MotivationFragment : Fragment() {
     }
 
     private fun chooseRelationship(isSecond : Boolean){
-        val result : Int = Random().nextInt(101)
+        val result : Int = Random().nextInt(100)+1
         when(result){
             in 1..10 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_place_of_origin)
                         else selected_motivation2.text = getString(R.string.relation_place_of_origin)
