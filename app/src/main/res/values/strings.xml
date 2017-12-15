@@ -56,6 +56,7 @@
     <string name="obligation_responsibility">Verantwortung</string>
 
     <string name="selected_motivation">Ausgewählte Motivation</string>
+    <string name="second_selected_motivation">Zweite Motivation</string>
     <string name="random_motivation_button">Zufällige Motivation</string>
     <!-- Character Creation Motivation Ambitions-->
     <string name="ambition">Zielsetzung</string>
@@ -85,7 +86,7 @@
     
     <!-- Character Creation Motivation Relationship-->
     <string name="relationship">Bindung</string>
-    <string name="relation_place_of_origion">Herkunftsort</string>
+    <string name="relation_place_of_origin">Herkunftsort</string>
     <string name="relation_pet">Haustier</string>
     <string name="relation_childhood_friend">Kindheitsfreund</string>
     <string name="relation_comrades">Kameraden</string>

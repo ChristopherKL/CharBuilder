@@ -14,6 +14,17 @@
         android:textColor="@color/colorBlack"
         android:textSize="15dp" 
         android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/selected_motivation2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/second_selected_motivation"
+        android:textColor="@color/colorGrey"
+        android:textSize="15dp"
+        android:textAlignment="center"/>
+
     <Button
         android:id="@+id/random_motivation_button"
         android:layout_width="wrap_content"
