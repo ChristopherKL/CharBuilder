@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.creationfragments.ObligationFragment
+import com.chrisphil.charbuilder.creationfragments.SpeciesFragment
 import com.chrisphil.charbuilder.interfaces.OnDataPass
 
 import kotlinx.android.synthetic.main.char_creation.*
@@ -120,7 +121,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         override fun getItem(position: Int): Fragment {
             when(position){
                 0 -> return ObligationFragment.newInstance(position+1)
-                1 -> return PlaceholderFragment.newInstance(position+1)
+                1 -> return SpeciesFragment.newInstance(position+1)
                 2 -> return PlaceholderFragment.newInstance(position+1)
             }
             return PlaceholderFragment.newInstance(99)
