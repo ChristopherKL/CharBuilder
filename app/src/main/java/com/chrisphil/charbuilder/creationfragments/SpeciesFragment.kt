@@ -1,13 +1,14 @@
 package com.chrisphil.charbuilder.creationfragments
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import com.chrisphil.charbuilder.R
@@ -96,10 +97,39 @@ class SpeciesFragment : Fragment() {
             val view = li.inflate(R.layout.char_creation_listview,p2,false)
             var name_view = view.findViewById<TextView>(R.id.firstLine)
             name_view.text = species[p0].name
+
             var desc_view = view.findViewById<TextView>(R.id.secondLine)
             desc_view.text = species[p0].description
+
+            var button = view.findViewById<ImageView>(R.id.icon)
+            button.setOnClickListener {
+                createSpeciesInfoDialog(species[p0])
+            }
             return view;
         }
+
+    }
+
+    fun createSpeciesInfoDialog(species : Species){
+        var dialogBuilder = AlertDialog.Builder(context)
+        val inflater = this.layoutInflater
+        val view = inflater.inflate(R.layout.char_species_information_dialog,null)
+        dialogBuilder.setView(view)
+
+        val species_name = view.findViewById<TextView>(R.id.speciesName)
+        val species_desc = view.findViewById<TextView>(R.id.speciesDesc)
+        val species_brawn = view.findViewById<TextView>(R.id.speciesBrawn)
+        val species_agility = view.findViewById<TextView>(R.id.speciesAgility)
+
+        dialogBuilder.setTitle("Species Info") //TODO: Dynamic Dialog Name from Stringsxml
+
+        species_name.text = species.name
+        species_desc.text = species.description
+        species_brawn.text = species.brawn.toString()
+        species_agility.text = species.agility.toString()
+
+        val b = dialogBuilder.create()
+        b.show()
 
     }
 
