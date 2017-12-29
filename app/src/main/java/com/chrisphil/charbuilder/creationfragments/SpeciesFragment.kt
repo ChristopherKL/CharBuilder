@@ -8,15 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
 import android.widget.ListView
-import android.widget.TextView
 import com.chrisphil.charbuilder.R
+import kotlinx.android.synthetic.main.char_creation_listview.view.*
+import kotlinx.android.synthetic.main.char_creation_species.view.*
+import kotlinx.android.synthetic.main.char_species_information_dialog.view.*
 import org.xmlpull.v1.XmlPullParser
 
-/**
- * Created by Christopher on 04.12.2017.
- */
 class SpeciesFragment : Fragment() {
 
     data class Species(val id : Long,
@@ -35,7 +33,7 @@ class SpeciesFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view : View = inflater!!.inflate(R.layout.char_creation_species, container, false);
-        val liste : ListView = view.findViewById(R.id.listview)
+        val liste : ListView = view.listview
         var species = loadSpecies()
 
         val adapter = SpeciesViewAdapter(context,species)
@@ -95,13 +93,13 @@ class SpeciesFragment : Fragment() {
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
             val li = LayoutInflater.from(context)
             val view = li.inflate(R.layout.char_creation_listview,p2,false)
-            var name_view = view.findViewById<TextView>(R.id.firstLine)
+            var name_view = view.firstLine
             name_view.text = species[p0].name
 
-            var desc_view = view.findViewById<TextView>(R.id.secondLine)
+            var desc_view = view.secondLine
             desc_view.text = species[p0].description
 
-            var button = view.findViewById<ImageView>(R.id.icon)
+            var button = view.icon
             button.setOnClickListener {
                 createSpeciesInfoDialog(species[p0])
             }
@@ -116,12 +114,12 @@ class SpeciesFragment : Fragment() {
         val view = inflater.inflate(R.layout.char_species_information_dialog,null)
         dialogBuilder.setView(view)
 
-        val species_name = view.findViewById<TextView>(R.id.speciesName)
-        val species_desc = view.findViewById<TextView>(R.id.speciesDesc)
-        val species_brawn = view.findViewById<TextView>(R.id.speciesBrawn)
-        val species_agility = view.findViewById<TextView>(R.id.speciesAgility)
+        val species_name = view.speciesName
+        val species_desc = view.speciesDesc
+        val species_brawn = view.speciesBrawn
+        val species_agility = view.speciesAgility
 
-        dialogBuilder.setTitle("Species Info") //TODO: Dynamic Dialog Name from Stringsxml
+        dialogBuilder.setTitle(resources.getString(R.string.species_info_dialog_title))
 
         species_name.text = species.name
         species_desc.text = species.description
