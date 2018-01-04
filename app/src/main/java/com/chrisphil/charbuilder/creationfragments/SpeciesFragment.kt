@@ -35,7 +35,7 @@ class SpeciesFragment : Fragment() {
                        val special : String)
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view : View = inflater!!.inflate(R.layout.char_creation_species, container, false);
+        val view : View = inflater!!.inflate(R.layout.char_creation_species, container, false)
         val liste : ListView = view.listview
 
         liste.choiceMode = CHOICE_MODE_SINGLE
@@ -46,7 +46,7 @@ class SpeciesFragment : Fragment() {
 
         liste.adapter = adapter
 
-        return view;
+        return view
     }
 
     private fun loadSpecies() : ArrayList<Species>{
