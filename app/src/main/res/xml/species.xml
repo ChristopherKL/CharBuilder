@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<species_list>
+    <species
+        name="Droide"
+        description="Hier könnte ihre Werbung stehen"
+        brawn_stat="1"
+        agility_stat="1"
+        intellect_stat="1"
+        cunning_stat="1"
+        willpower_stat="1"
+        presence_stat="1"
+        wound_threshold="10 + Brawn"
+        strain_threshold="10 + Willpower"
+        starting_exp="175"
+        special="Droids do not need to eat, sleep, or breathe, and are unaffected by toxins or poisons.Droids have a cybernetic implant cap of 6 instead of their Brawn rating." />
+
+    <species
+        name="Gand"
+        description="Ist halt so ein Ding"
+        brawn_stat="2"
+        agility_stat="2"
+        intellect_stat="2"
+        cunning_stat="2"
+        willpower_stat="3"
+        presence_stat="1"
+        wound_threshold="10 + Brawn"
+        strain_threshold="10 + Willpower"
+        starting_exp="100"
+        special="Gands begin the game with one rank in Discipline. They still may not train Discipline above rank 2 during character creation"/>
+    <species
+        name="Rodians"
+        description="Der ist heeeeslig"
+        brawn_stat="2"
+        agility_stat="3"
+        intellect_stat="2"
+        cunning_stat="2"
+        willpower_stat="1"
+        presence_stat="2"
+        wound_threshold="10 + Brawn"
+        strain_threshold="10 + Willpower"
+        starting_exp="100"
+        special="Rodians begin the game with one rank in Survival. They still may not train Survival above rank 2 during character creation. Rodians start with one rank in the Expert Tracker talent"/>
+</species_list>
