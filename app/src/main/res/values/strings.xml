@@ -98,6 +98,9 @@
     <string name="relation_droid_companion">Droiden Gefährte</string>
     <string name="relation_former_nemesis">Ehemaliger Erzfeind</string>
 
+    <!-- Character Creation Species Dialog -->
+    <string name="species_info_dialog_title">Spezies Information</string>
+    
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
     <string name="pref_design_title">Aussehen</string>
