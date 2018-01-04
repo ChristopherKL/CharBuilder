@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#005083</color>
     <color name="colorCardBG">#666464</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#696969</color>
     <color name="listSelectColor">#a6cdf4</color>
 </resources>

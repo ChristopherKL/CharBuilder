@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<obligation_list>
+    <obligation
+        name="Sucht"
+        description="Physische oder Psychische Abhängigkeit"
+        text="Der Charakter hat eine starke Sucht, die er befriedigen muss. Er wendet viel Zeit,Energie und Ressourcen auf um das Objekt der Sucht zu erlangen"/>
+
+    <obligation
+        name="Verrat"
+        description="Der Charakter wurde oder hat verraten"
+        text="Der Charakter wurde Opfer eines tiefen persönlichen Verrats oder ist derjenige, der den Verrat begangen hat. Der Verrat nimmt den Charakter mit und hat Einfluss auf sein alltägliches Leben. Das Opfer sucht nach Antworten, Gerechtigkeit oder Rache."/>
+
+    <obligation
+        name="Erpressung"
+        description="Der Charakter wird erpresst"
+        text="Jemand kennt eins der schmutzigen Geheimnisse des Charakters und zieht daraus einen Nutzen. Der Erpresser besitzt Beweise, die er veröffentlichen könnte. Damit das Geheimnis gewahrt wird, müssen Forderungen, meistens in Form von Geld oder Gefallen, für den Erpresser erfüllt werden."/>
+
+    <obligation
+        name="Kopfgeld"
+        description="Der Charakter hat ein Kopfgeld"
+        text="Aus irgendeinem Grund wurde ein Kopfgeld auf den Charakter ausgesetzt. Was der Grund ist, kann durch den Hintergrund des Charakters bestimmt werden. Die Schwere der Tat wird auf Grund der Gewichtung der Pflicht bestimmt."/>
+
+    <obligation
+        name="Kriminalität"
+        description="Probleme mit dem Gesetz"
+        text="Der Charakter ist vorbestraft oder wird einer Straftat beschuldigt (die er vielleicht garnicht begangen hat) und ist deswegen verwickelt ins Rechtssystem. Die Pflicht besteht darin, laufende Prozesskosten zu decken, Beweise zu beseitigen oder seine Unschuld zu beweisen"/>
+
+    <obligation
+        name="Schulden"
+        description="Geld oder andere Schulden"
+        text="Der Charakter schuldet jemandem sehr viel, egal ob es sich um Geld oder etwas anderes handelt. Je nachdem, bei wem man die Schulden hat, reicht es eventuell nicht sie abzubezahlen, um aus dem Schneider zu sein."/>
+
+    <obligation
+        name="Pflichtbewusstsein"
+        description="Eine Pflicht, die erfüllt werden muss"
+        text="Der Charakter hat eine Pflicht, die er gezwungen ist zu erfüllen. Das kann sein, einen Auftrag gut abzuschließen, Wehrdienst zu leisten oder eine Art Diebescodex zu befolgen. Der Charakter ist gesetzlich oder durch ein Ritual an die Pflicht gebunden. Es ist schwer oder von Nachteil, diese Verpflichtung nicht einzuhalten"/>
+
+    <obligation
+        name="Familie"
+        description="Tiefe Verbundenheit mit der Familie"
+        text="Die Verbundenheit zur Familie kostet viel Zeit und Aufmerksamkeit. Der Charakter hilft Geschwistern oder den Eltern, verwaltet ein Erbe oder ein Familiengeschäft."/>
+
+    <obligation
+        name="Gefälligkeit"
+        description="Ein großer Gefallen"
+        text="Der Charakter schuldet jemandem einen großen Gefallen, sei es, weil ein Freund ihm aus dem Gefängnis befreit hat oder jemand ein Auge zugedrückt hat beim Ware schmuggeln. "/>
+
+    <obligation
+        name="Eid"
+        description=""
+        text=""/>
+
+    <obligation
+        name="Besessenheit"
+        description=""
+        text=""/>
+
+    <obligation
+        name="Verantwortung"
+        description=""
+        text=""/>
+
+</obligation_list>
