@@ -15,7 +15,7 @@ import java.util.Random
 class MotivationFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater?.inflate(R.layout.char_creation_motivation, container, false)
+        val view : View = inflater!!.inflate(R.layout.char_creation_motivation, container, false)
         random_motivation_button.setOnClickListener{
             val motivationResult : Int = Random().nextInt(10)+1
             when(motivationResult) {
