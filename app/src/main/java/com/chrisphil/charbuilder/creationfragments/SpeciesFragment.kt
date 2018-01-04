@@ -4,18 +4,21 @@ import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.AbsListView.CHOICE_MODE_SINGLE
 import android.widget.BaseAdapter
 import android.widget.ListView
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.interfaces.OnDataPass
 import kotlinx.android.synthetic.main.char_creation_listview.view.*
+import kotlinx.android.synthetic.main.char_creation_species.*
 import kotlinx.android.synthetic.main.char_creation_species.view.*
 import kotlinx.android.synthetic.main.char_species_information_dialog.view.*
 import org.xmlpull.v1.XmlPullParser
 
 class SpeciesFragment : Fragment() {
+
+    lateinit var dataPass : OnDataPass
 
     data class Species(val id : Long,
                        val name : String,
@@ -34,6 +37,9 @@ class SpeciesFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view : View = inflater!!.inflate(R.layout.char_creation_species, container, false);
         val liste : ListView = view.listview
+
+        liste.choiceMode = CHOICE_MODE_SINGLE
+
         var species = loadSpecies()
 
         val adapter = SpeciesViewAdapter(context,species)
@@ -87,12 +93,13 @@ class SpeciesFragment : Fragment() {
         }
 
         override fun getCount(): Int {
-            return species.count();
+            return species.count()
         }
 
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
             val li = LayoutInflater.from(context)
             val view = li.inflate(R.layout.char_creation_listview,p2,false)
+
             var name_view = view.firstLine
             name_view.text = species[p0].name
 
@@ -103,7 +110,7 @@ class SpeciesFragment : Fragment() {
             button.setOnClickListener {
                 createSpeciesInfoDialog(species[p0])
             }
-            return view;
+            return view
         }
 
     }
@@ -149,6 +156,16 @@ class SpeciesFragment : Fragment() {
             fragment.arguments = args
             return fragment
         }
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        dataPass = context as OnDataPass
+    }
+
+    override fun onDestroyView() {
+        dataPass.onDataPass(listview.selectedItemId.toString()) //TODO: Real Item instead of id
+        super.onDestroyView()
     }
 
 }
