@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<motivation_list>
+    <ambition_list>
+        <ambition
+            name="Freundschaft"
+            description="Neue Freundschaften schliessen"
+            text="Der Charakter will bei anderen einen guten Eindruck machen und gemocht werden. Ob gesellig oder nicht, mit seinen Aktionen und Taten will er Freundschaften festigen."/>
+    </ambition_list>
+    <cause_list>
+        <cause
+            name="Religion / Spiritualität"
+            description="Glaube an Religion"
+            text="Der Charakter unterstützt aktiv eine religiöse oder spirituelle Organisation oder Glauben. Das könnten die Lehren der Jedi oder Sith, aber auch ein anderer Glauben sein."/>
+    </cause_list>
+    <relation_list>
+        <relation
+            name="Herkunftsort"
+            description="Stolz auf Herkunft"
+            text="Der Charakter ist stolz auf den Ort an dem er aufgewachsen ist. Das könnte ein Planet, Stadt, Raumstation oder Raumschiff sein. Der Charakter möchte dem Ort und seinen Leuten helfen und verteidigt ihn mit seinem Leben"/>
+    </relation_list>
+</motivation_list>

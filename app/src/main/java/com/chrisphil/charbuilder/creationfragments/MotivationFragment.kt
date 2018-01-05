@@ -1,12 +1,19 @@
 package com.chrisphil.charbuilder.creationfragments
 
+import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.ListView
 import com.chrisphil.charbuilder.R
 import kotlinx.android.synthetic.main.char_creation_motivation.*
+import kotlinx.android.synthetic.main.char_creation_motivation.view.*
+import kotlinx.android.synthetic.main.char_creation_listview.view.*
+import org.xmlpull.v1.XmlPullParser
 import java.util.Random
 
 /**
@@ -14,9 +21,28 @@ import java.util.Random
  */
 class MotivationFragment : Fragment() {
 
+    data class Motivation(
+            val id : Long,
+            val name : String,
+            val description : String,
+            val text : String
+    )
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view : View = inflater!!.inflate(R.layout.char_creation_motivation, container, false)
-        random_motivation_button.setOnClickListener{
+        val ambitionList : ListView = view.ambition_listView
+        val causeList : ListView = view.cause_listView
+        val relationList : ListView = view.relationship_listView
+        var ambitionArray = loadMotivations("ambition")
+        var causeArray = loadMotivations("cause")
+        var relationArray = loadMotivations("relation")
+        val ambitionAdapter = MotivationsViewAdapter(context,ambitionArray)
+        val causeAdapter = MotivationsViewAdapter(context,causeArray)
+        val relationAdapter = MotivationsViewAdapter(context,relationArray)
+        ambitionList.adapter = ambitionAdapter
+        causeList.adapter = causeAdapter
+        relationList.adapter = relationAdapter
+        view.random_motivation_button.setOnClickListener{
             val motivationResult : Int = Random().nextInt(10)+1
             when(motivationResult) {
                 in 1..3 -> chooseAmbition(false)
@@ -26,6 +52,71 @@ class MotivationFragment : Fragment() {
             }
         }
         return view
+    }
+
+    private fun loadMotivations(motivation : String) : ArrayList<Motivation>{
+        val allObligations = ArrayList<Motivation>()
+        var id_count = 0L
+        val xml = resources.getXml(R.xml.motivations)
+        while(xml.eventType != XmlPullParser.END_DOCUMENT){
+            if(xml.eventType == XmlPullParser.START_TAG){
+                if(xml.name == motivation){
+
+                    val current = Motivation(
+                            id_count,
+                            xml.getAttributeValue(null,"name"),
+                            xml.getAttributeValue(null,"description"),
+                            xml.getAttributeValue(null,"text")
+                    )
+                    allObligations.add(current)
+                    id_count++
+                }
+            }
+            xml.next()
+        }
+        return allObligations
+    }
+
+    inner class MotivationsViewAdapter(context: Context, var motivations : ArrayList<Motivation>) : BaseAdapter() {
+
+        override fun getItem(p0: Int): Any {
+            return motivations[p0]
+        }
+
+        override fun getItemId(p0: Int): Long {
+            return motivations[p0].id
+        }
+        override fun getCount(): Int {
+            return motivations.count()
+        }
+
+        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+            val li = LayoutInflater.from(context)
+            val view = li.inflate(R.layout.char_creation_listview,p2,false)
+            var name_view = view.firstLine
+            name_view.text = motivations[p0].name
+
+            var desc_view = view.secondLine
+            desc_view.text = motivations[p0].description
+
+            var button = view.icon
+            button.setOnClickListener {
+                createMotivationsInfoDialog(motivations[p0])
+            }
+            return view
+        }
+    }
+
+    private fun createMotivationsInfoDialog(motivation : Motivation){
+        var dialogBuilder = AlertDialog.Builder(context)
+        dialogBuilder.setMessage(motivation.text)
+                     .setTitle(motivation.name)
+        val dialog = dialogBuilder.create()
+        dialog.setButton(AlertDialog.BUTTON_NEUTRAL,getString(R.string.dialog_ok),{
+            _, _ ->
+            dialog.dismiss()
+        })
+        dialog.show()
     }
 
     private fun chooseAmbition(isSecond : Boolean){
@@ -140,5 +231,4 @@ class MotivationFragment : Fragment() {
             }
         }
     }
-
 }

@@ -3,7 +3,7 @@
     <obligation
         name="Sucht"
         description="Physische oder Psychische Abhängigkeit"
-        text="Der Charakter hat eine starke Sucht, die er befriedigen muss. Er wendet viel Zeit,Energie und Ressourcen auf um das Objekt der Sucht zu erlangen"/>
+        text="Der Charakter hat eine starke Sucht, die er befriedigen muss. Er wendet viel Zeit, Energie und Ressourcen auf um das Objekt der Sucht zu erlangen."/>
 
     <obligation
         name="Verrat"
@@ -23,7 +23,7 @@
     <obligation
         name="Kriminalität"
         description="Probleme mit dem Gesetz"
-        text="Der Charakter ist vorbestraft oder wird einer Straftat beschuldigt (die er vielleicht garnicht begangen hat) und ist deswegen verwickelt ins Rechtssystem. Die Pflicht besteht darin, laufende Prozesskosten zu decken, Beweise zu beseitigen oder seine Unschuld zu beweisen"/>
+        text="Der Charakter ist vorbestraft oder wird einer Straftat beschuldigt (die er vielleicht garnicht begangen hat) und ist deswegen verwickelt ins Rechtssystem. Die Pflicht besteht darin, laufende Prozesskosten zu decken, Beweise zu beseitigen oder seine Unschuld zu beweisen."/>
 
     <obligation
         name="Schulden"
@@ -33,7 +33,7 @@
     <obligation
         name="Pflichtbewusstsein"
         description="Eine Pflicht, die erfüllt werden muss"
-        text="Der Charakter hat eine Pflicht, die er gezwungen ist zu erfüllen. Das kann sein, einen Auftrag gut abzuschließen, Wehrdienst zu leisten oder eine Art Diebescodex zu befolgen. Der Charakter ist gesetzlich oder durch ein Ritual an die Pflicht gebunden. Es ist schwer oder von Nachteil, diese Verpflichtung nicht einzuhalten"/>
+        text="Der Charakter hat eine Pflicht, die er gezwungen ist zu erfüllen. Das kann sein, einen Auftrag gut abzuschließen, Wehrdienst zu leisten oder eine Art Diebescodex zu befolgen. Der Charakter ist gesetzlich oder durch ein Ritual an die Pflicht gebunden. Es ist schwer oder von Nachteil, diese Verpflichtung nicht einzuhalten."/>
 
     <obligation
         name="Familie"
@@ -47,7 +47,7 @@
 
     <obligation
         name="Eid"
-        description=""
+        description="Schwur eines Eids"
         text=""/>
 
     <obligation

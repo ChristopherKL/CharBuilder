@@ -1,5 +1,6 @@
 package com.chrisphil.charbuilder.creationfragments
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -132,7 +133,15 @@ class ObligationFragment : Fragment() {
     }
 
     private fun createObligationsInfoDialog(obligation : Obligation){
-
+        var dialogBuilder = AlertDialog.Builder(context)
+        dialogBuilder.setMessage(obligation.text)
+                .setTitle(obligation.name)
+        val dialog = dialogBuilder.create()
+        dialog.setButton(AlertDialog.BUTTON_NEUTRAL,getString(R.string.dialog_ok),{
+            _, _ ->
+            dialog.dismiss()
+        })
+        dialog.show()
     }
 
     companion object {

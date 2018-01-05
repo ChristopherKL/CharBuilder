@@ -4,6 +4,7 @@
     <string name="description">und das nicht</string>
     <string name="title_activity_main_navigation_drawer">CharBuilder</string>
     <string name="cancel">Abbrechen</string>
+    <string name="dialog_ok">Ok</string>
 
     <!-- Main Navigation Drawer Menu -->
     <string name="action_settings">Einstellungen</string>
