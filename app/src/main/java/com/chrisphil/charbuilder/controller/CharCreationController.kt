@@ -15,6 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.creationfragments.MotivationFragment
 import com.chrisphil.charbuilder.creationfragments.ObligationFragment
 import com.chrisphil.charbuilder.creationfragments.SpeciesFragment
 import com.chrisphil.charbuilder.interfaces.OnDataPass

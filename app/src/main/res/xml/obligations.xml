@@ -48,16 +48,16 @@
     <obligation
         name="Eid"
         description="Schwur eines Eids"
-        text=""/>
+        text="Der Charakter hat einen Eid geschworen, der seine Gedanken und Aktionen lenkt und sein moralisches Weltbild prägt. Das könnte der Eid auf eine Gottheit, eine Art zu leben(wie der Jedi Code) oder die Bereitschaft, sich für das Besserwerden einer Gruppe oder eines Zustands zu opfern, sein. Es ist ein persönliches und tiefes Unterfangen, möglicherweise ohne ein wirklich erreichbares Endziel in Sicht. Charaktere, die diesem Eid nicht gerecht werden, stehen vor einem innerer und moralischer Kampf."/>
 
     <obligation
         name="Besessenheit"
-        description=""
-        text=""/>
+        description="Eine krankhafte Besessenheit"
+        text="Die Besessenheit auf einen Celebrity, eine Region, eine politische Bewegung oder andere Kutlur-Symbole aus der Gesellschaft neigt dazu, das Leben des Charakters zu beeinträchtigen. Das Verfolgen dieser Besessenheit kann zum Nachteil der Gesundheit, der Finazen oder des Wohlbefinden des Charakters sein. Mit Gleichgesinnten versteht sich der Charakter gut, andere begegnen ihm mit Mitleid, Spott oder auch Angst, falls sie die Besessenheit nicht verstehen."/>
 
     <obligation
         name="Verantwortung"
-        description=""
-        text=""/>
+        description="Starkes Verantwortungsbewusstsein"
+        text="Der Charakter hat eine starke Verantwortlichkeit oder Beziehung zu einer Person, einem Ort oder einer Sache. Das könnte dargestellt werden durch eine starke Bindung zu einem Mentor, dem Drang, Waisenkindern in einer bestimtmen Lage zu helfen oder sich der Bedürfnisse einer unterrepräsentierten Minderheit anzunehmen."/>
 
 </obligation_list>

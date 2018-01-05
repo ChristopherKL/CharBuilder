@@ -4,18 +4,153 @@
         <ambition
             name="Freundschaft"
             description="Neue Freundschaften schliessen"
-            text="Der Charakter will bei anderen einen guten Eindruck machen und gemocht werden. Ob gesellig oder nicht, mit seinen Aktionen und Taten will er Freundschaften festigen."/>
+            text="Der Charakter will bei Anderen einen guten Eindruck machen und gemocht werden. Ob gesellig oder nicht, durch seinen Aktionen und Taten will er Freundschaften festigen."/>
+
+        <ambition
+            name="Liebe"
+            description="Die große Liebe finden"
+            text="Der Charakter ist angetrieben von Liebe und Innigkeit. Entweder hat er schon die wahre Liebe gefunden oder ist noch auf der Suche."/>
+
+        <ambition
+            name="Freiheit"
+            description="Tun was man will"
+            text="Der Charakter strebt die Freiheit an, alles zu tun, was er will. Seine eigene Pflichten ablegen oder andere aus ihren Fesseln der Knechtschaft befreien, ist das, was diesen Charakter ausmacht."/>
+
+        <ambition
+            name="Berühmtheit"
+            description="Im Rampenlicht stehen"
+            text="Der Charakter sucht das Rampenlicht und möchte berühmt werden. Jeder soll von seinen Taten und Aktionen erfahren, sodass er die Aufmerksamkeit seiner Fans und Unterstützer genießen kann."/>
+
+        <ambition
+            name="Gier"
+            description="Geld regiert die Welt"
+            text="Jedes Mittel um an Geld zukommen ist diesem Charakter recht. Er könnte ein Unternehmen leiten, sein Geld investieren oder einen Überfall starten, um sein Bankkonto aufzufüllen."/>
+
+        <ambition
+            name="Ansehen"
+            description="Verbesserung des Sozialstatus"
+            text="Dieser Charakter will seinen sozialen Status verbessern, möglicherweise durch Titel, Empfehlungen oder Auszeichnungen. Dabei ist es egal, ob er er aus einfachen Verhältnissen kommt oder eine höhere Position anstrebt."/>
+
+        <ambition
+            name="Expertise"
+            description="Meistere deine Fähigkeiten"
+            text="Der Charakter will sein Handwerk meistern und durch ständige Übung Perfektion erreichen. Alternativ wählt der Spieler ein oder zwei Fähigkeiten, die sein Charakter meistern möchte."/>
+
+        <ambition
+            name="Fernweh / Neuheit"
+            description="Entdeckerdrang und Neugier"
+            text="Der Charakter will die Galaxis erkunden und ist motiviert, ferne und unerforschte Gebiete zu entdecken. Alternativ könnte der Charakter darauf aus sein, neue Sinneseindrücke und Aktivitäten zu erleben, um seine Genusssucht zu befriedigen."/>
+
+        <ambition
+            name="Macht"
+            description="Kontrolle über andere"
+            text="Der Charakter sehnt sich nach Macht und Autorität über andere. Die Herrschaft muss nicht machthaberisch sein, wichtig ist nur, die Kontrolle über die Situation und Leute in seinem Umfeld zu haben."/>
+
+        <ambition
+            name="Religion / Spiritualität"
+            description="Glaube an Religion"
+            text="Der Charakter ist gezeichnet und folgt dem Einfluss einer bestimmten religiösen oder spirituellen Berufung. Das könnten die Lehren der Jedi oder Sith, aber auch ein anderer Glauben, sein."/>
     </ambition_list>
     <cause_list>
         <cause
             name="Religion / Spiritualität"
             description="Glaube an Religion"
-            text="Der Charakter unterstützt aktiv eine religiöse oder spirituelle Organisation oder Glauben. Das könnten die Lehren der Jedi oder Sith, aber auch ein anderer Glauben sein."/>
+            text="Der Charakter unterstützt aktiv eine religiöse oder spirituelle Organisation oder Glauben. Das könnten die Lehren der Jedi oder Sith, aber auch ein anderer Glauben, sein."/>
+
+        <cause
+            name="Die Schwachen / Wohltätigkeit"
+            description="Hilf deinem Nächsten"
+            text="In einem totalitären System geführt von Tyrannen kämpft der Charakter für die Unterdrückten. Die Interessen der Hilfsbedürftigen stehen für ihn über seinen eigenen. Er spendet Zeit oder Geld, um den Bedürftigen zu helfen."/>
+
+        <cause
+            name="Nichtmenschliche Rechte"
+            description="Gleiches Recht für alle Spzeies"
+            text="Während der fremdenfeindlichen Herrschaft des Imperiums kämpft der Charakter für die Rechte der nichtmenschlichen Spezies."/>
+
+        <cause
+            name="Lokale Politik"
+            description="Unterstützung lokaler politischer Organisationen"
+            text="Der Charakter unterstützt eine bestimmte politische Organisation, meistens auf einem einzelnen Planeten oder innerhalb eines Systems. Er engagiert sich für Kampagnen und Kandidaten und würde sogar eventuell für die Organisation kämpfen."/>
+
+        <cause
+            name="Sturz des Imperiums"
+            description="Nieder mit dem Imperium"
+            text="Das Imperium und alles, für das es steht, wird vom Charakter verachtet. Er muss kein aktives Mitglied des Widerstands sein, dennoch heißt er seine Ziele gut. Gegner der imperialen Tyrannei finden bei ihm Hilfe und Unterschlupf."/>
+
+        <cause
+            name="Kriminalität"
+            description="Gesetz der Straße"
+            text="Der Charakter unterstützt die Idee von Schwarzmärkten, Söldnern und anderen Gruppen, die außerhalb des Gesetzes liegen. Auch wenn der Charakter selbst kein Krimineller ist, so hilft er anderen Kriminellen, vorallem Familienmitglieder und Freunden."/>
+
+        <cause
+            name="Gleichberechtigung"
+            description="Gleiches Recht für alle"
+            text="Sklaverei und Vertragsknechtschaft sind Abscheulichkeiten, die in den Augen des Charakters abgeschafft werden müssen. Wenn sich die Gelegenheit ergibt, versucht der Charakter, Sklaven zu helfen oder sie zu befreien."/>
+
+        <cause
+            name="Droiden Rechte"
+            description="Droiden sind Teil der Gesellschaft"
+            text="Der Charakter ist der Meinung, dass Droiden als vollständiges Mitlgied der Gesellschaft akzeptiert werden sollten. Sie sind mehr als nur Werkzeuge und Diener."/>
+
+        <cause
+            name="Kapitalismus"
+            description="Geld regiert die Galaxis"
+            text="Der Charakter ist ein unverfrorener Kapitalist und kämpft für die Rechte von Kaufleuten, Handelsorganisationen und manchmal gegen die Wünsche des Imperiums und einiger krimineller Gruppen."/>
+
+        <cause
+            name="Unterstützung des Imperiums"
+            description="Lang lebe das Imperium"
+            text="Der Charakter unterstützt tatsächlich die Ziele und Methoden des Imperiums und tut sein Bestes, um sein Anliegen voranzutreiben. Er wird das Imperium im Gespräch verteidigen und zu seiner Verteidigung aktiv zu den Waffen greifen."/>
     </cause_list>
     <relation_list>
         <relation
             name="Herkunftsort"
             description="Stolz auf Herkunft"
-            text="Der Charakter ist stolz auf den Ort an dem er aufgewachsen ist. Das könnte ein Planet, Stadt, Raumstation oder Raumschiff sein. Der Charakter möchte dem Ort und seinen Leuten helfen und verteidigt ihn mit seinem Leben"/>
+            text="Der Charakter ist stolz auf den Ort an dem er aufgewachsen ist. Das könnte ein Planet, eine Stadt, eine Raumstation oder ein Raumschiff sein. Der Charakter möchte dem Ort und seinen Leuten helfen und verteidigt ihn mit seinem Leben."/>
+
+        <relation
+            name="Haustier"
+            description="Ein treuer tierischer Begleiter"
+            text="Der Charakter hat eine starke Bindung zu einem Haustier oder einem Tiergefährten irgendwiner Art. Dieser Gefährte ist relativ klein und kann nicht kämpfen."/>
+
+        <relation
+            name="Kindheitsfreund"
+            description="Freunde fürs Leben"
+            text="Der Charakter hält eine Freundschaft aus Kindheitstagen aufrecht und selbst, wenn er eine Galaxie entfernt von ihm ist, will er nur das Beste für seinen Freund."/>
+
+        <relation
+            name="Kameraden"
+            description="Loyalität gegenüber der Gruppe"
+            text="Der Charakter zeigt Loyalität gegenüber denen, an dessen Seite er dient. Dies könnte entweder die aktuelle Gruppe, frühere Militärfreunde oder Geschäftspartner sein."/>
+
+        <relation
+            name="Geschwister"
+            description="Enger Kontakt mit Geschwistern"
+            text="Der Charakter hat ein oder mehrere Geschwister, mit denen er in engem Kontakt steht. Es ist unwahrscheinlich, dass die Geschwister Gegner sind. Diese Motivation kann oder kann nicht mit der Beziehungsverpflichtung eines Charakters übereinstimmen."/>
+
+        <relation
+            name="Mentor"
+            description="Ein guter Lehrmeister"
+            text="Der Charakter steht einem Mentor, Professor, Lehrer oder einer anderen Person besonders nahe, der ihm in seinen frühen Jahren Unterstützung, Wissen und Weisheit zur Verfügung gestellt hat."/>
+
+        <relation
+            name="Eltern"
+            description="Mama ist stolz auf dich"
+            text="Der Charakter hat enge Beziehungen zu seinen Eltern (oder einem alleinerziehenden Elternteil) und sucht deren ständige Zustimmung. Dies kann eine gesunde oder unterstützende Situation sein oder auch nicht."/>
+
+        <relation
+            name="Erweiterte Familie / Clan"
+            description="Alles für die Familie"
+            text="Der Charakter hat eine große erweiterte Familie, Clan oder Stamm, die er zutiefst liebt. Er sucht sowohl ihren Komfort als auch die Zustimmung trotz der vielen Stimmen, die in seinem Ohr nach Aufmerksamkeit verlangen."/>
+
+        <relation
+            name="Droiden Gefährte"
+            description="Ein treuer Roboter Gefährte"
+            text="Der Charakter besitzt eine Vorliebe für einen bestimmten Droiden. Das könnte ein ehemaliger Familiendiener sein, der Astromechdroide seines Schiffes oder sein treuer Protokolldroide. Dies kann einen Spieler-Droiden beinhalten."/>
+
+        <relation
+            name="Ehemaliger Erzfeind"
+            description="Alter Feind ist neuer Freund"
+            text="Der Charakter bildete eine enge Bindung mit einem ehemaligen Erzfeind oder Rivalen. Obwohl die Wogen zwischen ihnen geglättet sind, könnten die beiden immer noch extrem konkurrierend sein."/>
     </relation_list>
 </motivation_list>

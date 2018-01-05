@@ -55,7 +55,7 @@ class MotivationFragment : Fragment() {
     }
 
     private fun loadMotivations(motivation : String) : ArrayList<Motivation>{
-        val allObligations = ArrayList<Motivation>()
+        val allMotivations = ArrayList<Motivation>()
         var id_count = 0L
         val xml = resources.getXml(R.xml.motivations)
         while(xml.eventType != XmlPullParser.END_DOCUMENT){
@@ -68,13 +68,13 @@ class MotivationFragment : Fragment() {
                             xml.getAttributeValue(null,"description"),
                             xml.getAttributeValue(null,"text")
                     )
-                    allObligations.add(current)
+                    allMotivations.add(current)
                     id_count++
                 }
             }
             xml.next()
         }
-        return allObligations
+        return allMotivations
     }
 
     inner class MotivationsViewAdapter(context: Context, var motivations : ArrayList<Motivation>) : BaseAdapter() {
