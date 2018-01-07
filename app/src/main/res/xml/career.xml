@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<career_list>
+    <career
+        name="Kopfgeldjäger"
+        subclass1="Assassine"
+        subclass2="Technikfan"
+        subclass3="Überlebenskünstler"/>
+    <career
+        name="Kolonist"
+        subclass1="Arzt"
+        subclass2="Politiker"
+        subclass3="Gelehrter"/>
+    <career
+        name="Entdecker"
+        subclass1="Grenzgänger"
+        subclass2="Kundschafter"
+        subclass3="Händler"/>
+    <career
+        name="Söldner"
+        subclass1="Bodyguard"
+        subclass2="Marodeur"
+        subclass3="Soldat"/>
+    <career
+        name="Schmuggler"
+        subclass1="Pilot"
+        subclass2="Schurke"
+        subclass3="Dieb"/>
+    <career
+        name="Techniker"
+        subclass1="Mechaniker"
+        subclass2="Hacker"
+        subclass3="Outlaw"/>
+</career_list>
