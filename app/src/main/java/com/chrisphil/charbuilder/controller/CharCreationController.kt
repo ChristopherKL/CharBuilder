@@ -15,6 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.creationfragments.CareerFragment
 import com.chrisphil.charbuilder.creationfragments.ObligationFragment
 import com.chrisphil.charbuilder.creationfragments.SpeciesFragment
 import com.chrisphil.charbuilder.interfaces.OnDataPass
@@ -33,12 +34,6 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         setContentView(R.layout.char_creation)
 
         setSupportActionBar(toolbar)
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        //mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
-
-        // Set up the ViewPager with the sections adapter.
-        //container.adapter = mSectionsPagerAdapter
 
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_obligation)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_species)))
@@ -53,7 +48,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         char_tab_layout.tabGravity = TabLayout.GRAVITY_FILL
         char_tab_layout.tabMode = TabLayout.MODE_SCROLLABLE
 
-        val adapter : PageAdapter = PageAdapter(supportFragmentManager,char_tab_layout.tabCount)
+        val adapter = PageAdapter(supportFragmentManager,char_tab_layout.tabCount)
 
         container.adapter = adapter
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(char_tab_layout))
@@ -122,7 +117,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
             when(position){
                 0 -> return ObligationFragment.newInstance(position+1)
                 1 -> return SpeciesFragment.newInstance(position+1)
-                2 -> return PlaceholderFragment.newInstance(position+1)
+                2 -> return CareerFragment.newInstance(position+1)
             }
             return PlaceholderFragment.newInstance(99)
         }
