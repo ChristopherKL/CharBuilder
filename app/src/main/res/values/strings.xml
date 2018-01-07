@@ -101,6 +101,17 @@
 
     <!-- Character Creation Species Dialog -->
     <string name="species_info_dialog_title">Spezies Information</string>
+
+    <!-- Character Creation Appearance-->
+    <string name="appearance_gender">Geschlecht:</string>
+    <string name="appearance_birthday">Geburtstag:</string>
+    <string name="appearance_age">Alter:</string>
+    <string name="appearance_height">Größe:</string>
+    <string name="appearance_weight">Gewicht:</string>
+    <string name="appearance_haircolor">Haar-/Fellfarbe:</string>
+    <string name="appearance_eyecolor">Augenfarbe:</string>
+    <string name="appearance_skincolor">Hautfarbe:</string>
+    <string name="appearance_features">Besondere Merkmale:</string>
     
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>

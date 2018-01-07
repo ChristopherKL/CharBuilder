@@ -231,4 +231,21 @@ class MotivationFragment : Fragment() {
             }
         }
     }
+
+    companion object {
+
+        private val ARG_SECTION_NUMBER = "section_number"
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        fun newInstance(sectionNumber: Int): MotivationFragment {
+            val fragment = MotivationFragment()
+            val args = Bundle()
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber)
+            fragment.arguments = args
+            return fragment
+        }
+    }
 }

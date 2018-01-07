@@ -49,20 +49,20 @@ class ObligationFragment : Fragment() {
 
     private fun loadObligations() : ArrayList<Obligation>{
         val allObligations = ArrayList<Obligation>()
-        var id_count = 0L
+        var idCount = 0L
         val xml = resources.getXml(R.xml.obligations)
         while(xml.eventType != XmlPullParser.END_DOCUMENT){
             if(xml.eventType == XmlPullParser.START_TAG){
                 if(xml.name == "obligation"){
 
                     val current = Obligation(
-                            id_count,
+                            idCount,
                             xml.getAttributeValue(null,"name"),
                             xml.getAttributeValue(null,"description"),
                             xml.getAttributeValue(null,"text")
                     )
                     allObligations.add(current)
-                    id_count++
+                    idCount++
                 }
             }
             xml.next()

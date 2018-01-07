@@ -1,6 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/genderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/genderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_gender"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/genderEditText"/>
+
+        <EditText
+            android:id="@+id/genderEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:layout_marginStart="26dp"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/birthdayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genderLayout">
+        <TextView
+            android:id="@+id/birthdayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_birthday"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/birthdayEditText"/>
+
+        <EditText
+            android:id="@+id/birthdayEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:layout_marginStart="26dp"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/birthdayLayout">
+        <TextView
+            android:id="@+id/ageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_age"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/ageEditText"/>
+
+        <EditText
+            android:id="@+id/ageEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_marginStart="66dp"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/heightLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ageLayout">
+        <TextView
+            android:id="@+id/heightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_height"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/heightEditText"/>
+
+        <EditText
+            android:id="@+id/heightEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:layout_marginStart="57dp"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weightLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heightLayout">
+        <TextView
+            android:id="@+id/weightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_weight"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/weightEditText"/>
+
+        <EditText
+            android:id="@+id/weightEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:layout_marginStart="43dp"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/haircolorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weightLayout">
+        <TextView
+            android:id="@+id/haircolorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_haircolor"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/haircolorEditText"/>
+
+        <EditText
+            android:id="@+id/haircolorEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/eyecolorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/haircolorLayout">
+        <TextView
+            android:id="@+id/eyecolorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_eyecolor"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/eyecolorEditText"/>
+
+        <EditText
+            android:id="@+id/eyecolorEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:layout_marginStart="21dp"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/skincolorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eyecolorLayout">
+        <TextView
+            android:id="@+id/skincolorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_skincolor"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/skincolorEditText"/>
+
+        <EditText
+            android:id="@+id/skincolorEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:layout_marginStart="30dp"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/featuresLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/skincolorLayout">
+
+        <TextView
+            android:id="@+id/featuresTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance_features"
+            android:textColor="@color/colorBlack"
+            android:labelFor="@+id/featuresEditText"/>
+
+        <EditText
+            android:id="@+id/featuresEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="15"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+</RelativeLayout>
