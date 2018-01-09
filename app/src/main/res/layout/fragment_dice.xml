@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGrey"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLightGrey"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/proficiency_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
+            android:src="@drawable/dice_proficiency"/>
+
+        <ImageButton
+            android:id="@+id/challenge_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
+            android:src="@drawable/dice_challenge"/>
+
+        <ImageButton
+            android:id="@+id/boost_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
+            android:src="@drawable/dice_boost"/>
+
+        <ImageButton
+            android:id="@+id/difficulty_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
+            android:src="@drawable/dice_difficulty"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLightGrey"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/force_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
+            android:src="@drawable/dice_force"/>
+
+        <ImageButton
+            android:id="@+id/setback_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
+            android:src="@drawable/dice_setback"/>
+
+        <ImageButton
+            android:id="@+id/ability_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
+            android:src="@drawable/dice_ability"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
