@@ -106,4 +106,10 @@
     <string name="pref_design_title">Aussehen</string>
     <string name="pref_design_themelist">Farbe</string>
     <string name="pref_design_themelist_summary">Das Grundfarbschema der App</string>
+
+    <!-- Dice Tool -->
+    <string name="dice_available_title">Verfügbare Würfel</string>
+    <string name="dice_selected_title">Ausgewählte Würfel</string>
+    <string name="button_roll_dice">Würfeln</string>
+    <string name="button_roll_history">Verlauf anzeigen</string>
 </resources>
