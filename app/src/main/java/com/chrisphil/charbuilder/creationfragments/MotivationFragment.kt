@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.BaseExpandableListAdapter
 import com.chrisphil.charbuilder.R
 import kotlinx.android.synthetic.main.char_creation_career_group_item.view.*
@@ -196,36 +195,6 @@ class MotivationFragment : Fragment() {
             return motivationGroup.size
         }
 
-    }
-
-    inner class MotivationsViewAdapter(context: Context, var motivations : ArrayList<Motivation>) : BaseAdapter() {
-
-        override fun getItem(p0: Int): Any {
-            return motivations[p0]
-        }
-
-        override fun getItemId(p0: Int): Long {
-            return motivations[p0].id
-        }
-        override fun getCount(): Int {
-            return motivations.count()
-        }
-
-        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            val li = LayoutInflater.from(context)
-            val view = li.inflate(R.layout.char_creation_listview,p2,false)
-            var name_view = view.firstLine
-            name_view.text = motivations[p0].name
-
-            var desc_view = view.secondLine
-            desc_view.text = motivations[p0].description
-
-            var button = view.icon
-            button.setOnClickListener {
-                createMotivationsInfoDialog(motivations[p0])
-            }
-            return view
-        }
     }
 
     private fun createMotivationsInfoDialog(motivation : Motivation){
