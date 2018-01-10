@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:orientation="vertical" >
+    android:orientation="vertical">
     <TextView
         android:id="@+id/selected_motivation"
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:layout_marginTop="5dp"
         android:text="@string/selected_motivation"
         android:textColor="@color/colorBlack"
-        android:textSize="15dp" 
+        android:textSize="15sp"
         android:textAlignment="center"/>
 
     <TextView
@@ -22,7 +22,7 @@
         android:layout_marginTop="5dp"
         android:text="@string/second_selected_motivation"
         android:textColor="@color/colorGrey"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAlignment="center"/>
 
     <Button
@@ -31,51 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/random_motivation_button"
-        android:layout_marginTop="3dp" />
-    <ScrollView
+        android:layout_marginTop="3dp"/>
+
+    <ExpandableListView
+        android:id="@+id/motivation_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/ambition"
-                    android:textColor="@color/colorBlack"
-                    android:layout_marginTop="2dp"
-                    android:textSize="15sp" />
-                <ListView
-                    android:id="@+id/ambition_listView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></ListView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/cause"
-                    android:textColor="@color/colorBlack"
-                    android:layout_marginTop="2dp"
-                    android:textSize="15sp" />
-                <ListView
-                    android:id="@+id/cause_listView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></ListView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/relationship"
-                    android:textColor="@color/colorBlack"
-                    android:layout_marginTop="2dp"
-                    android:textSize="15sp" />
-                <ListView
-                    android:id="@+id/relationship_listView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></ListView>
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize"/>
+
 </LinearLayout>

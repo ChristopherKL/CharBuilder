@@ -8,8 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ListView
+import android.widget.BaseExpandableListAdapter
 import com.chrisphil.charbuilder.R
+import kotlinx.android.synthetic.main.char_creation_career_group_item.view.*
 import kotlinx.android.synthetic.main.char_creation_motivation.*
 import kotlinx.android.synthetic.main.char_creation_motivation.view.*
 import kotlinx.android.synthetic.main.char_creation_listview.view.*
@@ -22,26 +23,37 @@ import java.util.Random
 class MotivationFragment : Fragment() {
 
     data class Motivation(
-            val id : Long,
-            val name : String,
-            val description : String,
-            val text : String
+        val id : Long,
+        val name : String,
+        val description : String,
+        val text : String
+    )
+
+    data class MotivationGroup(
+        val id : Long,
+        val name : String,
+        val motivationArray : ArrayList<Motivation>
     )
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view : View = inflater!!.inflate(R.layout.char_creation_motivation, container, false)
-        val ambitionList : ListView = view.ambition_listView
-        val causeList : ListView = view.cause_listView
-        val relationList : ListView = view.relationship_listView
-        var ambitionArray = loadMotivations("ambition")
-        var causeArray = loadMotivations("cause")
-        var relationArray = loadMotivations("relation")
-        val ambitionAdapter = MotivationsViewAdapter(context,ambitionArray)
-        val causeAdapter = MotivationsViewAdapter(context,causeArray)
-        val relationAdapter = MotivationsViewAdapter(context,relationArray)
-        ambitionList.adapter = ambitionAdapter
-        causeList.adapter = causeAdapter
-        relationList.adapter = relationAdapter
+
+        val ambitionArray = loadMotivations("ambition",0L)
+        val ambitionGroup = MotivationGroup(0L, getString(R.string.ambition),ambitionArray)
+
+        val causeArray = loadMotivations("cause",1L)
+        val causeGroup = MotivationGroup(1L,getString(R.string.cause),causeArray)
+
+        val relationArray = loadMotivations("relation",3L)
+        val relationshipGroup = MotivationGroup(2L, getString(R.string.relationship),relationArray)
+
+        var motivationGroupArray : ArrayList<MotivationGroup> = ArrayList()
+        motivationGroupArray.add(ambitionGroup)
+        motivationGroupArray.add(causeGroup)
+        motivationGroupArray.add(relationshipGroup)
+
+        view.motivation_list.setAdapter(MotivationListAdapter(context,motivationGroupArray))
+
         view.random_motivation_button.setOnClickListener{
             val motivationResult : Int = Random().nextInt(10)+1
             when(motivationResult) {
@@ -54,27 +66,136 @@ class MotivationFragment : Fragment() {
         return view
     }
 
-    private fun loadMotivations(motivation : String) : ArrayList<Motivation>{
+    private fun loadMotivations(motivation : String, groupID : Long) : ArrayList<Motivation>{
         val allMotivations = ArrayList<Motivation>()
-        var id_count = 0L
+        var idCount = groupID*10
         val xml = resources.getXml(R.xml.motivations)
         while(xml.eventType != XmlPullParser.END_DOCUMENT){
             if(xml.eventType == XmlPullParser.START_TAG){
                 if(xml.name == motivation){
 
                     val current = Motivation(
-                            id_count,
+                            idCount,
                             xml.getAttributeValue(null,"name"),
                             xml.getAttributeValue(null,"description"),
                             xml.getAttributeValue(null,"text")
                     )
                     allMotivations.add(current)
-                    id_count++
+                    idCount++
                 }
             }
             xml.next()
         }
         return allMotivations
+    }
+
+    inner class MotivationListAdapter(context : Context,var motivationGroup : ArrayList<MotivationGroup>) : BaseExpandableListAdapter() {
+        override fun getGroup(p0: Int): Any {
+            return motivationGroup[p0]
+        }
+
+        override fun isChildSelectable(p0: Int, p1: Int): Boolean {
+            return true
+        }
+
+        override fun hasStableIds(): Boolean {
+            return true
+        }
+
+        override fun getChild(p0: Int, p1: Int): Any {
+            when(p1) {
+                0 -> return motivationGroup[p0].motivationArray[0]
+                1 -> return motivationGroup[p0].motivationArray[1]
+                2 -> return motivationGroup[p0].motivationArray[2]
+                3 -> return motivationGroup[p0].motivationArray[3]
+                4 -> return motivationGroup[p0].motivationArray[4]
+                5 -> return motivationGroup[p0].motivationArray[5]
+                6 -> return motivationGroup[p0].motivationArray[6]
+                7 -> return motivationGroup[p0].motivationArray[7]
+                8 -> return motivationGroup[p0].motivationArray[8]
+                9 -> return motivationGroup[p0].motivationArray[9]
+            }
+            return motivationGroup[p0].motivationArray[0]
+        }
+
+        override fun getGroupId(p0: Int): Long {
+            return motivationGroup[p0].id
+        }
+
+        override fun getChildId(p0: Int, p1: Int): Long {
+            when(p1){
+                0 -> return motivationGroup[p0].motivationArray[0].id
+                1 -> return motivationGroup[p0].motivationArray[1].id
+                2 -> return motivationGroup[p0].motivationArray[2].id
+                3 -> return motivationGroup[p0].motivationArray[3].id
+                4 -> return motivationGroup[p0].motivationArray[4].id
+                5 -> return motivationGroup[p0].motivationArray[5].id
+                6 -> return motivationGroup[p0].motivationArray[6].id
+                7 -> return motivationGroup[p0].motivationArray[7].id
+                8 -> return motivationGroup[p0].motivationArray[8].id
+                9 -> return motivationGroup[p0].motivationArray[9].id
+            }
+            return motivationGroup[p0].motivationArray[0].id
+        }
+
+        override fun getChildrenCount(p0: Int): Int {
+            return motivationGroup[p0].motivationArray.size
+        }
+
+        override fun isEmpty(): Boolean {
+            return motivationGroup.isEmpty()
+        }
+
+        override fun getChildView(p0: Int, p1: Int, p2: Boolean, p3: View?, p4: ViewGroup?): View {
+            val li = LayoutInflater.from(context)
+            val view = li.inflate(R.layout.char_creation_listview,p4,false)
+            when(p1){
+                0 -> {view.firstLine.text = motivationGroup[p0].motivationArray[0].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[0].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[0])}}
+                1 -> {view.firstLine.text = motivationGroup[p0].motivationArray[1].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[1].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[1])}}
+                2 -> {view.firstLine.text = motivationGroup[p0].motivationArray[2].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[2].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[2])}}
+                3 -> {view.firstLine.text = motivationGroup[p0].motivationArray[3].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[3].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[3])}}
+                4 -> {view.firstLine.text = motivationGroup[p0].motivationArray[4].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[4].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[4])}}
+                5 -> {view.firstLine.text = motivationGroup[p0].motivationArray[5].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[5].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[5])}}
+                6 -> {view.firstLine.text = motivationGroup[p0].motivationArray[6].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[6].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[6])}}
+                7 -> {view.firstLine.text = motivationGroup[p0].motivationArray[7].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[7].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[7])}}
+                8 -> {view.firstLine.text = motivationGroup[p0].motivationArray[8].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[8].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[8])}}
+                9 -> {view.firstLine.text = motivationGroup[p0].motivationArray[9].name
+                    view.secondLine.text = motivationGroup[p0].motivationArray[9].description
+                    view.icon.setOnClickListener{createMotivationsInfoDialog(motivationGroup[p0].motivationArray[9])}}
+            }
+
+            return view
+        }
+
+        override fun getGroupView(p0: Int, p1: Boolean, p2: View?, p3: ViewGroup?): View {
+            val li = LayoutInflater.from(context)
+            val view = li.inflate(R.layout.char_creation_career_group_item,p3,false)
+            view.career_name.text = motivationGroup[p0].name
+            return view
+        }
+
+        override fun getGroupCount(): Int {
+            return motivationGroup.size
+        }
+
     }
 
     inner class MotivationsViewAdapter(context: Context, var motivations : ArrayList<Motivation>) : BaseAdapter() {
