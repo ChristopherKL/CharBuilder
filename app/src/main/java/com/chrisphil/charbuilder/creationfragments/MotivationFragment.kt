@@ -211,51 +211,88 @@ class MotivationFragment : Fragment() {
 
     private fun chooseAmbition(isSecond : Boolean){
         val result : Int = Random().nextInt(100)+1
-        when(result){
-            in 1..10 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_friendship)
-                        else selected_motivation2.text = getString(R.string.ambition_friendship)
-            in 11..20 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_love)
-                        else selected_motivation2.text = getString(R.string.ambition_love)
-            in 21..30 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_freedom)
-                        else selected_motivation2.text = getString(R.string.ambition_freedom)
-            in 31..40 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_fame)
-                        else selected_motivation2.text = getString(R.string.ambition_fame)
-            in 41..50 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_greed)
-                        else selected_motivation2.text = getString(R.string.ambition_greed)
-            in 51..60 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_status)
-                        else selected_motivation2.text = getString(R.string.ambition_status)
-            in 61..70 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_expertise)
-                        else selected_motivation2.text = getString(R.string.ambition_expertise)
-            in 71..80 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_wanderlust_novelty)
-                        else selected_motivation2.text = getString(R.string.ambition_wanderlust_novelty)
-            in 81..90 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_power)
-                        else selected_motivation2.text = getString(R.string.ambition_power)
-            in 91..100 -> if(!isSecond) selected_motivation.text = getString(R.string.ambition_religion_spirituality)
-                        else selected_motivation2.text = getString(R.string.ambition_religion_spirituality)
+        when(result) {
+            in 1..10 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_friendship)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_friendship)
+            in 11..20 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_love)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_love)
+            in 21..30 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_freedom)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_freedom)
+            in 31..40 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_fame)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_fame)
+            in 41..50 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_greed)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_greed)
+            in 51..60 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_status)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_status)
+            in 61..70 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_expertise)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_expertise)
+            in 71..80 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_wanderlust_novelty)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_wanderlust_novelty)
+            in 81..90 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_power)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.ambition_power)
+            in 91..100 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.ambition_religion_spirituality)
+                } else selected_motivation2.text = getString(R.string.ambition_religion_spirituality)
         }
     }
 
     private fun chooseCause(isSecond : Boolean){
         val result : Int = Random().nextInt(100)+1
-        when(result){
-            in 1..10 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_religion_spirituality)
-                        else selected_motivation2.text = getString(R.string.cause_religion_spirituality)
-            in 11..20 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_theweak_charity)
-                        else selected_motivation2.text = getString(R.string.cause_theweak_charity)
-            in 21..30 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_nonhuman_rights)
-                        else selected_motivation2.text = getString(R.string.cause_nonhuman_rights)
-            in 31..40 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_local_politics)
-                        else selected_motivation2.text = getString(R.string.cause_local_politics)
-            in 41..50 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_overthrow_the_empire)
-                        else selected_motivation2.text = getString(R.string.cause_overthrow_the_empire)
-            in 51..60 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_crime)
-                        else selected_motivation2.text = getString(R.string.cause_crime)
-            in 61..70 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_emancipation)
-                        else selected_motivation2.text = getString(R.string.cause_emancipation)
-            in 71..80 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_droid_rights)
-                        else selected_motivation2.text = getString(R.string.cause_droid_rights)
-            in 81..90 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_capitalism)
-                        else selected_motivation2.text = getString(R.string.cause_capitalism)
+        when(result) {
+            in 1..10 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_religion_spirituality)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_religion_spirituality)
+            in 11..20 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_theweak_charity)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_theweak_charity)
+            in 21..30 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_nonhuman_rights)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_nonhuman_rights)
+            in 31..40 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_local_politics)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_local_politics)
+            in 41..50 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_overthrow_the_empire)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_overthrow_the_empire)
+            in 51..60 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_crime)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_crime)
+            in 61..70 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_emancipation)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_emancipation)
+            in 71..80 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_droid_rights)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.cause_droid_rights)
+            in 81..90 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_capitalism)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.cause_capitalism)
             in 91..100 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_support_the_empire)
                         else selected_motivation2.text = getString(R.string.cause_support_the_empire)
         }
@@ -263,27 +300,47 @@ class MotivationFragment : Fragment() {
 
     private fun chooseRelationship(isSecond : Boolean){
         val result : Int = Random().nextInt(100)+1
-        when(result){
-            in 1..10 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_place_of_origin)
-                        else selected_motivation2.text = getString(R.string.relation_place_of_origin)
-            in 11..20 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_pet)
-                        else selected_motivation2.text = getString(R.string.relation_pet)
-            in 21..30 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_childhood_friend)
-                        else selected_motivation2.text = getString(R.string.relation_childhood_friend)
-            in 31..40 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_comrades)
-                        else selected_motivation2.text = getString(R.string.relation_comrades)
-            in 41..50 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_siblings)
-                        else selected_motivation2.text = getString(R.string.relation_siblings)
-            in 51..60 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_mentor)
-                        else selected_motivation2.text = getString(R.string.relation_mentor)
-            in 61..70 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_parents)
-                        else selected_motivation2.text = getString(R.string.relation_parents)
-            in 71..80 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_extended_family_clan)
-                        else selected_motivation2.text = getString(R.string.relation_extended_family_clan)
-            in 81..90 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_droid_companion)
-                        else selected_motivation2.text = getString(R.string.relation_droid_companion)
-            in 91..100 -> if(!isSecond) selected_motivation.text = getString(R.string.relation_former_nemesis)
-                        else selected_motivation2.text = getString(R.string.relation_former_nemesis)
+        when(result) {
+            in 1..10 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.relation_place_of_origin)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.relation_place_of_origin)
+            in 11..20 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.relation_pet)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.relation_pet)
+            in 21..30 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.relation_childhood_friend)
+                selected_motivation2.text = ""
+            } else selected_motivation2.text = getString(R.string.relation_childhood_friend)
+            in 31..40 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.relation_comrades)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.relation_comrades)
+            in 41..50 -> if(!isSecond) {
+                selected_motivation.text = getString(R.string.relation_siblings)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.relation_siblings)
+            in 51..60 -> if(!isSecond) {
+                selected_motivation.text = getString(R.string.relation_mentor)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.relation_mentor)
+            in 61..70 -> if(!isSecond) {
+                selected_motivation.text = getString(R.string.relation_parents)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.relation_parents)
+            in 71..80 -> if(!isSecond) {
+                selected_motivation.text = getString(R.string.relation_extended_family_clan)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.relation_extended_family_clan)
+            in 81..90 -> if(!isSecond) {
+                selected_motivation.text = getString(R.string.relation_droid_companion)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.relation_droid_companion)
+            in 91..100 -> if(!isSecond) {
+                selected_motivation.text = getString(R.string.relation_former_nemesis)
+                selected_motivation2.text = ""
+                } else selected_motivation2.text = getString(R.string.relation_former_nemesis)
         }
     }
 

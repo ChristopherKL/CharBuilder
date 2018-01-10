@@ -40,7 +40,7 @@ class ObligationFragment : Fragment() {
         view.random_obligation_button.setOnClickListener{
             val obligationResult : Int = Random().nextInt(100)+1
             when(obligationResult) {
-                in 1..96 -> chooseObligation(obligationResult)
+                in 1..96 -> chooseObligation(obligationResult, false)
                 in 97..100 -> chooseTwoObligations()
             }
         }
@@ -75,25 +75,86 @@ class ObligationFragment : Fragment() {
         dataPass = context as OnDataPass
     }
 
-    private fun chooseObligation(result : Int){
+    private fun chooseObligation(result : Int, isSecond : Boolean){
         when(result){
-            in 1..8 -> selected_obligation.text = getString(R.string.obligation_addiction)
-            in 9..16 -> selected_obligation.text = getString(R.string.obligation_betrayal)
-            in 17..24 -> selected_obligation.text = getString(R.string.obligation_blackmail)
-            in 25..32 -> selected_obligation.text = getString(R.string.obligation_bounty)
-            in 33..40 -> selected_obligation.text = getString(R.string.obligation_criminal)
-            in 41..48 -> selected_obligation.text = getString(R.string.obligation_debt)
-            in 49..56 -> selected_obligation.text = getString(R.string.obligation_dutybound)
-            in 57..64 -> selected_obligation.text = getString(R.string.obligation_family)
-            in 65..72 -> selected_obligation.text = getString(R.string.obligation_favor)
-            in 73..80 -> selected_obligation.text = getString(R.string.obligation_oath)
-            in 81..88 -> selected_obligation.text = getString(R.string.obligation_obsession)
-            in 89..96 -> selected_obligation.text = getString(R.string.obligation_responsibility)
+            in 1..8 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_addiction)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_addiction)
+            in 9..16 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_betrayal)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_betrayal)
+            in 17..24 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_blackmail)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_blackmail)
+            in 25..32 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_bounty)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_bounty)
+            in 33..40 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_criminal)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_criminal)
+            in 41..48 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_debt)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_debt)
+            in 49..56 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_dutybound)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_dutybound)
+            in 57..64 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_family)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_family)
+            in 65..72 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_favor)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_favor)
+            in 73..80 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_oath)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_oath)
+            in 81..88 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_obsession)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_obsession)
+            in 89..96 -> if(!isSecond) {
+                selected_obligation.text = getString(R.string.obligation_responsibility)
+                selected_obligation2.text = ""}
+                else selected_obligation2.text = getString(R.string.obligation_responsibility)
         }
     }
 
-    private fun chooseTwoObligations(){
+    private fun checkResult(result : Int) : Int{
+        when(result){
+            in 1..8 -> return 1
+            in 9..16 -> return 2
+            in 17..24 -> return 3
+            in 25..32 -> return 4
+            in 33..40 -> return 5
+            in 41..48 -> return 6
+            in 49..56 -> return 7
+            in 57..64 -> return 8
+            in 65..72 -> return 9
+            in 73..80 -> return 10
+            in 81..88 -> return 11
+            in 89..96 -> return 12
+        }
+        return 1
+    }
 
+    private fun chooseTwoObligations(){
+        var result : Int = Random().nextInt(96)+1
+        chooseObligation(result, false)
+        val resultClass = checkResult(result)
+        result = Random().nextInt(96)+1
+        while(resultClass == checkResult(result)){
+            result = Random().nextInt(96)+1
+        }
+        chooseObligation(result,true)
     }
 
     override fun onDestroyView() {
