@@ -3,6 +3,7 @@ package com.chrisphil.charbuilder.controller
 import android.support.v4.app.Fragment
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.chrisphil.charbuilder.R
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_dice.*
 import kotlinx.android.synthetic.main.fragment_dice.view.*
 
@@ -18,8 +20,16 @@ import kotlinx.android.synthetic.main.fragment_dice.view.*
  */
 class DiceController : Fragment() {
 
-    val diceMaxCount = 10
-    val diceCount: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0)
+    private val diceMaxCount = 6
+    private val historyMaxCount = 5
+
+    private var diceCount: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0)
+    private var rollHistory : Array<RollHistoryEntry> = Array(historyMaxCount){RollHistoryEntry("","")}
+
+    data class RollHistoryEntry(val time : String,
+                                val result : String)
+
+
 
     companion object {
         fun newInstance(): DiceController {
@@ -66,8 +76,22 @@ class DiceController : Fragment() {
             displayRollHistory()
         }
 
+        rollHistory = loadArrayFromPreference(context,"rollHistory","rollHistoryArray")
+
         return view
     }
+
+    private fun saveArrayToPreference(context: Context,array: Array<RollHistoryEntry>,prefName : String,stringName : String){
+        var settings = context.getSharedPreferences(prefName,0)
+        settings.edit().putString(stringName,Gson().toJson(array)).commit()
+    }
+
+    private fun loadArrayFromPreference(context: Context,prefName : String,stringName : String) : Array<RollHistoryEntry>{
+        var settings = context.getSharedPreferences(prefName,0)
+        val arrayJson = settings.getString(stringName,Gson().toJson(rollHistory))
+        return Gson().fromJson(arrayJson,rollHistory.javaClass)
+    }
+
 
     private fun onProficiencyDiceButton(context: Context){
         if(diceCount[0] < diceMaxCount) {
@@ -82,7 +106,7 @@ class DiceController : Fragment() {
             diceButton.layoutParams = param
             proficiency_dice_list.addView(diceButton)
         }else{
-            Toast.makeText(context,"Du kannst nur 10 von jedem Würfel haben",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"Du kannst nur "+ diceMaxCount +" von jedem Würfel haben",Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -194,5 +218,10 @@ class DiceController : Fragment() {
 
     private fun displayRollHistory(){
 
+    }
+
+    override fun onStop() {
+        super.onStop()
+        saveArrayToPreference(context,rollHistory,"rollHistory","rollHistoryArray")
     }
 }
