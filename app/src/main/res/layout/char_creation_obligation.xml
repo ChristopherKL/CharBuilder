@@ -33,5 +33,7 @@
         android:id="@+id/obligation_listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="?attr/actionBarSize" />
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:choiceMode="singleChoice"
+        android:listSelector="@color/listSelectColor"/>
 </LinearLayout>

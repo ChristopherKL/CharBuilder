@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
 import com.chrisphil.charbuilder.R
@@ -37,6 +38,13 @@ class ObligationFragment : Fragment() {
         var obligationArray = loadObligations()
         val adapter = ObligationsViewAdapter(context,obligationArray)
         list.adapter = adapter
+
+        list.setOnItemClickListener{
+            _, _, position, _ ->
+            selected_obligation.text = obligationArray[position].name
+            selected_obligation2.text = ""
+        }
+
         view.random_obligation_button.setOnClickListener{
             val obligationResult : Int = Random().nextInt(100)+1
             when(obligationResult) {
