@@ -131,6 +131,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
                 2 -> return PlaceholderFragment.newInstance(position+1)
                 6 -> return MotivationFragment.newInstance(position+1)
                 7 -> return AppearanceFragment.newInstance(position+1)
+                8 -> return GearFragment.newInstance(position+1)
             }
             return PlaceholderFragment.newInstance(99)
         }

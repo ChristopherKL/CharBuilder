@@ -113,6 +113,17 @@
     <string name="appearance_skincolor">Hautfarbe:</string>
     <string name="appearance_features">Besondere Merkmale:</string>
     
+    <!-- Character Creation Gear -->
+    <string name="gear_weapon_name">Waffe</string>
+    <string name="gear_weapon_damage">Schaden</string>
+    <string name="gear_item">Ausrüstung</string>
+    <string name="gear_comment">Anmerkung</string>
+    <string name="gear_credits">Credits</string>
+    <string name="gear_hint_lightsaber">Lichtschwert</string>
+    <string name="gear_damage_example">5 + W</string>
+    <string name="gear_hint_stimpack">2 Stimpacks</string>
+    <string name="gear_hint_comment">Heilt 4 Wunden</string>
+    
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
     <string name="pref_design_title">Aussehen</string>
