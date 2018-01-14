@@ -1,6 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/weaponLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/weaponTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gear_weapon_name"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/weaponName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="13"
+            android:inputType="text"
+            android:hint="@string/gear_hint_lightsaber"/>
+
+        <EditText
+            android:id="@+id/weaponName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="13"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/weaponName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="13"
+            android:inputType="text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weaponDamageLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@+id/weaponLayout"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/weaponDamageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gear_weapon_damage"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:paddingEnd="20dp"/>
+
+        <EditText
+            android:id="@+id/weaponDamage1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="4"
+            android:inputType="text"
+            android:hint="@string/gear_damage_example"/>
+
+        <EditText
+            android:id="@+id/weaponDamage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="4"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/weaponDamage3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="4"
+            android:inputType="text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/itemLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weaponLayout"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingStart="5dp">
+
+        <TextView
+            android:id="@+id/itemTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gear_item"
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/itemName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="7"
+            android:inputType="text"
+            android:hint="@string/gear_hint_stimpack"/>
+
+        <EditText
+            android:id="@+id/itemName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="7"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/itemName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="7"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/itemName4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="7"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/itemName5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="7"
+            android:inputType="text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weaponLayout"
+        android:layout_toEndOf="@+id/itemLayout"
+        android:paddingTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/commentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gear_comment"
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/commentText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/gear_hint_comment"/>
+
+        <EditText
+            android:id="@+id/commentText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="10"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/commentText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="10"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/commentText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="10"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/commentText5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="10"
+            android:inputType="text"/>
+    </LinearLayout>
+</RelativeLayout>

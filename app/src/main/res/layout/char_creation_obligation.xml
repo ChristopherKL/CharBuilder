@@ -12,16 +12,15 @@
         android:layout_marginTop="5dp"
         android:text="@string/selected_obligation"
         android:textColor="@color/colorBlack"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAlignment="center"/>
     <TextView
         android:id="@+id/selected_obligation2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="@string/second_selected_obligation"
         android:textColor="@color/colorGrey"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAlignment="center"/>
     <Button
         android:id="@+id/random_obligation_button"
@@ -33,5 +32,8 @@
     <ListView
         android:id="@+id/obligation_listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:choiceMode="singleChoice"
+        android:listSelector="@color/listSelectColor"/>
 </LinearLayout>
