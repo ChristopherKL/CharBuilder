@@ -15,8 +15,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.creationfragments.AppearanceFragment
+import com.chrisphil.charbuilder.creationfragments.AttributeFragment
 import com.chrisphil.charbuilder.creationfragments.CareerFragment
+import com.chrisphil.charbuilder.creationfragments.ExperienceFragment
+import com.chrisphil.charbuilder.creationfragments.GearFragment
+import com.chrisphil.charbuilder.creationfragments.MotivationFragment
 import com.chrisphil.charbuilder.creationfragments.ObligationFragment
+import com.chrisphil.charbuilder.creationfragments.SpecializationFragment
 import com.chrisphil.charbuilder.creationfragments.SpeciesFragment
 import com.chrisphil.charbuilder.interfaces.OnDataPass
 
@@ -111,13 +117,15 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         dialog.show()
     }
 
-
     inner class PageAdapter(fm:FragmentManager,tabNum:Int) : FragmentStatePagerAdapter(fm){
         override fun getItem(position: Int): Fragment {
             when(position){
                 0 -> return ObligationFragment.newInstance(position+1)
                 1 -> return SpeciesFragment.newInstance(position+1)
                 2 -> return CareerFragment.newInstance(position+1)
+                6 -> return MotivationFragment.newInstance(position+1)
+                7 -> return AppearanceFragment.newInstance(position+1)
+                8 -> return GearFragment.newInstance(position+1)
             }
             return PlaceholderFragment.newInstance(99)
         }
@@ -127,9 +135,6 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
             return 9
         }
     }
-
-
-
 
     /**
      * A placeholder fragment containing a simple view.

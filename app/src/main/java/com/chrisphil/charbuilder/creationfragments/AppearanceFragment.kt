@@ -15,4 +15,21 @@ class AppearanceFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.char_creation_appearance, container, false);
     }
+
+    companion object {
+
+        private val ARG_SECTION_NUMBER = "section_number"
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        fun newInstance(sectionNumber: Int): AppearanceFragment {
+            val fragment = AppearanceFragment()
+            val args = Bundle()
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber)
+            fragment.arguments = args
+            return fragment
+        }
+    }
 }
