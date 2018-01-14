@@ -29,7 +29,7 @@ class DiceHelper {
     }
 
 
-    val proficiency_dice = arrayOf(
+    val proficiency_die = arrayOf(
             DiceSide(0,0,0,0,0,0,0,0),
             DiceSide(1,0,0,0,0,0,0,0),
             DiceSide(1,0,0,0,0,0,0,0),
@@ -43,4 +43,75 @@ class DiceHelper {
             DiceSide(0,0,0,0,0,2,0,0),
             DiceSide(0,0,1,0,0,0,0,0)
             )
+
+    val challenge_die = arrayOf(
+            DiceSide(0,0,0,0,0,0,0,0),
+            DiceSide(0,1,0,0,0,0,0,0),
+            DiceSide(0,1,0,0,0,0,0,0),
+            DiceSide(0,2,0,0,0,0,0,0),
+            DiceSide(0,2,0,0,0,0,0,0),
+            DiceSide(0,0,0,0,1,0,0,0),
+            DiceSide(0,0,0,0,1,0,0,0),
+            DiceSide(0,1,0,0,1,0,0,0),
+            DiceSide(0,1,0,0,1,0,0,0),
+            DiceSide(0,0,0,0,2,0,0,0),
+            DiceSide(0,0,0,0,2,0,0,0),
+            DiceSide(0,0,0,1,0,0,0,0)
+            )
+
+    val difficulty_die = arrayOf(
+            DiceSide(0,0,0,0,0,0,0,0),
+            DiceSide(0,1,0,0,0,0,0,0),
+            DiceSide(0,2,0,0,0,0,0,0),
+            DiceSide(0,0,0,0,1,0,0,0),
+            DiceSide(0,0,0,0,1,0,0,0),
+            DiceSide(0,0,0,0,1,0,0,0),
+            DiceSide(0,0,0,0,2,0,0,0),
+            DiceSide(0,1,0,0,1,0,0,0)
+            )
+
+    val force_die = arrayOf(
+            DiceSide(0,0,0,0,0,0,0,1),
+            DiceSide(0,0,0,0,0,0,0,1),
+            DiceSide(0,0,0,0,0,0,0,1),
+            DiceSide(0,0,0,0,0,0,0,1),
+            DiceSide(0,0,0,0,0,0,0,1),
+            DiceSide(0,0,0,0,0,0,0,1),
+            DiceSide(0,0,0,0,0,0,0,1),
+            DiceSide(0,0,0,0,0,0,0,2),
+            DiceSide(0,0,0,0,0,0,1,0),
+            DiceSide(0,0,0,0,0,0,1,0),
+            DiceSide(0,0,0,0,0,0,2,0),
+            DiceSide(0,0,0,0,0,0,2,0),
+            DiceSide(0,0,0,0,0,0,2,0)
+            )
+
+    val ability_die = arrayOf(
+            DiceSide(0,0,0,0,0,0,0,0),
+            DiceSide(1,0,0,0,0,0,0,0),
+            DiceSide(1,0,0,0,0,0,0,0),
+            DiceSide(2,0,0,0,0,0,0,0),
+            DiceSide(0,0,0,0,0,1,0,0),
+            DiceSide(0,0,0,0,0,1,0,0),
+            DiceSide(1,0,0,0,0,1,0,0),
+            DiceSide(0,0,0,0,0,2,0,0)
+            )
+
+    val setback_die = arrayOf(
+            DiceSide(0,0,0,0,0,0,0,0),
+            DiceSide(0,0,0,0,0,0,0,0),
+            DiceSide(0,1,0,0,0,0,0,0),
+            DiceSide(0,1,0,0,0,0,0,0),
+            DiceSide(0,0,0,0,1,0,0,0),
+            DiceSide(0,0,0,0,1,0,0,0)
+    )
+
+    val boost_die = arrayOf(
+            DiceSide(0,0,0,0,0,0,0,0),
+            DiceSide(0,0,0,0,0,0,0,0),
+            DiceSide(1,0,0,0,0,0,0,0),
+            DiceSide(1,0,0,0,0,1,0,0),
+            DiceSide(0,0,0,0,0,2,0,0),
+            DiceSide(0,0,0,0,0,1,0,0)
+    )
 }
