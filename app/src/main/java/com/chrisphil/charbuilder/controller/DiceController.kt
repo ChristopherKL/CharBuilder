@@ -4,20 +4,23 @@ import android.app.AlertDialog
 import android.support.v4.app.Fragment
 import android.content.Context
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
 import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.help.DiceHelper
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.dice_result_display_dialog.view.*
 import kotlinx.android.synthetic.main.fragment_dice.*
 import kotlinx.android.synthetic.main.fragment_dice.view.*
+import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Created by Phil on 24.11.2017.
@@ -25,6 +28,7 @@ import java.util.*
 class DiceController : Fragment() {
 
     private val diceMaxCount = 6
+    private val historyMaxCount = 5
 
     private var diceCount: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0)
     private var rollHistory : ArrayList<RollHistoryEntry> = ArrayList()
@@ -90,7 +94,8 @@ class DiceController : Fragment() {
     private fun loadArrayFromPreference(context: Context,prefName : String,stringName : String) : ArrayList<RollHistoryEntry>{
         var settings = context.getSharedPreferences(prefName,0)
         val arrayJson = settings.getString(stringName,Gson().toJson(rollHistory))
-        return Gson().fromJson(arrayJson,rollHistory.javaClass)
+        val turnsType = object : TypeToken<ArrayList<RollHistoryEntry>>() {}.type
+        return Gson().fromJson(arrayJson,turnsType)
     }
 
 
@@ -229,7 +234,15 @@ class DiceController : Fragment() {
             }
         }
         val final_result = calculate_result(result)
-        rollHistory.add(RollHistoryEntry(Calendar.getInstance().time.toString(),final_result))
+
+        //The list size should stay at historyMaxCount
+        if(rollHistory.count() >= historyMaxCount) {
+            rollHistory.removeAt(0)
+        }
+
+        val format = SimpleDateFormat("dd/MM HH:mm")
+        rollHistory.add(RollHistoryEntry(format.format(Calendar.getInstance().time).toString(), final_result))
+
         displayResultDialog(final_result)
 
     }
@@ -353,8 +366,45 @@ class DiceController : Fragment() {
         return addedResult
     }
 
-    private fun displayRollHistory(){
+    private fun displayRollHistory() {
+        var dialogBuilder = AlertDialog.Builder(context)
+        val view = RecyclerView(context)
+        dialogBuilder.setView(view)
+        view.layoutManager = LinearLayoutManager(context)
+        view.adapter = RollHistoryListAdapter(rollHistory)
 
+        val b = dialogBuilder.create()
+        b.show()
+
+    }
+
+    inner class RollHistoryListAdapter (private val rollHistory:ArrayList<RollHistoryEntry> ) :  RecyclerView.Adapter<RollHistoryViewHolder>() {
+
+        override fun getItemCount(): Int {
+            return rollHistory.count()
+        }
+
+        override fun onBindViewHolder(holder: RollHistoryViewHolder, position: Int) {
+            val ci: RollHistoryEntry = rollHistory[position]
+            holder.time.text =ci.time
+            holder.bind(rollHistory[position])
+        }
+
+        override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): RollHistoryViewHolder {
+            val itemView: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.dice_roll_history, viewGroup, false)
+            return RollHistoryViewHolder(itemView)
+        }
+    }
+
+    inner class RollHistoryViewHolder constructor(v: View) : RecyclerView.ViewHolder(v) {
+        val view = v
+        val time: TextView = v.findViewById(R.id.historyTime)
+
+        fun bind(item : RollHistoryEntry){
+            view.setOnClickListener {
+                displayResultDialog(item.result)
+            }
+        }
     }
 
     override fun onStop() {

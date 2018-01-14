@@ -40,13 +40,6 @@ class CharListController : Fragment(){
         return view
     }
 
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-
-    }
-
-
-
     private fun createList(size : Int) : List<CharInfo>{
         var liste : MutableList<CharInfo> = mutableListOf<CharInfo>()
         for (i in 1..size){
