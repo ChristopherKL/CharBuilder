@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.chrisphil.charbuilder.controller.CharListController
+import com.chrisphil.charbuilder.controller.DiceController
 import com.chrisphil.charbuilder.controller.SettingsController
 import kotlinx.android.synthetic.main.activity_main_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation_drawer.*
@@ -51,6 +52,10 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
             }
             R.id.nav_dice -> {
                 this.title = resources.getString(R.string.dices)
+                supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.content_frame, DiceController.newInstance(), "diceController")
+                        .commit()
             }
             R.id.nav_manage -> {
                 this.title = resources.getString(R.string.action_settings)
