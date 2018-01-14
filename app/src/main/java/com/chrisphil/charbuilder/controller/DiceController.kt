@@ -1,5 +1,6 @@
 package com.chrisphil.charbuilder.controller
 
+import android.app.AlertDialog
 import android.support.v4.app.Fragment
 import android.content.Context
 import android.os.Bundle
@@ -13,8 +14,10 @@ import android.widget.Toast
 import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.help.DiceHelper
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.dice_result_display_dialog.view.*
 import kotlinx.android.synthetic.main.fragment_dice.*
 import kotlinx.android.synthetic.main.fragment_dice.view.*
+import java.util.*
 
 /**
  * Created by Phil on 24.11.2017.
@@ -22,10 +25,9 @@ import kotlinx.android.synthetic.main.fragment_dice.view.*
 class DiceController : Fragment() {
 
     private val diceMaxCount = 6
-    private val historyMaxCount = 5
 
     private var diceCount: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0)
-    private var rollHistory : Array<RollHistoryEntry> = Array(historyMaxCount){RollHistoryEntry("", DiceHelper.DiceSide(0,0,0,0,0,0,0,0))}
+    private var rollHistory : ArrayList<RollHistoryEntry> = ArrayList()
 
     data class RollHistoryEntry(val time : String,
                                 val result : DiceHelper.DiceSide)
@@ -80,12 +82,12 @@ class DiceController : Fragment() {
         return view
     }
 
-    private fun saveArrayToPreference(context: Context,array: Array<RollHistoryEntry>,prefName : String,stringName : String){
+    private fun saveArrayToPreference(context: Context,array: ArrayList<RollHistoryEntry>,prefName : String,stringName : String){
         var settings = context.getSharedPreferences(prefName,0)
         settings.edit().putString(stringName,Gson().toJson(array)).commit()
     }
 
-    private fun loadArrayFromPreference(context: Context,prefName : String,stringName : String) : Array<RollHistoryEntry>{
+    private fun loadArrayFromPreference(context: Context,prefName : String,stringName : String) : ArrayList<RollHistoryEntry>{
         var settings = context.getSharedPreferences(prefName,0)
         val arrayJson = settings.getString(stringName,Gson().toJson(rollHistory))
         return Gson().fromJson(arrayJson,rollHistory.javaClass)
@@ -227,7 +229,83 @@ class DiceController : Fragment() {
             }
         }
         val final_result = calculate_result(result)
-        Log.d("ROLL","Success: " + final_result.success + " Failure: " + final_result.failure + " Advantage: " + final_result.advantage)
+        rollHistory.add(RollHistoryEntry(Calendar.getInstance().time.toString(),final_result))
+        displayResultDialog(final_result)
+
+    }
+
+    private fun displayResultDialog(result : DiceHelper.DiceSide){
+        var dialogBuilder = AlertDialog.Builder(context)
+        val inflater = this.layoutInflater
+        val view = inflater.inflate(R.layout.dice_result_display_dialog,null)
+        dialogBuilder.setView(view)
+
+        for(i in 1..result.success){
+            var successImage = ImageView(context)
+            successImage.setImageDrawable(context.getDrawable(R.drawable.dice_success))
+            val param = LinearLayout.LayoutParams(100, 100)
+            successImage.layoutParams = param
+            view.success_list.addView(successImage)
+        }
+
+        for(i in 1..result.failure){
+            var failureImage = ImageView(context)
+            failureImage.setImageDrawable(context.getDrawable(R.drawable.dice_failure))
+            val param = LinearLayout.LayoutParams(100, 100)
+            failureImage.layoutParams = param
+            view.failure_list.addView(failureImage)
+        }
+
+        for(i in 1..result.advantage){
+            var advantageImage = ImageView(context)
+            advantageImage.setImageDrawable(context.getDrawable(R.drawable.dice_advantage))
+            val param = LinearLayout.LayoutParams(100, 100)
+            advantageImage.layoutParams = param
+            view.advantage_list.addView(advantageImage)
+        }
+
+        for(i in 1..result.threat){
+            var threatImage = ImageView(context)
+            threatImage.setImageDrawable(context.getDrawable(R.drawable.dice_threat))
+            val param = LinearLayout.LayoutParams(100, 100)
+            threatImage.layoutParams = param
+            view.threat_list.addView(threatImage)
+        }
+
+        for(i in 1..result.lightside){
+            var lightsideImage = ImageView(context)
+            lightsideImage.setImageDrawable(context.getDrawable(R.drawable.dice_lightside))
+            val param = LinearLayout.LayoutParams(100, 100)
+            lightsideImage.layoutParams = param
+            view.lightside_list.addView(lightsideImage)
+        }
+
+        for(i in 1..result.darkside){
+            var darksideImage = ImageView(context)
+            darksideImage.setImageDrawable(context.getDrawable(R.drawable.dice_darkside))
+            val param = LinearLayout.LayoutParams(100, 100)
+            darksideImage.layoutParams = param
+            view.darkside_list.addView(darksideImage)
+        }
+
+        for(i in 1..result.triumph){
+            var triumphImage = ImageView(context)
+            triumphImage.setImageDrawable(context.getDrawable(R.drawable.dice_triumph))
+            val param = LinearLayout.LayoutParams(100, 100)
+            triumphImage.layoutParams = param
+            view.triumph_list.addView(triumphImage)
+        }
+
+        for(i in 1..result.despair){
+            var despairImage = ImageView(context)
+            despairImage.setImageDrawable(context.getDrawable(R.drawable.dice_despair))
+            val param = LinearLayout.LayoutParams(100, 100)
+            despairImage.layoutParams = param
+            view.despair_list.addView(despairImage)
+        }
+
+        val b = dialogBuilder.create()
+        b.show()
     }
 
     private fun calculate_result(result: ArrayList<DiceHelper.DiceSide>) : DiceHelper.DiceSide{
