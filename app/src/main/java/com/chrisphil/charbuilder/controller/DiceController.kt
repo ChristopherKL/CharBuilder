@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.help.DiceHelper
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_dice.*
 import kotlinx.android.synthetic.main.fragment_dice.view.*
@@ -24,12 +25,10 @@ class DiceController : Fragment() {
     private val historyMaxCount = 5
 
     private var diceCount: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0)
-    private var rollHistory : Array<RollHistoryEntry> = Array(historyMaxCount){RollHistoryEntry("","")}
+    private var rollHistory : Array<RollHistoryEntry> = Array(historyMaxCount){RollHistoryEntry("", DiceHelper.DiceSide(0,0,0,0,0,0,0,0))}
 
     data class RollHistoryEntry(val time : String,
-                                val result : String)
-
-
+                                val result : DiceHelper.DiceSide)
 
     companion object {
         fun newInstance(): DiceController {
@@ -213,7 +212,67 @@ class DiceController : Fragment() {
     }
 
     private fun rollDice(){
+        val result = ArrayList<DiceHelper.DiceSide>()
+        for(i in diceCount.indices){
+            for (d in 1..diceCount[i]){
+                when(i){
+                    0 -> result.add(DiceHelper.profciciency_die.roll())
+                    1 -> result.add(DiceHelper.challenge_die.roll())
+                    2 -> result.add(DiceHelper.boost_die.roll())
+                    3 -> result.add(DiceHelper.difficulty_die.roll())
+                    4 -> result.add(DiceHelper.force_die.roll())
+                    5 -> result.add(DiceHelper.setback_die.roll())
+                    6 -> result.add(DiceHelper.ability_die.roll())
+                }
+            }
+        }
+        val final_result = calculate_result(result)
+        Log.d("ROLL","Success: " + final_result.success + " Failure: " + final_result.failure + " Advantage: " + final_result.advantage)
+    }
 
+    private fun calculate_result(result: ArrayList<DiceHelper.DiceSide>) : DiceHelper.DiceSide{
+        //Pack everything in one DiceSide
+        var addedResult : DiceHelper.DiceSide = DiceHelper.DiceSide(0,0,0,0,0,0,0,0)
+
+        for(side in result){
+            addedResult.success     += side.success
+            addedResult.failure     += side.failure
+            addedResult.triumph     += side.triumph
+            addedResult.despair     += side.despair
+            addedResult.threat      += side.threat
+            addedResult.advantage   += side.advantage
+            addedResult.lightside   += side.lightside
+            addedResult.darkside    += side.darkside
+        }
+
+        //Success & Failure
+        if(addedResult.success >= addedResult.failure) {
+            addedResult.success = addedResult.success - addedResult.failure
+            addedResult.failure = 0
+        }else{
+            addedResult.failure = addedResult.failure - addedResult.success
+            addedResult.success = 0
+        }
+
+        //Advantage & Threat
+        if(addedResult.advantage >= addedResult.threat) {
+            addedResult.advantage = addedResult.advantage - addedResult.threat
+            addedResult.threat = 0
+        }else{
+            addedResult.threat = addedResult.threat - addedResult.advantage
+            addedResult.advantage = 0
+        }
+
+        //Lightside & Darkside
+        if(addedResult.lightside >= addedResult.darkside) {
+            addedResult.lightside = addedResult.lightside - addedResult.darkside
+            addedResult.darkside = 0
+        }else{
+            addedResult.darkside = addedResult.darkside - addedResult.lightside
+            addedResult.lightside = 0
+        }
+
+        return addedResult
     }
 
     private fun displayRollHistory(){
