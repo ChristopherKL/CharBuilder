@@ -24,7 +24,7 @@
         android:textAlignment="center"/>
     <Button
         android:id="@+id/random_obligation_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/random_obligation_button"
