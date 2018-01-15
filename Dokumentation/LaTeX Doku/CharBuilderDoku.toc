@@ -1,8 +1,13 @@
-\select@language {ngerman}
+\babel@toc {ngerman}{}
 \contentsline {section}{\numberline {1}Einleitung}{3}{section.1}
 \contentsline {section}{\numberline {2}Stand der Technik}{3}{section.2}
-\contentsline {section}{\numberline {3}Anforderungen}{3}{section.3}
-\contentsline {section}{\numberline {4}Architektur}{3}{section.4}
-\contentsline {section}{\numberline {5}Implementierung}{3}{section.5}
-\contentsline {section}{\numberline {6}Test und Usability}{3}{section.6}
-\contentsline {section}{\numberline {7}Zusammenfassung}{3}{section.7}
+\contentsline {subsection}{\numberline {2.1}Android}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Kotlin}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Gson}{4}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Gradle}{4}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Android Studio}{4}{subsection.2.5}
+\contentsline {section}{\numberline {3}Anforderungen}{4}{section.3}
+\contentsline {section}{\numberline {4}Architektur}{4}{section.4}
+\contentsline {section}{\numberline {5}Implementierung}{4}{section.5}
+\contentsline {section}{\numberline {6}Test und Usability}{4}{section.6}
+\contentsline {section}{\numberline {7}Zusammenfassung}{4}{section.7}
