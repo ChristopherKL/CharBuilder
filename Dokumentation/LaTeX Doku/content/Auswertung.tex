@@ -1,10 +1,79 @@
 \newpage
 \section{Einleitung}
-In diesem Dokument wird die Entwicklung der Applikation CharBuilder für das Wahlpflichtfach Mobile Applikationen dargestellt. Die Aufgabenstellung hat uns sowohl die Wahl der Plattform als auch die Art der App offengelassen. Da wir in der Vorlesung die Grundlagen der App-Entwicklung
+In diesem Dokument wird die Entwicklung der Applikation CharBuilder als Semesterprojekt für das Wahlpflichtfach Mobile Applikationen dargestellt. Die Aufgabenstellung hat uns sowohl die Wahl der Plattform als auch die Art der App offengelassen. Da wir in der Vorlesung die Grundlagen der App-Entwicklung unter Android gelernt haben, machte es für uns Sinn, unsere erste App für Android zu entwickeln. Weitere Faktoren für die Entscheidung waren, dass man für die Entwicklung keinen teuren Development Account benötigt und beide Entwickler bereits Kenntnisse in Java besitzen. Außerdem kann die App direkt auf dem eigenen Smartphone getestet werden.\\
 
+Die Idee der App entstand aus unserem gemeinsamen Hobby, dem Pen and Paper Rollenspiel. Pen and Apper Charaktere werden normalersweise am Computer generiert und verwaltet. Wenn man sich zum Spielen trifft, bringt jeder seinen Charakterbogen ausgedruckt oder als Datei auf dem Handy mit. Ziel der App ist es, Charaktere auf dem Handy erstellen und verwalten zu können. Dadurch kann man sich das Ausdrucken oder Übertragen aufs Handy sparen und muss es nur noch mitnehmen.\\
+
+Der Aufgabenstellung konnten wir die fünf Themengebiete Stand der Technik, Anforderungen, Architektur, Implementierung und Test und Usability für unsere Dokumentation entnehmen. Auf jedes dieser Themen werden wir im Laufe des Dokuments eingehen und dadurch strukturiert die Entwicklung der App aufzeigen.
+
+\newpage
 \section{Stand der Technik}
+Im nachfolgenden wird erläutert welche Technologien wir für die Erstellung der CharBuilder App verwendet
+und warum wir uns für die entschieden haben. Hierbei haben wir den Text in die Unterkategorien Android(Betriebssystem), Kotlin(Programmiersprache), Gson(Json Java-Lib), Gradle(Build Tool), Android Studio(IDEA) aufgeteilt, dies sind die wichtigsten Technologien die wird nutzen um unsere App zu entwickeln.
 
+\subsection{Android}
+Wie in der Einleitung geschrieben haben wir uns für Android als Betriebssystem entschieden. Da verschiedene Version dessen auf unterschiedlichen Geräten verteilt sind
+muss man sich als Entwickler darüber hinaus auch für ein Mindest-API-Level entscheiden. Dies stellt die niedrigste Android Version dar, unter welcher die App ausgeführt werden kann.
+Bei der Wahl des API-Levels spielen verschiedene Faktoren eine Rolle, unter anderem wie viele der Android Geräte welche Version des Betriebssystems ausführen oder ob der Entwickler
+Funktionen nutzen möchte die erst ab einer bestimmten Version verfügbar sind.\\
+%includegraphics("bild api verteilung android")
+Wir haben uns entschieden, unsere Applikation lediglich für Android Betriebssysteme der Version 5.0(API Level 21) oder höher zu entwickeln.
+Die Version 5 ist bereits am 12.11.2014 veröffentlicht worden und bringt einen großen Wandel in der Benutzeroberfläche durch Googles Material Design.
+Dieses ist an den Gestaltungsstil "Flat Design" angelehnt und minimalistisch gehalten. Die Entscheidung trafen wir aufgrund der weitreichenden 
+Änderungen in dieser Version, des bereits 3 Jahre in der Vergangenheit liegenden Veröffentlichungsdatums und der breiten Verteilung von 80,7\% aller Android Geräte.
+%\cite{https://de.statista.com/statistik/daten/studie/180113/umfrage/anteil-der-verschiedenen-android-versionen-auf-geraeten-mit-android-os/}.\\
+
+\subsection{Kotlin}
+
+Kotlin ist eine neue Programmiersprache von JetBrains aus dem Jahr 2016. Wie auch Java kompiliert Kotlin zu JVM Bytecode. Es lässt sich dadurch sehr gut in das bestehende Java Ökosystem einbinden und kann alle Java Bibliotheken verwenden. Seit dem 17. Mai 2017 ist Kotlin eine von Android offiziel unterstützte Sprache.\\
+%\cite{https://10clouds.com/blog/kotlin-android/}
+Beide Teammitglieder haben zuvor noch nicht mit Kotlin gearbeitet, konnten sich jedoch aufgrund der Ähnlichkeit zu Java schnell zurechtfinden und gute Erfahrungen sammeln. Die Programmiersprache bietet dem Programmierer viele Vorteile wodurch sie immer beliebter wird unter Androidentwicklern. Der weitreichenste Vorteil ist es  null-Referenzen zu verhindern, die Sprache bietet einem "Null Safety". Eine weitere Änderung ist auch die Möglichkeit Datenklassen zu erstellen, diese sind Klassen welche lediglich Daten halten und keinerlei Methoden selbst implementieren. Ein Beispiel dieser kann man im Kapitel Implementierung finden. Der Großteil der Appentwicklung geschah mit Kotlin v1.15 später wurde dann ein Update auf Kotlin v1.2 durchgeführt. Dies liegt an dem Entwicklungszyklus von Kotlin, so wurde immer mit dem aktuellsten stabilen Release gearbeitet.
+%include graphics(kotlin findviewbyid bild christopher)
+%\cite{https://kotlinlang.org/}
+
+\subsection{Gson}
+
+Gson ist eine Java Bibliothek zur Serialization und Deserialization. Sie wird genutzt um Java Objekte in JSON umzuwandeln oder auch JSON zu Java Objekten zu wandeln. Hierbei ist die Möglichkeit Generics zu verwenden äußerst wichtig, da diese in der CharBuilder Applikation mehrmals zum Einsatz kommt. Wir haben diese Bibliothek ausgesucht da sie uns bereits bekannt war von früheren Projekten und wir positive Erfahrungen gemacht haben. Desweiteren wird die Software bereits seit 2008 entwickelt und konnte seitdem durch viele Revisionen und Verbesserungen überzeugen. Für die App verwendet wir die Gson Version 2.8.2.
+%\cite{https://github.com/google/gson}
+
+\subsection{Gradle}
+
+Gradle ist ein weit verbreitetes Build-Tool welches automatisiert arbeitet und unterstützung für mehrere verschiedene Sprachen bietet. Es wird typischerweise für Android Applikationen verwendet welche mit Android Studio entwickelt werden, da das Tool tief in die Entwicklungsumgebung integriert ist. Zu unserer Entscheidung diese Programm zu werden kann nicht viel gesagt werden, da es wie oben erwähnt bereits integriert war und eine alternative neben großem Mehraufwand keine Vorzüge geboten hätte.
+
+\subsection{Android Studio}
+
+Android Studio ist die offizielle Entwicklungsumgebung für native Androidprogrammierung. Es bietet neben den bekannten IDE Funktionen wie Syntax Highlighting, Autovervollständigung, Instant Run(Es wird nur der veränderte Teil neu kompiliert) und Debugger auch einen Android Emulator um verschiede Geräte und Android Version zu simulieren. Die IDE basiert auf IntelliJ's Softwareprodukten. Mit der Version 3.0.1 wurde die Entwicklungsumgebung für Kotlin angepasst, dies ist auch die Version welche wir zur Entwicklung unserer App verwendeten. Dabei liefert die neue Version ebenfalls ein Programm um Java-Code direkt in Kotlin-Code umzuwandeln, dies erleichtert dem Entwickler anfangs den Einstieg sollte im späteren verlauf aber nur selten genutzt werden um eine einheitliche Codequalität zu erreichen.
+
+
+\newpage
 \section{Anforderungen}
+Im folgenden Kapitel werden die Anforderungen, die wir an unsere App gestellt haben, genauer beschrieben. Diese Anforderungen wurden von uns vor Beginn der App-Implementierung aufgestellt, um einen Überblick über alle Funktionen zu erhalten, die die App beinhalten wird. Die Anforderungen sind in diese vier Kategorien eingeteilt:
+\begin{description}
+\item Must Have \\
+Die in dieser Kategorie aufgeführten Anforderungen beschreiben die Grundfunktionen der App. Sie werden definitiv während der Entwicklung umgesetzt.
+\item Should Have \\
+Anforderungen in dieser Kategorie haben eine niedrigere Priorität, sollten aber in der App wiederzufinden sein.
+\item Could Have \\
+Diese Kategorie listet Anforderungen auf, die keine Garantie haben, in der App umgesetzt zu werden. Wenn am Ende des Projekts noch Zeit ist könnten sie in die App aufgenommen werden.
+\item Won't Have \\
+In dieser Kategorie stehen Anforderungen, die definitiv nicht für die App vorgesehen sind.
+\end{description}
+
+\subsection{Must Have}
+Als wichtigste Funktion der App gilt das Erstellen eines neuen Charakters. Es muss möglich sein einen Charakter entsprechend des gewählten Regelwerks zu erstellen. Zunächst wird es nur möglich sein Charaktere im Regelwerk \textit{Star Wars: Am Rande des Imperiums} zu erschaffen. Während des Erstellungsprozesses kann der Nutzer auf Regeltexte zurückgreifen, die ihm seine aktuellen Auswahlmöglichkeiten erklären. Diese Regeltexte werden aufgrund von eventuellen Urheberrechtsverletzungen nicht aus dem offiziellen Regelwerk kopiert, sondern von den Entwicklern der App zusammengefasst.
+
+Nachdem der Nutzer einen Charakter erstellt hat, wird dieser in einer Liste mit anderen bereits von ihm angelegten Charakteren angezeigt. In der Liste wird das für den Charakter ausgewählte Bild, sein Name und das Regelwerk, in dem er gespielt wird, dargestellt. Der Nutzer kann nicht mehr benötigte Einträge aus der Liste löschen, Änderungen an den Charakteren vornehmen und diese als PDF-Datei exportieren. Durch einen Klick auf einen der Listeneinträge werden dem Nutzer alle Eigenschaften, Talente, Spezialisierungen, etc. zu einem Charakter angezeigt.
+
+Eine weitere Funktion der App ist das eingebaute Würfeltool. Wenn der Nutzer sich in der Detailansicht zu einem seiner Charaktere befindet, kann er ohne großen Aufwand Proben auf seine Fähigkeiten werfen. Es wird dann berechnet, ob die Probe erfolgreich war oder nicht und das Ergebnis wird sichtbar. Außerdem wird die Probe im Verlauf des Würfeltools angezeigt, sodass der Nutzer eine Übersicht seiner vorherigen Proben erhält. Das Würfeltool ist über die Navigationsleiste erreichbar und bietet eine Auswahl an benötigten Würfeln an.
+
+\subsection{Should Have}
+Damit Charaktere nicht an ein bestimmtes Gerät gebunden sind, sollte der Nutzer die Möglichkeit haben seine Charakterdaten als JSON-Datei in Google Drive zu speichern.
+
+\subsection{Could Have}
+Es wird nicht ausgeschlossen, dass die App die Erstellung von Charakteren in unterschiedlichen Regelwerken ermöglicht. Allerdings gibt es große Unterschiede in der Komplexität und dem Umfang von Pen and Paper Regelwerken, weswegen zunächst nur ein Regelwerk unterstützt wird. Eine englischsprachige Version der App ist geplant. Das Übersetzen der Regeln nimmt jedoch viel Zeit in Anspruch.
+
+\subsection{Won't Have}
+Die App wird keine Gruppenverwaltung ermöglichen. Das bedeutet, dass ein Spielleiter nicht die Charaktere seiner Gruppenmitglieder einsehen kann. Außerdem werden in der App keine spielbaren Abenteuer vorhanden sein. Sie dient lediglich dem Speichern und Verwalten von Pen and Paper Charakteren. Nutzer der App werden in der App keine Anleitung für das Spielen von Pen and Paper Abenteuern finden. Alle verwendeten Auszüge aus Regelwerken dienen der Unterstützung während des Erstellungsprozesses. 
 
 \section{Architektur}
 
