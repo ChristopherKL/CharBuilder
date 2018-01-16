@@ -42,8 +42,11 @@ Gradle ist ein weit verbreitetes Build-Tool welches automatisiert arbeitet und u
 
 \subsection{Android Studio}
 
-Android Studio ist die offizielle Entwicklungsumgebung für native Androidprogrammierung. Es bietet neben den bekannten IDE Funktionen wie Syntax Highlighting, Autovervollständigung, Instant Run(Es wird nur der veränderte Teil neu kompiliert) und Debugger auch einen Android Emulator um verschiede Geräte und Android Version zu simulieren. Die IDE basiert auf IntelliJ's Softwareprodukten. Mit der Version 3.0.1 wurde die Entwicklungsumgebung für Kotlin angepasst, dies ist auch die Version welche wir zur Entwicklung unserer App verwendeten. Dabei liefert die neue Version ebenfalls ein Programm um Java-Code direkt in Kotlin-Code umzuwandeln, dies erleichtert dem Entwickler anfangs den Einstieg sollte im späteren verlauf aber nur selten genutzt werden um eine einheitliche Codequalität zu erreichen.
+Android Studio ist die offizielle Entwicklungsumgebung für native Androidprogrammierung. Es bietet neben den bekannten IDE Funktionen wie Syntax Highlighting, Autovervollständigung, Instant Run(Es wird nur der veränderte Teil neu kompiliert) und Debugger auch einen Android Emulator um verschiedene Geräte und Android Version zu simulieren. Die IDE basiert auf IntelliJ's Softwareprodukten. Mit der Version 3.0.1 wurde die Entwicklungsumgebung für Kotlin angepasst, dies ist auch die Version welche wir zur Entwicklung unserer App verwendeten. Dabei liefert die neue Version ebenfalls ein Programm um Java-Code direkt in Kotlin-Code umzuwandeln, dies erleichtert dem Entwickler anfangs den Einstieg sollte im späteren verlauf aber nur selten genutzt werden um eine einheitliche Codequalität zu erreichen.
 
+\subsection{Android Studio}
+
+Android Studio ist die offizielle Entwicklungsumgebung für native Androidprogrammierung. Es bietet neben den bekannten IDE Funktionen wie Syntax Highlighting, Autovervollständigung, Instant Run(Es wird nur der veränderte Teil neu kompiliert) und Debugger auch einen Android Emulator um verschiede Geräte und Android Version zu simulieren. Die IDE basiert auf IntelliJ's Softwareprodukten. Mit der Version 3.0.1 wurde die Entwicklungsumgebung für Kotlin angepasst, dies ist auch die Version welche wir zur Entwicklung unserer App verwendeten. Dabei liefert die neue Version ebenfalls ein Programm um Java-Code direkt in Kotlin-Code umzuwandeln, dies erleichtert dem Entwickler anfangs den Einstieg sollte im späteren verlauf aber nur selten genutzt werden um eine einheitliche Codequalität zu erreichen.
 
 \newpage
 \section{Anforderungen}
@@ -74,6 +77,53 @@ Es wird nicht ausgeschlossen, dass die App die Erstellung von Charakteren in unt
 
 \subsection{Won't Have}
 Die App wird keine Gruppenverwaltung ermöglichen. Das bedeutet, dass ein Spielleiter nicht die Charaktere seiner Gruppenmitglieder einsehen kann. Außerdem werden in der App keine spielbaren Abenteuer vorhanden sein. Sie dient lediglich dem Speichern und Verwalten von Pen and Paper Charakteren. Nutzer der App werden in der App keine Anleitung für das Spielen von Pen and Paper Abenteuern finden. Alle verwendeten Auszüge aus Regelwerken dienen der Unterstützung während des Erstellungsprozesses. 
+
+\subsection{Idee}
+
+Die App stellt einen digitalen Pen und Paper Charakterbogen dar. Es wird möglich sein, neue Charaktere anzulegen und die bereits bestehenden zu verwalten. Der Nutzer soll außerdem die Möglichkeit haben, seine Charaktere auf andere Geräte zu übertragen. Zu Beginn werden wir uns auf das \glqq Star Wars : Am Rande des Imperiums\grqq- Regelwerk konzentrieren.
+\subsection{Must have}
+
+Text der erklärt was must have bedeutet
+
+\begin{itemize}
+	\item Erstellung eines neuen Charakters
+	\item Löschen eines bestehenden Charakters
+	\item Wechsel zwischen bereits angelegten Charakteren
+	\item Änderungen an Charakteren(Talentsteigerungen, etc.)
+	\item Würfeltool
+	\item Regeltexte,die bei der Erstellung helfen
+	\item PDF Export
+\end{itemize}
+
+\subsection{Should have}
+
+Text der erklärt was should have bedeutet
+
+\begin{itemize}
+	\item Importieren und Exportieren von Charakteren in JSON
+	\item Verlauf von Abenteuern, die ein Charakter schon bestanden hat
+	\item Orte/Länder, die ein Charakter schon besucht/bereist hat.
+	\item Möglichkeit, die Charaktere in der Google Cloud zu speichern um von den anderen Geräten darauf zugreifen zu können
+	\item Option die generierten Dokumente auszudrucken
+\end{itemize}
+
+\subsection{Could have}
+
+Text der erklärt was could have bedeutet
+
+\begin{itemize}
+	\item Möglichkeit Charaktere für andere Regelwerke zu erstellen
+	\item Vorgefertigte Charaktere
+\end{itemize}
+
+\subsection{Won't have}
+
+Text der erklärt was won't have bedeutet
+
+\begin{itemize}
+	\item Gruppenverwaltung(Möglichkeit für Spielleiter, seine Gruppenmitglieder einzusehen
+	\item Spielbare Abenteuer
+\end{itemize}
 
 \section{Architektur}
 
