@@ -6,6 +6,7 @@
 \contentsline {subsection}{\numberline {2.3}Gson}{4}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Gradle}{5}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Android Studio}{5}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}UMLet}{5}{subsection.2.6}
 \contentsline {section}{\numberline {3}Anforderungen}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Must Have}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Should Have}{7}{subsection.3.2}
