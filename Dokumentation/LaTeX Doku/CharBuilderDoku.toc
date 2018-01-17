@@ -25,5 +25,6 @@
 \contentsline {subsubsection}{\nonumberline MotivationFragment.kt}{10}{section*.9}
 \contentsline {subsubsection}{\nonumberline AppearanceFragment.kt}{10}{section*.10}
 \contentsline {subsubsection}{\nonumberline GearFragment.kt}{10}{section*.11}
+\contentsline {subsection}{\numberline {5.2}W\IeC {\"u}rfeltool}{10}{subsection.5.2}
 \contentsline {section}{\numberline {6}Test und Usability}{10}{section.6}
 \contentsline {section}{\numberline {7}Zusammenfassung}{10}{section.7}
