@@ -51,31 +51,31 @@ UMLet ist ein kostenloses Open-Source UML Tool mit einer simplen Benutzeroberfl�
 \section{Anforderungen}
 Im folgenden Kapitel werden die Anforderungen, die wir an unsere App gestellt haben, genauer beschrieben. Diese Anforderungen wurden von uns vor Beginn der App-Implementierung aufgestellt, um einen Überblick über alle Funktionen zu erhalten, die die App beinhalten wird. Die Anforderungen sind in diese vier Kategorien eingeteilt:
 \begin{description}
-\item Must Have \\
+\item[Must Have]\hfill \\
 Unter \grqq Must have\grqq{} ist jede Funktionalität aufgelistet welche \textbf{unbedingt} umgesetzt werden muss, um das Projekt als erfolgreich bezeichnen zu können. Diese Kategorie wird oft auch \grqq Minimale Anforderungen\grqq{} genannt.
-\item Should Have \\
+\item[Should Have]\hfill \\
 Die Kategorie \grqq Should have\grqq{} fasst all die Punkte unter sich zusammen, die für ein erfolgreiches Projekt nicht unbedingt erforderlich sind, aber dennoch wichtiger Bestandteil sein können. Als Beispiel sei eine Funktionalität zu sehen, welche das Produkt lediglich erweitert, von welcher die Grundfunktionalitäten allerdings nicht abhängig sind.
-\item Could Have \\
+\item [Could Have]\hfill \\
 Features, die unter \grqq Could have\grqq{} aufgelistet sind, werden nur umgesetzt, wenn alle Punkte unter \grqq Must have\grqq{} und \grqq Should have\grqq{} bereits abgearbeitet sind. Sie sind vollkommen optional.
-\item Won't Have \\
+\item[Won't Have]\hfill \\
 \grqq Won't have\grqq{} beinhaltet jene Punkte, welche \textbf{nicht} umgesetzt werden. Sie wurden von den Entwicklern oder Auftraggebern zu Beginn der Projektspezifikation ausgeschlossen.
 \end{description}
 
 \subsection{Must Have}
-Als wichtigste Funktion der App gilt das Erstellen eines neuen Charakters. Es muss möglich sein einen Charakter entsprechend des gewählten Regelwerks zu erstellen. Zunächst wird es nur möglich sein Charaktere im Regelwerk \textit{Star Wars: Am Rande des Imperiums} zu erschaffen. Während des Erstellungsprozesses kann der Nutzer auf Regeltexte zurückgreifen, die ihm seine aktuellen Auswahlmöglichkeiten erklären. Diese Regeltexte werden aufgrund von eventuellen Urheberrechtsverletzungen nicht aus dem offiziellen Regelwerk kopiert, sondern von den Entwicklern der App zusammengefasst.
+Als wichtigste Funktion der App gilt das Erstellen eines neuen Charakters. Es muss möglich sein einen Charakter entsprechend des gewählten Regelwerks zu erstellen. Zunächst wird es nur möglich sein Charaktere im Regelwerk \textit{Star Wars: Am Rande des Imperiums} zu erschaffen. Während des Erstellungsprozesses kann der Nutzer auf Regeltexte zurückgreifen, die ihm seine aktuellen Auswahlmöglichkeiten erklären. Diese Regeltexte werden aufgrund von eventuellen Urheberrechtsverletzungen nicht aus dem offiziellen Regelwerk kopiert, sondern von den Entwicklern der App zusammengefasst.\\
 
-Nachdem der Nutzer einen Charakter erstellt hat, wird dieser in einer Liste mit anderen bereits von ihm angelegten Charakteren angezeigt. In der Liste wird das für den Charakter ausgewählte Bild, sein Name und das Regelwerk, in dem er gespielt wird, dargestellt. Der Nutzer kann nicht mehr benötigte Einträge aus der Liste löschen, Änderungen an den Charakteren vornehmen und diese als PDF-Datei exportieren. Durch einen Klick auf einen der Listeneinträge werden dem Nutzer alle Eigenschaften, Talente, Spezialisierungen, etc. zu einem Charakter angezeigt.
-\newpage
+Nachdem der Nutzer einen Charakter erstellt hat, wird dieser in einer Liste mit anderen bereits von ihm angelegten Charakteren angezeigt. In der Liste wird das für den Charakter ausgewählte Bild, sein Name und das Regelwerk, in dem er gespielt wird, dargestellt. Der Nutzer kann nicht mehr benötigte Einträge aus der Liste löschen, Änderungen an den Charakteren vornehmen und diese als PDF-Datei exportieren. Durch einen Klick auf einen der Listeneinträge werden dem Nutzer alle Eigenschaften, Talente, Spezialisierungen, etc. zu einem Charakter angezeigt.\\
+
 Eine weitere Funktion der App ist das eingebaute Würfeltool. Wenn der Nutzer sich in der Detailansicht zu einem seiner Charaktere befindet, kann er ohne großen Aufwand Proben auf seine Fähigkeiten werfen. Es wird dann berechnet, ob die Probe erfolgreich war oder nicht und das Ergebnis erscheint in einem Dialog. Außerdem wird das Ergebnis des Würfelwurfs im Verlauf des Würfeltools angezeigt, sodass der Nutzer eine Übersicht seiner vorherigen Proben erhält. Das Würfeltool ist über die Navigationsleiste im Hauptmenü erreichbar und bietet eine Auswahl an Würfeln, die für das jeweilige Regelwerk benötigt werden.
 
 \subsection{Should Have}
 Damit Charaktere nicht an ein bestimmtes Gerät gebunden sind, sollte der Nutzer die Möglichkeit haben, seine Charakterdaten als JSON-Datei in Google Drive zu speichern. Jeder Charakter bereist im Zuge seiner erlebten Abenteuer eine Vielzahl von Orten. Um dem Spieler eine Erinnerungsstütze zu geben, an welchen Orten sein Charakter schon war und was für Abenteuer er dabei abgeschlossen hat, sollte es eine Art Reisetagebuch für jeden Charakter geben.
 
 \subsection{Could Have}
-Es wird nicht ausgeschlossen, dass die App die Erstellung von Charakteren in unterschiedlichen Regelwerken ermöglicht. Allerdings gibt es große Unterschiede in der Komplexität und dem Umfang von Pen and Paper Regelwerken, weswegen zunächst nur ein Regelwerk unterstützt wird. Eine englischsprachige Version der App ist geplant. Das Übersetzen der Regeln nimmt jedoch viel Zeit in Anspruch. Eine weitere mögliche Option wäre das einbinden der Google Billing Api, die dem Entwickler das Freischalten von In-App Käufen ermöglicht.
+Es wird nicht ausgeschlossen, dass die App die Erstellung von Charakteren in unterschiedlichen Regelwerken ermöglicht. Allerdings gibt es große Unterschiede in der Komplexität und dem Umfang von Pen and Paper Regelwerken, weswegen zunächst nur ein Regelwerk unterstützt wird. Eine englischsprachige Version der App ist geplant. Das Übersetzen der Regeln nimmt jedoch viel Zeit in Anspruch. Eine weitere mögliche Option wäre das Einbinden der Google Billing Api, die dem Entwickler das Freischalten von In-App Käufen ermöglicht.
 
 \subsection{Won't Have}
-Die App wird keine Gruppenverwaltung ermöglichen. Das bedeutet, dass ein Spielleiter nicht die Charaktere seiner Gruppenmitglieder einsehen kann. Außerdem werden in der App keine spielbaren Abenteuer vorhanden sein. Sie dient lediglich dem Speichern und Verwalten von Pen and Paper Charakteren. Nutzer der App werden in der App keine Anleitung für das Spielen von Pen and Paper Abenteuern finden. Alle verwendeten Auszüge aus Regelwerken dienen der Unterstützung während des Erstellungsprozesses. 
+Die App wird keine Gruppenverwaltung ermöglichen. Das bedeutet, dass ein Spielleiter nicht die Charaktere seiner Gruppenmitglieder einsehen kann. Außerdem werden in der App keine spielbaren Abenteuer vorhanden sein. Sie dient lediglich dem Speichern und Verwalten von Pen and Paper Charakteren. Nutzer der App werden in der App keine Anleitung für das Spielen von Pen and Paper Abenteuern finden. Alle verwendeten Auszüge aus Regelwerken dienen ausschließlich der Unterstützung während des Erstellungsprozesses. 
 
 \newpage
 WIP
@@ -84,20 +84,28 @@ WIP
 Die App stellt einen digitalen Pen und Paper Charakterbogen dar. Es wird möglich sein, neue Charaktere anzulegen und die bereits bestehenden zu verwalten. Der Nutzer soll außerdem die Möglichkeit haben, seine Charaktere auf andere Geräte zu übertragen. Zu Beginn werden wir uns auf das \glqq Star Wars : Am Rande des Imperiums\grqq- Regelwerk konzentrieren.
 
 \section{Architektur}
+\subsection{Model View Controller(MVC)}
+CharCreationController als Controller, Player als Model, Fragmente als View
 
 \newpage
 \section{Implementierung}
 
 \subsection{Charaktererstellung}
-Da die Erstellung eines Charakters im offiziellen Regelwerk bereits in sinnvolle Schritte unterteilt war, wollten wir diese Gliederung in der App wiederspiegeln. Durch das Bewahren der in den Regeln eingeführten Struktur haben neue Spieler einen guten Überblick über die für die Charaktererstellung benötigten Schritte. Außerdem müssen sich Spieler, die das offizielle Regelwerk bereits kennen, nicht an eine neue Gliederung gewöhnen. In der App werden die Schritte durch Fragmente dargestellt. Jedes Fragment besitzt ein eigenes Layout, das an die Anforderungen des jeweiligen Erstellungsschritts angepasst ist. Um zwischen den einzelnen Fragmenten navigieren zu können, haben wir uns für ein \textit{TabLayout} entschieden. Dadurch kann der Nutzer zu jeder Zeit während der Erstellung sehen, wie viele Schritte er noch bearbeiten muss. Außerdem hat der Nutzer so die Möglichkeit, im Erstellungsprozess hin und her zuspringen, falls er in vorherigen Fragmenten Änderungen vornehmen möchte.\\
+Da die Erstellung eines Charakters im offiziellen Regelwerk bereits in sinnvolle Schritte unterteilt war, wollten wir diese Gliederung in der App wiederspiegeln. Durch das Bewahren der in den Regeln eingeführten Struktur haben neue Spieler einen guten Überblick über die für die Charaktererstellung benötigten Schritte. Außerdem müssen sich Spieler, die das offizielle Regelwerk bereits kennen, nicht an eine neue Gliederung gewöhnen. In der App werden die Schritte durch Fragmente dargestellt. Jedes Fragment besitzt ein eigenes Layout, das an die Anforderungen des jeweiligen Erstellungsschritts angepasst ist. Für die Navigation zwischen den einzelnen Fragmenten verwenden wir ein \textit{TabLayout}. Dieses Layout wird durch die Klasse \textit{CharCreationController} mit den nötigen Tabs versehen.\\
+
+Der \textit{CharCreationController} ist eine Activity, die geöffnet wird, sobald der Nutzer die Charaktererstellung startet. Er besitzt eine innere Klasse namens \textit{PageAdapter}, welcher von der durch Android zu Verfügung gestellten Klasse \textit{FragmentStatePagerAdapter} erbt. Durch den \textit{PageAdapter} wird geregelt, wann ein neues Fragment geladen wird und an welcher Stelle des \textit{TabLayouts} dieses Fragment eingeordnet wird. Das \textit{TabLayout} bietet dem Nutzer eine gute Übersicht über die Schritte der Charaktererstellung. Durch Klicken auf die Namen der einzelnen Tabs oder das Wischen nach links oder rechts kann der Nutzer frei wählen, welche Schritte des Erstellungsprozesses er bearbeiten möchte. Zudem kann er nachträglich Änderungen an Fragmenten vornehmen, falls ihm seine derzeitige Wahl nicht gefällt.\\
+
+Jede Eingabe, die der Nutzer während der Erstellung in den Fragmenten einträgt, wird an die Activity weitergegeben, welche die Daten in einer Instanz der Klasse \textit{Player} speichert. Bei Initialisierung eines neuen Fragments wird geprüft, ob schon Werte in den entsprechenden Attributen des Player-Objekts vorhanden sind. Hat der Nutzer das geladene Fragment schonmal bearbeitet und möchte jetzt Änderungen vornehmen, sollen die Felder wieder so ausgefüllt sein, wie er sie hinterlassen hat. Eine weitere potenzielle Quelle für Verlust von Daten ist das versehentliche Drücken der Zurück-Taste auf der \textit{Android Navigation Bar}. Zur Vermeidung dieses Problems fängt die Activity Klicks auf die Zurück-Taste ab und zeigt einen Dialog an, in dem man das Abbrechen der Charaktererstellung bestätigen muss.\\
 
 Es gibt zwei Layouts, die in mehreren Fragmenten als Listenelement in \textit{ListViews} oder als Group Item in \textit{ExpandableListViews} eingesetzt werden:
 \begin{description}
-\item[char\_creation\_listview.xml]\mbox{}\\ Ein Layout bestehend aus zwei \textit{TextViews} für Name und kurz Beschreibung der Pflicht.
-
-\item[char\_creation\_career\_group\_item.xml]\mbox{}\\ Das ist ein Satz 
+\item[char\_creation\_listview.xml]\mbox{}\\
+Ein Layout bestehend aus zwei \textit{TextViews} für Name und kurz Beschreibung des jeweiligen Elements und einem anklickbaren \textit{ImageView}, das, wenn der Nutzer darauf drückt, einen Dialog mit dem Regeltext zum jeweiligen Element wiedergibt.
+\item[char\_creation\_career\_group\_item.xml]\mbox{}\\
+Dieses Layout besteht nur aus einem \textit{TextView} und wird in \textit{ExpandableListViews} als Group Item Layout verwendet.
 \end{description}
 
+Einige der Fragmente verfügen über eine \textit{Data Class}. Diese Klassen sind ein in Kotlin eingeführtes Konzept, um das Schreiben von unnötigem \grqq Boilerplate Code\grqq{} in einfachen Klassen, die nur als Datencontainer genutzt werden, zu verhindern\cite{dataclasses}. Häufig werden die Datenklassen in den Fragmenten dazu genutzt, Daten aus einer geparsten XML-Datei zu speichern und sie dann in ein \textit{ListView}-Element zu laden. Mit Hilfe dieser Methode erleichtern wir uns das Zuordnen der passenden Kurzbeschreibungen und Regeltexte zu einem entsprechenden Regelbegriff.\\
 
 Im Folgenden werden wir auf die einzelnen Fragmente und ihre Funktionen eingehen.
 
@@ -108,10 +116,9 @@ Der erste Schritt in einer Charaktererstellung ist das Bestimmen der Verpflichtu
 \item Durch das Drücken auf einen Button lässt der Spieler die App per Zufall ein oder zwei Pflichten bestimmen.
 \end{enumerate}
 
-Zur Umsetzung der Liste haben wir uns für eine \textit{ListView} entschieden. Die Liste wird durch den \textit{ObligationsViewAdapter} mit Inhalt gefüllt.
+Zur Umsetzung der Liste haben wir uns für eine \textit{ListView} entschieden, die durch den \textit{ObligationsViewAdapter} mit Inhalt gefüllt.\\
 
 Jede Pflicht hat eine Wahrscheinlichkeit von 8\% durch den Zufall ausgewählt zu werden. Insgesamt hat der Spieler also eine Chance von 96\% nur eine Pflicht bei der zufälligen Bestimmung zu erhalten. Die übrigen 4\% bilden die Wahrscheinlichkeit dafür, dass der Charakter mit zwei Pflichten startet. Diese Warscheinlichkeiten für das Auswählen der Pflichten wurden dem Regelwerk\cite[39]{rulebook} entnommen, das eine Tabelle mit Würfelergebnissen für jede Verpflichtung beinhaltet. Während der Erstellung ist die Zufallsbestimmung der einzige Weg, eine zweite Verpflichtung zu erhalten. Aus diesem Grund musste in der Implementierung darauf geachtet werden, dass das Textfeld der zweiten Pflicht zurückgesetzt wird, wenn eine neue ausgewählt wird. Dabei ist es egal, ob die neue Verpflichtung durch den Spieler oder den Zufall gesetzt wird. Wenn die derzeitige Pflicht dem Spieler nicht gefällt, kann er sie beliebig oft selbst ändern oder durch Drücken des Buttons neu bestimmen. Die Reihenfolge der Aktionen spielt dabei auch keine Rolle.\\
-
 
 \subsubsection{SpeciesFragment.kt}
 \subsubsection{CareerFragment.kt}
@@ -119,6 +126,7 @@ Jede Pflicht hat eine Wahrscheinlichkeit von 8\% durch den Zufall ausgewählt zu
 \subsubsection{AttributeFragment.kt}
 \subsubsection{ExperienceFragment.kt}
 \subsubsection{MotivationFragment.kt}
+Probleme mit dreifach ListView und komplettes Redesign erwähnen
 \subsubsection{AppearanceFragment.kt}
 \subsubsection{GearFragment.kt}
 

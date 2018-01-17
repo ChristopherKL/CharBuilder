@@ -5,4 +5,11 @@ Sterling Hershey.
 \newblock {\em Star Wars: Edge of the Empire Core Rulebook}.
 \newblock Fantasy Flight Games, 2013.
 
+\bibitem[Par17]{dataclasses}
+Eugen Paraschiv.
+\newblock {Data Classes in Kotlin}.
+\newblock {\em Baeldung}, 2017.
+\newblock \url{http://www.baeldung.com/kotlin-data-classes}\\ Stand:
+  17.01.2018.
+
 \end{thebibliography}

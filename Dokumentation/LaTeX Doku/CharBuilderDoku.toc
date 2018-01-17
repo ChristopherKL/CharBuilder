@@ -14,17 +14,18 @@
 \contentsline {subsection}{\numberline {3.4}Won't Have}{7}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Idee}{8}{subsection.3.5}
 \contentsline {section}{\numberline {4}Architektur}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Model View Controller(MVC)}{8}{subsection.4.1}
 \contentsline {section}{\numberline {5}Implementierung}{9}{section.5}
 \contentsline {subsection}{\numberline {5.1}Charaktererstellung}{9}{subsection.5.1}
-\contentsline {subsubsection}{\nonumberline ObligationFragment.kt}{9}{section*.3}
-\contentsline {subsubsection}{\nonumberline SpeciesFragment.kt}{10}{section*.4}
-\contentsline {subsubsection}{\nonumberline CareerFragment.kt}{10}{section*.5}
-\contentsline {subsubsection}{\nonumberline SpecializationFragment.kt}{10}{section*.6}
-\contentsline {subsubsection}{\nonumberline AttributeFragment.kt}{10}{section*.7}
-\contentsline {subsubsection}{\nonumberline ExperienceFragment.kt}{10}{section*.8}
-\contentsline {subsubsection}{\nonumberline MotivationFragment.kt}{10}{section*.9}
-\contentsline {subsubsection}{\nonumberline AppearanceFragment.kt}{10}{section*.10}
-\contentsline {subsubsection}{\nonumberline GearFragment.kt}{10}{section*.11}
-\contentsline {subsection}{\numberline {5.2}W\IeC {\"u}rfeltool}{10}{subsection.5.2}
-\contentsline {section}{\numberline {6}Test und Usability}{10}{section.6}
-\contentsline {section}{\numberline {7}Zusammenfassung}{10}{section.7}
+\contentsline {subsubsection}{\nonumberline ObligationFragment.kt}{10}{section*.3}
+\contentsline {subsubsection}{\nonumberline SpeciesFragment.kt}{11}{section*.4}
+\contentsline {subsubsection}{\nonumberline CareerFragment.kt}{11}{section*.5}
+\contentsline {subsubsection}{\nonumberline SpecializationFragment.kt}{11}{section*.6}
+\contentsline {subsubsection}{\nonumberline AttributeFragment.kt}{11}{section*.7}
+\contentsline {subsubsection}{\nonumberline ExperienceFragment.kt}{11}{section*.8}
+\contentsline {subsubsection}{\nonumberline MotivationFragment.kt}{11}{section*.9}
+\contentsline {subsubsection}{\nonumberline AppearanceFragment.kt}{11}{section*.10}
+\contentsline {subsubsection}{\nonumberline GearFragment.kt}{11}{section*.11}
+\contentsline {subsection}{\numberline {5.2}W\IeC {\"u}rfeltool}{11}{subsection.5.2}
+\contentsline {section}{\numberline {6}Test und Usability}{11}{section.6}
+\contentsline {section}{\numberline {7}Zusammenfassung}{11}{section.7}
