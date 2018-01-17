@@ -69,7 +69,7 @@ Nachdem der Nutzer einen Charakter erstellt hat, wird dieser in einer Liste mit 
 Eine weitere Funktion der App ist das eingebaute Würfeltool. Wenn der Nutzer sich in der Detailansicht zu einem seiner Charaktere befindet, kann er ohne großen Aufwand Proben auf seine Fähigkeiten werfen. Es wird dann berechnet, ob die Probe erfolgreich war oder nicht und das Ergebnis erscheint in einem Dialog. Außerdem wird das Ergebnis des Würfelwurfs im Verlauf des Würfeltools angezeigt, sodass der Nutzer eine Übersicht seiner vorherigen Proben erhält. Das Würfeltool ist über die Navigationsleiste im Hauptmenü erreichbar und bietet eine Auswahl an Würfeln, die für das jeweilige Regelwerk benötigt werden.
 
 \subsection{Should Have}
-Damit Charaktere nicht an ein bestimmtes Gerät gebunden sind, sollte der Nutzer die Möglichkeit haben, seine Charakterdaten als JSON-Datei in Google Drive zu speichern.
+Damit Charaktere nicht an ein bestimmtes Gerät gebunden sind, sollte der Nutzer die Möglichkeit haben, seine Charakterdaten als JSON-Datei in Google Drive zu speichern. Jeder Charakter bereist im Zuge seiner erlebten Abenteuer eine Vielzahl von Orten. Um dem Spieler eine Erinnerungsstütze zu geben, an welchen Orten sein Charakter schon war und was für Abenteuer er dabei abgeschlossen hat, sollte es eine Art Reisetagebuch für jeden Charakter geben.
 
 \subsection{Could Have}
 Es wird nicht ausgeschlossen, dass die App die Erstellung von Charakteren in unterschiedlichen Regelwerken ermöglicht. Allerdings gibt es große Unterschiede in der Komplexität und dem Umfang von Pen and Paper Regelwerken, weswegen zunächst nur ein Regelwerk unterstützt wird. Eine englischsprachige Version der App ist geplant. Das Übersetzen der Regeln nimmt jedoch viel Zeit in Anspruch. Eine weitere mögliche Option wäre das einbinden der Google Billing Api, die dem Entwickler das Freischalten von In-App Käufen ermöglicht.
@@ -83,46 +83,44 @@ WIP
 
 Die App stellt einen digitalen Pen und Paper Charakterbogen dar. Es wird möglich sein, neue Charaktere anzulegen und die bereits bestehenden zu verwalten. Der Nutzer soll außerdem die Möglichkeit haben, seine Charaktere auf andere Geräte zu übertragen. Zu Beginn werden wir uns auf das \glqq Star Wars : Am Rande des Imperiums\grqq- Regelwerk konzentrieren.
 
-\subsection{Must have}
-
-\begin{itemize}
-	\item Erstellung eines neuen Charakters
-	\item Löschen eines bestehenden Charakters
-	\item Wechsel zwischen bereits angelegten Charakteren
-	\item Änderungen an Charakteren(Talentsteigerungen, etc.)
-	\item Würfeltool
-	\item Regeltexte,die bei der Erstellung helfen
-	\item PDF Export
-\end{itemize}
-
-\subsection{Should have}
-
-\begin{itemize}
-	\item Importieren und Exportieren von Charakteren in JSON
-	\item Verlauf von Abenteuern, die ein Charakter schon bestanden hat
-	\item Orte/Länder, die ein Charakter schon besucht/bereist hat.
-	\item Möglichkeit, die Charaktere in der Google Cloud zu speichern um von den anderen Geräten darauf zugreifen zu können
-	\item Option die generierten Dokumente auszudrucken
-\end{itemize}
-
-\subsection{Could have}
-
-\begin{itemize}
-	\item Möglichkeit Charaktere für andere Regelwerke zu erstellen
-	\item Vorgefertigte Charaktere
-\end{itemize}
-
-\subsection{Won't have}
-
-\begin{itemize}
-	\item Gruppenverwaltung(Möglichkeit für Spielleiter, seine Gruppenmitglieder einzusehen
-	\item Spielbare Abenteuer
-\end{itemize}
-
 \section{Architektur}
 
+\newpage
 \section{Implementierung}
 
+\subsection{Charaktererstellung}
+Da die Erstellung eines Charakters im offiziellen Regelwerk bereits in sinnvolle Schritte unterteilt war, wollten wir diese Gliederung in der App wiederspiegeln. Durch das Bewahren der in den Regeln eingeführten Struktur haben neue Spieler einen guten Überblick über die für die Charaktererstellung benötigten Schritte. Außerdem müssen sich Spieler, die das offizielle Regelwerk bereits kennen, nicht an eine neue Gliederung gewöhnen. In der App werden die Schritte durch Fragmente dargestellt. Jedes Fragment besitzt ein eigenes Layout, das an die Anforderungen des jeweiligen Erstellungsschritts angepasst ist. Um zwischen den einzelnen Fragmenten navigieren zu können, haben wir uns für ein \textit{TabLayout} entschieden. Dadurch kann der Nutzer zu jeder Zeit während der Erstellung sehen, wie viele Schritte er noch bearbeiten muss. Außerdem hat der Nutzer so die Möglichkeit, im Erstellungsprozess hin und her zuspringen, falls er in vorherigen Fragmenten Änderungen vornehmen möchte.\\
+
+Es gibt zwei Layouts, die in mehreren Fragmenten als Listenelement in \textit{ListViews} oder als Group Item in \textit{ExpandableListViews} eingesetzt werden:
+\begin{description}
+\item[char_creation_litview.xml]\hfill\\
+Ein Layout bestehend aus zwei \textit{TextViews} für Name und kurz Beschreibung der Pflicht.
+\item[char_creation_career_group_item.xml]\hfill
+\end{description}
+
+
+Im Folgenden werden wir auf die einzelnen Fragmente und ihre Funktionen eingehen.
+
+\subsubsection{ObligationFragment.kt}
+Der erste Schritt in einer Charaktererstellung ist das Bestimmen der Verpflichtung/en eines Charakters. Das Regelwerk zu \glqq Star Wars : Am Rande des Imperiums\grqq{}\cite[39]{rulebook} gibt eine Liste von zwölf wählbaren Pflichten vor. Dem Spieler werden zwei Möglichkeiten angeboten, eine Pflicht für seinen Charakter zu wählen:
+\begin{enumerate}
+\item Der Spieler sucht sich aus der Liste mit zwölf Einträgen eine für ihn passende Pflicht aus.
+\item Durch das Drücken auf einen Button lässt der Spieler die App per Zufall ein oder zwei Pflichten bestimmen.
+\end{enumerate}
+
+Zur Umsetzung der Liste haben wir uns für eine \textit{ListView} entschieden. Die Liste wird durch den \textit{ObligationsViewAdapter} mit Inhalt gefüllt.
+
+Jede Pflicht hat eine Wahrscheinlichkeit von 8\% durch den Zufall ausgewählt zu werden. Insgesamt hat der Spieler also eine Chance von 96\% nur eine Pflicht bei der zufälligen Bestimmung zu erhalten. Die übrigen 4\% bilden die Wahrscheinlichkeit dafür, dass der Charakter mit zwei Pflichten startet. Diese Warscheinlichkeiten für das Auswählen der Pflichten wurden dem Regelwerk\cite[39]{rulebook} entnommen, das eine Tabelle mit Würfelergebnissen für jede Verpflichtung beinhaltet. Während der Erstellung ist die Zufallsbestimmung der einzige Weg, eine zweite Verpflichtung zu erhalten. Aus diesem Grund musste in der Implementierung darauf geachtet werden, dass das Textfeld der zweiten Pflicht zurückgesetzt wird, wenn eine neue ausgewählt wird. Dabei ist es egal, ob die neue Verpflichtung durch den Spieler oder den Zufall gesetzt wird. Wenn die derzeitige Pflicht dem Spieler nicht gefällt, kann er sie beliebig oft selbst ändern oder durch Drücken des Buttons neu bestimmen. Die Reihenfolge der Aktionen spielt dabei auch keine Rolle.\\
+
+
+\subsubsection{SpeciesFragment.kt}
+\subsubsection{CareerFragment.kt}
+\subsubsection{SpecializationFragment.kt}
+\subsubsection{AttributeFragment.kt}
+\subsubsection{ExperienceFragment.kt}
+\subsubsection{MotivationFragment.kt}
+\subsubsection{AppearanceFragment.kt}
+\subsubsection{GearFragment.kt}
 
 \section{Test und Usability}
 
