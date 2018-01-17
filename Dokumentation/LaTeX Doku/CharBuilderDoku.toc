@@ -6,18 +6,17 @@
 \contentsline {subsection}{\numberline {2.3}Gson}{4}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Gradle}{5}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Android Studio}{5}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Android Studio}{5}{subsection.2.6}
 \contentsline {section}{\numberline {3}Anforderungen}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Must Have}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Should Have}{7}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Could Have}{7}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Won't Have}{7}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Idee}{7}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}Must have}{7}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.5}Idee}{8}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Must have}{8}{subsection.3.6}
 \contentsline {subsection}{\numberline {3.7}Should have}{8}{subsection.3.7}
 \contentsline {subsection}{\numberline {3.8}Could have}{8}{subsection.3.8}
 \contentsline {subsection}{\numberline {3.9}Won't have}{8}{subsection.3.9}
-\contentsline {section}{\numberline {4}Architektur}{8}{section.4}
-\contentsline {section}{\numberline {5}Implementierung}{8}{section.5}
-\contentsline {section}{\numberline {6}Test und Usability}{8}{section.6}
-\contentsline {section}{\numberline {7}Zusammenfassung}{8}{section.7}
+\contentsline {section}{\numberline {4}Architektur}{9}{section.4}
+\contentsline {section}{\numberline {5}Implementierung}{9}{section.5}
+\contentsline {section}{\numberline {6}Test und Usability}{9}{section.6}
+\contentsline {section}{\numberline {7}Zusammenfassung}{9}{section.7}
