@@ -30,6 +30,7 @@ Beide Teammitglieder haben zuvor noch nicht mit Kotlin gearbeitet, konnten sich 
 %include graphics(kotlin findviewbyid bild christopher)
 %\cite{https://kotlinlang.org/}
 
+\newpage
 \subsection{Gson}
 
 Gson ist eine Java Bibliothek zur Serialization und Deserialization. Sie wird genutzt um Java Objekte in JSON umzuwandeln oder auch JSON zu Java Objekten zu wandeln. Hierbei ist die Möglichkeit Generics zu verwenden äußerst wichtig, da diese in der CharBuilder Applikation mehrmals zum Einsatz kommt. Wir haben diese Bibliothek ausgesucht da sie uns bereits bekannt war von früheren Projekten und wir positive Erfahrungen gemacht haben. Desweiteren wird die Software bereits seit 2008 entwickelt und konnte seitdem durch viele Revisionen und Verbesserungen überzeugen. Für die App verwendet wir die Gson Version 2.8.2.
@@ -78,11 +79,6 @@ Es wird nicht ausgeschlossen, dass die App die Erstellung von Charakteren in unt
 Die App wird keine Gruppenverwaltung ermöglichen. Das bedeutet, dass ein Spielleiter nicht die Charaktere seiner Gruppenmitglieder einsehen kann. Außerdem werden in der App keine spielbaren Abenteuer vorhanden sein. Sie dient lediglich dem Speichern und Verwalten von Pen and Paper Charakteren. Nutzer der App werden in der App keine Anleitung für das Spielen von Pen and Paper Abenteuern finden. Alle verwendeten Auszüge aus Regelwerken dienen ausschließlich der Unterstützung während des Erstellungsprozesses. 
 
 \newpage
-WIP
-\subsection{Idee}
-
-Die App stellt einen digitalen Pen und Paper Charakterbogen dar. Es wird möglich sein, neue Charaktere anzulegen und die bereits bestehenden zu verwalten. Der Nutzer soll außerdem die Möglichkeit haben, seine Charaktere auf andere Geräte zu übertragen. Zu Beginn werden wir uns auf das \glqq Star Wars : Am Rande des Imperiums\grqq- Regelwerk konzentrieren.
-
 \section{Architektur}
 \subsection{Model View Controller(MVC)}
 CharCreationController als Controller, Player als Model, Fragmente als View
@@ -107,7 +103,7 @@ Dieses Layout besteht nur aus einem \textit{TextView} und wird in \textit{Expand
 
 Einige der Fragmente verfügen über eine \textit{Data Class}. Diese Klassen sind ein in Kotlin eingeführtes Konzept, um das Schreiben von unnötigem \grqq Boilerplate Code\grqq{} in einfachen Klassen, die nur als Datencontainer genutzt werden, zu verhindern \cite{dataclasses}. Häufig werden die Datenklassen in den Fragmenten dazu genutzt, Daten aus einer geparsten XML-Datei zu speichern und sie dann in ein \textit{ListView}-Element zu laden. Mit Hilfe dieser Methode erleichtern wir uns das Zuordnen der passenden Kurzbeschreibungen und Regeltexte zu einem entsprechenden Regelbegriff.\\
 
-Im Folgenden werden wir auf die einzelnen Fragmente und ihre Funktionen eingehen.
+Im Folgenden werden wir auf die einzelnen Fragmente und ihre Funktionen eingehen. Sie sind in der Reihenfolge angeordnet, in der sie auch in den Tabs der Charaktererstellung  wiederzufinden sind.
 
 \subsubsection{ObligationFragment.kt}
 Der erste Schritt in einer Charaktererstellung ist das Bestimmen der Verpflichtung/en eines Charakters. Das Regelwerk zu \glqq Star Wars : Am Rande des Imperiums\grqq{} \cite[39]{rulebook} gibt eine Liste von zwölf wählbaren Pflichten vor. Dem Spieler werden zwei Möglichkeiten angeboten, eine Pflicht für seinen Charakter zu wählen:
@@ -140,7 +136,14 @@ Da die Motivationen in drei Kategorien eingeteilt sind, verlief die Bestimmung d
 Die \textit{ExpandableListView} war nicht unsere erste Wahl zur Dartstellung der Motivationen. Das ursprüngliche Layout des Fragments bestand aus drei untereinander angeordneten \textit{ListViews}, welche
 durch \textit{TextViews} mit den Namen der jeweiligen Gruppen voneinander abgegrenzt werden sollten. Damit der Nutzer alle drei \textit{ListViews} durch Scrollen erreichen kann, sollten sie in einer \textit{ScrollView} angeordnet sein. Android lässt es allerdings nicht zu, zwei scrollbare Elemente ineinander zu verschachteln. Also musste die einfache Lösung, die bereits im \textit{ObligationFragment} Verwendung gefunden hat, einer komplexeren Lösung weichen. Unser nächster Ansatz war, die drei \textit{ListViews} in \textit{CardViews} zu verpacken und diese dann untereinander anzuorden. Diese Lösung war auch nicht optimal, da die \textit{ListViews} dann auf eine minimal Größe zusammengeschrumpft sind, sodass der Nutzer keine gute Ansicht der Motivationen hatte. Schließlich wurde die Idee der drei \textit{ListViews} komplett verworfen. Der frühere \textit{BaseAdapter} musste durch einen mit wesentlich höherem Implementierungsaufwand verbundenem \textit{BaseExpandableListAdapter} ersetzt werden und die drei \textit{ListViews} wurden in einer \textit{ExpandableListView} zusammengefasst.
 
+\newpage
 \subsubsection{AppearanceFragment.kt}
+Für das Layout dieses Fragments wurde mehr Zeit in Ansrpuch genommen als ursprünglich eingeplant. Zuerst sollten sich alle Elemente in einem \textit{RelativeLayout} befinden und durch mögliche Abhängigkeiten wie \textit{android:layout\_below} an ihre angedachte Position geschoben werden. Mit diesem Aufbau des Layouts wurden die \textit{TextViews} jedoch nicht auf einer Linie mit den \textit{EditText}-Elementen gezeichnet, so dass immer ein Höhenunterschied sichtbar war. Der zweite Ansatz bestand aus zwei \textit{LinearLayouts}, die mit Hilfe eines \textit{RelativeLayouts} parallel nebeneinander angeordnet werden und dafür sorgen, dass jeweils ein \textit{EditText}-Element auf der selben Höhe wie das zugehörige \textit{TextView} platziert wird. Das Ergebnis war das selbe wie zuvor. Der dritte Entwurf brachte endlich das erhoffte Ergebnis. Als Root-Layout wird wieder ein \textit{RelativeLayout} genutzt, um die schon erwähnten Abhängigkeiten nutzen zu können. Danach verwenden wir für jedes Paar aus \textit{TextView} und \textit{EditText} ein eigenes \textit{LinearLayout} mit einer horizontalen Ausrichtung. Nur das letzte Paar ist vertikal angeordnet, da die Eingabe im \textit{EditText} eventuell länger werden könnte.\\
+
+Zusammen mit dem \textit{GearFragment}, das im nächsten Absatz beschrieben wird, ist das \textit{AppearcanceFragment} das einzige Fragment, in dem der Spieler eigene Texteingaben vornehmen kann. Je nachdem, welche Eingabe der Nutzer im jeweiligen \textit{EditText}-Element eintragen soll, wird ihm eine passende Tastatur angezeigt. Verlangt das Eingabefeld z.B. ein Alter für den Charakter, so wird dem Nutzer nur eine Tastatur mit Zahlen als Eingabeoption eingeblendet. Durch diese Eingrenzung der Eingabemöglichkeiten erleichtern wir uns die Datenweitergabe an das Player-Objekt der Activity.\\
+
+Viel Logik hat dieses Fragment nicht zu bieten, denn es dient lediglich als Eingabemöglichkeit der einzelnen Aussehensoptionen eines Charakters. Sobald eine Eingabe bestätigt wird, aktualisiert das Fragment das zugehörige Attribut des Player-Objekts der Activity.
+
 \subsubsection{GearFragment.kt}
 
 \subsection{Würfeltool}
