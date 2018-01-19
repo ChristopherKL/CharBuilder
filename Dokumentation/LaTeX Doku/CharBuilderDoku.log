@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.17)  18 JAN 2018 16:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.17)  19 JAN 2018 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1980,32 +1980,33 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 121.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 122.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 122.
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 123.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 125.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 125.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 128.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 128.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 128.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 128.
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 125.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 125.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 125.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 125.
+[10]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 128.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 128.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 130.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 130.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
@@ -2018,45 +2019,48 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 138.
 [11]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 139.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 139.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 139.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 139.
- [12]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 140.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 140.
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 144.
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 146.
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 151.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 151.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 154.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 154.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 157.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 157.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 159.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 159.
 ) (./CharBuilderDoku.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 12.
  (c:/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -2250,17 +2254,17 @@ CharBuilderDoku.bbl
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 68.
 Package rerunfilecheck Info: File `CharBuilderDoku.out' has not changed.
-(rerunfilecheck)             Checksum: 88A4828CC8B30F005D8D24BB594CDABC;3703.
+(rerunfilecheck)             Checksum: 7BBA906A0AB47E766A6B2127B2A04057;3703.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 68.
  ) 
 Here is how much of TeX's memory you used:
  29454 strings out of 493013
- 521329 string characters out of 6136992
- 675196 words of memory out of 5000000
+ 521331 string characters out of 6136992
+ 676196 words of memory out of 5000000
  32365 multiletter control sequences out of 15000+600000
  96288 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,12n,54p,10394b,840s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,12n,54p,10394b,822s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/texlive/2016/tex
 mf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type
 1/public/lm/lmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr12.p
@@ -2269,7 +2273,7 @@ fb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/201
 /type1/public/lm/lmss12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/l
 mss17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/te
 xlive/2016/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on CharBuilderDoku.pdf (13 pages, 244968 bytes).
+Output written on CharBuilderDoku.pdf (13 pages, 247476 bytes).
 PDF statistics:
  275 PDF objects out of 1000 (max. 8388607)
  248 compressed objects within 3 object streams
