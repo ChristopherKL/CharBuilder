@@ -30,7 +30,6 @@ Beide Teammitglieder haben zuvor noch nicht mit Kotlin gearbeitet, konnten sich 
 %include graphics(kotlin findviewbyid bild christopher)
 %\cite{https://kotlinlang.org/}
 
-\newpage
 \subsection{Gson}
 
 Gson ist eine Java Bibliothek zur Serialization und Deserialization. Sie wird genutzt um Java Objekte in JSON umzuwandeln oder auch JSON zu Java Objekten zu wandeln. Hierbei ist die Möglichkeit Generics zu verwenden äußerst wichtig, da diese in der CharBuilder Applikation mehrmals zum Einsatz kommt. Wir haben diese Bibliothek ausgesucht da sie uns bereits bekannt war von früheren Projekten und wir positive Erfahrungen gemacht haben. Desweiteren wird die Software bereits seit 2008 entwickelt und konnte seitdem durch viele Revisionen und Verbesserungen überzeugen. Für die App verwendet wir die Gson Version 2.8.2.
@@ -51,6 +50,8 @@ Git ist eine Software zur Versionsverwaltung. Es findet bereits große Anwendung
 \subsection{UMLet}
 
 UMLet ist ein kostenloses Open-Source UML Tool mit einer simplen Benutzeroberfläche. Die erstellten Diagramme lassen sich z.B. als pdf, jpg oder png exportieren. Wenn einem die große Auswahl an UML Elementen nicht reicht, kann man eigene erstellen oder importieren. Zum Zeichnen unserer Diagramme haben wir die Version 14.2 genutzt. %\cite{http://www.umlet.com/}
+
+\subsection{Google Firebase}
 
 \newpage
 \section{Anforderungen}
@@ -166,6 +167,9 @@ Das Würfeltool stellt einen abgegrenzten Teil unserer Applikation dar. Es wird 
 Auch im DiceController wurden zusätzliche innere Klassen benötigt um den Würfelverlauf korrekt zu speichern und darzustellen. Die Einträge des Verlaufs werden durch \textit{RollHistoryEntry} mittels der Zeit und \textit{DiceSide} repräsentiert. Jedes Würfelsymbol erhält zum Aufruf des Fragmentes einen \textit{onClickListener} welcher sobald der Nutzer auf die jeweilige Grafik tippt, einen Würfel der entsprechenden Kategorie zum \grqq Pool\grqq{} hinzufügt. Die maximale Anzahl pro Typ wird dabei in der Variable \textit{diceMaxCount} festgehalten und beträgt 6, da das Regelwerk nicht mehr erlaubt. Wenn ein Würfel zum Pool hinzugefügt wird so wird in dem Array \textit{diceCount} der entsprechende Wert um 1 erhöht. Im Array befinde sich für jeden Würfeltyp ein Integer welches die Anzahl der momentan zum Pool hinzugefügten speichert. So kann dynamisch ein Element entfernt und hinzugefügt werden. Sollte der Benutzer sich entscheiden zu Würfel wird entsprechend oft die random-Method der Dice Klasse aufgerufen. Da diese ein DiceSide-Object zurückliefert, kann man alle Ergebnisse addieren und so das Gesamtergebnis in einem DiceSide-Object speichern. Abschließend werden noch Symbole, welche sich gegenseitig aufheben, gegeneinander gerechnet und alles mit dem aktuellen TimeStamp in die \textit{RollHistory}-ArrayList gespeichert. In dieser werden immer die letzten 5 Ergebnisse gespeichert. Um den Würfelverlauf dauerhaft speichern zu können verwendeten wir \textit{SharedPreferences} und die JSON-Bibliothek Google Gson \cite{gson}. Zunächst wurde das ArrayList-Object in eine JSON-repräsentation umgewandelt und diese dann als String in die Preferences Datei eingetragen. Zum laden des Objektes wird dieser Prozess umgekehrt. Abschließend sei zu sagen das die größte Herausforderung bei der Implementierung das entwickeln einer passenden Datenrepräsentation der Würfel war. Die Wahrscheinlichkeiten uns Symboltabellen entnahmen wir dem \textit{Under a black Sun}-Storybook \cite{adventurebook}.
 
 \subsection{Import/Export}
+
+Die Funktion den Charakter zu importieren und auch zu exportieren war uns sehr wichtig, da die Charaktere auch auf anderen Geräten geöffnet zur Verfügung stehen sollten.
+
 \section{Test und Usability}
 
 \section{Zusammenfassung}

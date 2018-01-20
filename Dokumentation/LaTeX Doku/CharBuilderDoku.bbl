@@ -1,8 +1,20 @@
-\begin{thebibliography}{Her13}
+\begin{thebibliography}{Goo13}
+
+\bibitem[Goo13]{gson}
+Google.
+\newblock A java serialization/deserialization library to convert java objects
+  into json and back.
+\newblock 2013.
+\newblock \url{https://github.com/google/gson}\\ Stand: 18.01.2018.
 
 \bibitem[Her13]{rulebook}
 Sterling Hershey.
 \newblock {\em Star Wars: Edge of the Empire Core Rulebook}.
+\newblock Fantasy Flight Games, 2013.
+
+\bibitem[Ost13]{adventurebook}
+Katrina Ostrander.
+\newblock {\em Under a black sun}.
 \newblock Fantasy Flight Games, 2013.
 
 \bibitem[Par17]{dataclasses}

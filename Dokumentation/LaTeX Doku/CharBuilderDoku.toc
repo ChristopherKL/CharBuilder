@@ -6,25 +6,31 @@
 \contentsline {subsection}{\numberline {2.3}Gson}{5}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Gradle}{5}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Android Studio}{5}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}UMLet}{5}{subsection.2.6}
-\contentsline {section}{\numberline {3}Anforderungen}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Must Have}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Should Have}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Could Have}{7}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Won't Have}{7}{subsection.3.4}
-\contentsline {section}{\numberline {4}Architektur}{8}{section.4}
-\contentsline {subsection}{\numberline {4.1}Model View Controller(MVC)}{8}{subsection.4.1}
-\contentsline {section}{\numberline {5}Implementierung}{9}{section.5}
-\contentsline {subsection}{\numberline {5.1}Charaktererstellung}{9}{subsection.5.1}
-\contentsline {subsubsection}{\nonumberline ObligationFragment.kt}{10}{section*.3}
-\contentsline {subsubsection}{\nonumberline SpeciesFragment.kt}{11}{section*.4}
-\contentsline {subsubsection}{\nonumberline CareerFragment.kt}{11}{section*.5}
-\contentsline {subsubsection}{\nonumberline SpecializationFragment.kt}{11}{section*.6}
-\contentsline {subsubsection}{\nonumberline ExperienceFragment.kt}{11}{section*.7}
-\contentsline {subsubsection}{\nonumberline AttributeFragment.kt}{11}{section*.8}
-\contentsline {subsubsection}{\nonumberline MotivationFragment.kt}{11}{section*.9}
-\contentsline {subsubsection}{\nonumberline AppearanceFragment.kt}{12}{section*.10}
-\contentsline {subsubsection}{\nonumberline GearFragment.kt}{13}{section*.11}
-\contentsline {subsection}{\numberline {5.2}W\IeC {\"u}rfeltool}{13}{subsection.5.2}
-\contentsline {section}{\numberline {6}Test und Usability}{13}{section.6}
-\contentsline {section}{\numberline {7}Zusammenfassung}{13}{section.7}
+\contentsline {subsection}{\numberline {2.6}Git}{5}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}UMLet}{6}{subsection.2.7}
+\contentsline {section}{\numberline {3}Anforderungen}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Must Have}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Should Have}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Could Have}{8}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Won't Have}{8}{subsection.3.4}
+\contentsline {section}{\numberline {4}Architektur}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Model View Controller(MVC)}{9}{subsection.4.1}
+\contentsline {section}{\numberline {5}Implementierung}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}Charaktererstellung}{10}{subsection.5.1}
+\contentsline {subsubsection}{\nonumberline ObligationFragment.kt}{11}{section*.3}
+\contentsline {subsubsection}{\nonumberline SpeciesFragment.kt}{12}{section*.4}
+\contentsline {subsubsection}{\nonumberline CareerFragment.kt}{13}{section*.5}
+\contentsline {subsubsection}{\nonumberline SpecializationFragment.kt}{13}{section*.6}
+\contentsline {subsubsection}{\nonumberline ExperienceFragment.kt}{13}{section*.7}
+\contentsline {subsubsection}{\nonumberline AttributeFragment.kt}{14}{section*.8}
+\contentsline {subsubsection}{\nonumberline MotivationFragment.kt}{14}{section*.9}
+\contentsline {subsubsection}{\nonumberline AppearanceFragment.kt}{15}{section*.10}
+\contentsline {subsubsection}{\nonumberline GearFragment.kt}{16}{section*.11}
+\contentsline {subsection}{\numberline {5.2}W\IeC {\"u}rfeltool}{16}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Import/Export}{17}{subsection.5.3}
+\contentsline {section}{\numberline {6}Test und Usability}{18}{section.6}
+\contentsline {section}{\numberline {7}Zusammenfassung}{18}{section.7}
+\contentsline {subsection}{\numberline {7.1}Fazit}{18}{subsection.7.1}
+\contentsline {subsubsection}{\nonumberline Christopher Kluck}{18}{section*.12}
+\contentsline {subsubsection}{\nonumberline Philipp Clausing}{18}{section*.13}
+\contentsline {subsection}{\numberline {7.2}Entwicklungspotenzial}{18}{subsection.7.2}
