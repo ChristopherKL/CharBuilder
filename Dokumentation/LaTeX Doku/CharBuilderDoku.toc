@@ -35,10 +35,8 @@
 \contentsline {subsection}{\numberline {5.2}W\IeC {\"u}rfeltool}{20}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Import/Export}{21}{subsection.5.3}
 \contentsline {section}{\numberline {6}Test und Usability}{21}{section.6}
-\contentsline {subsection}{\numberline {6.1}Test}{21}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Usability}{21}{subsection.6.2}
-\contentsline {section}{\numberline {7}Zusammenfassung}{21}{section.7}
+\contentsline {section}{\numberline {7}Zusammenfassung}{22}{section.7}
 \contentsline {subsection}{\numberline {7.1}Fazit}{22}{subsection.7.1}
-\contentsline {subsubsection}{\nonumberline Christopher Kluck}{22}{section*.16}
-\contentsline {subsubsection}{\nonumberline Philipp Clausing}{22}{section*.17}
-\contentsline {subsection}{\numberline {7.2}Entwicklungspotenzial}{22}{subsection.7.2}
+\contentsline {subsubsection}{\nonumberline Christopher Kluck}{22}{section*.17}
+\contentsline {subsubsection}{\nonumberline Philipp Clausing}{23}{section*.18}
+\contentsline {subsection}{\numberline {7.2}Entwicklungspotenzial}{23}{subsection.7.2}

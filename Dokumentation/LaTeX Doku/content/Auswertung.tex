@@ -24,16 +24,13 @@ Dieses ist an den Gestaltungsstil "Flat Design" angelehnt und minimalistisch geh
 
 \subsection{Kotlin}
 
-Kotlin ist eine neue Programmiersprache von JetBrains aus dem Jahr 2016. Wie auch Java kompiliert Kotlin zu JVM Bytecode. Es lässt sich dadurch sehr gut in das bestehende Java Ökosystem einbinden und kann alle Java Bibliotheken verwenden. Seit dem 17. Mai 2017 ist Kotlin eine von Android offiziel unterstützte Sprache.\\
-%\cite{https://10clouds.com/blog/kotlin-android/}
-Beide Teammitglieder haben zuvor noch nicht mit Kotlin gearbeitet, konnten sich jedoch aufgrund der Ähnlichkeit zu Java schnell zurechtfinden und gute Erfahrungen sammeln. Die Programmiersprache bietet dem Programmierer viele Vorteile wodurch sie immer beliebter wird unter Androidentwicklern. Der weitreichenste Vorteil ist es  null-Referenzen zu verhindern, die Sprache bietet einem "Null Safety". Eine weitere Änderung ist auch die Möglichkeit Datenklassen zu erstellen, diese sind Klassen welche lediglich Daten halten und keinerlei Methoden selbst implementieren. Ein Beispiel dieser kann man im Kapitel Implementierung finden. Der Großteil der Appentwicklung geschah mit Kotlin v1.15 später wurde dann ein Update auf Kotlin v1.2 durchgeführt. Dies liegt an dem Entwicklungszyklus von Kotlin, so wurde immer mit dem aktuellsten stabilen Release gearbeitet.
-%include graphics(kotlin findviewbyid bild christopher)
-%\cite{https://kotlinlang.org/}
+Kotlin ist eine neue Programmiersprache von JetBrains aus dem Jahr 2016. Wie auch Java kompiliert Kotlin zu JVM Bytecode. Es lässt sich dadurch sehr gut in das bestehende Java Ökosystem einbinden und kann alle Java Bibliotheken verwenden. Seit dem 17. Mai 2017 ist Kotlin eine von Android offiziel unterstützte Sprache.\cite{kotlinrelease}\\
+
+Beide Teammitglieder haben zuvor noch nicht mit Kotlin gearbeitet, konnten sich jedoch aufgrund der Ähnlichkeit zu Java schnell zurechtfinden und gute Erfahrungen sammeln. Die Programmiersprache bietet dem Programmierer viele Vorteile wodurch sie immer beliebter wird unter Androidentwicklern. Der weitreichenste Vorteil ist es  null-Referenzen zu verhindern, die Sprache bietet einem "Null Safety". Eine weitere Änderung ist auch die Möglichkeit Datenklassen zu erstellen, diese sind Klassen welche lediglich Daten halten und keinerlei Methoden selbst implementieren. Ein Beispiel dieser kann man im Kapitel Implementierung finden. Der Großteil der Appentwicklung geschah mit Kotlin v1.15 später wurde dann ein Update auf Kotlin v1.2 durchgeführt. Dies liegt an dem Entwicklungszyklus von Kotlin, so wurde immer mit dem aktuellsten stabilen Release gearbeitet.\cite{kotlin}
 
 \subsection{Gson}
 
-Gson ist eine Java Bibliothek zur Serialization und Deserialization. Sie wird genutzt um Java Objekte in JSON umzuwandeln oder auch JSON zu Java Objekten zu wandeln. Hierbei ist die Möglichkeit Generics zu verwenden äußerst wichtig, da diese in der CharBuilder Applikation mehrmals zum Einsatz kommt. Wir haben diese Bibliothek ausgesucht da sie uns bereits bekannt war von früheren Projekten und wir positive Erfahrungen gemacht haben. Desweiteren wird die Software bereits seit 2008 entwickelt und konnte seitdem durch viele Revisionen und Verbesserungen überzeugen. Für die App verwendet wir die Gson Version 2.8.2.
-%\cite{https://github.com/google/gson}
+Gson ist eine Java Bibliothek zur Serialization und Deserialization. Sie wird genutzt um Java Objekte in JSON umzuwandeln oder auch JSON zu Java Objekten zu wandeln. Hierbei ist die Möglichkeit Generics zu verwenden äußerst wichtig, da diese in der CharBuilder Applikation mehrmals zum Einsatz kommt. Wir haben diese Bibliothek ausgesucht da sie uns bereits bekannt war von früheren Projekten und wir positive Erfahrungen gemacht haben. Desweiteren wird die Software bereits seit 2008 entwickelt und konnte seitdem durch viele Revisionen und Verbesserungen überzeugen. Für die App verwendet wir die Gson Version 2.8.2.\cite{gson}
 
 \subsection{Gradle}
 
@@ -49,7 +46,7 @@ Git ist eine Software zur Versionsverwaltung. Es findet bereits große Anwendung
 
 \subsection{UMLet}
 
-UMLet ist ein kostenloses Open-Source UML Tool mit einer simplen Benutzeroberfläche. Die erstellten Diagramme lassen sich z.B. als pdf, jpg oder png exportieren. Wenn einem die große Auswahl an UML Elementen nicht reicht, kann man eigene erstellen oder importieren. Zum Zeichnen unserer Diagramme haben wir die Version 14.2 genutzt. %\cite{http://www.umlet.com/}
+UMLet ist ein kostenloses Open-Source UML Tool mit einer simplen Benutzeroberfläche. Die erstellten Diagramme lassen sich z.B. als pdf, jpg oder png exportieren. Wenn einem die große Auswahl an UML Elementen nicht reicht, kann man eigene erstellen oder importieren. Zum Zeichnen unserer Diagramme haben wir die Version 14.2 genutzt.\cite{umlet}
 
 \subsection{Google Firebase}
 \label{sdt:firebase}
@@ -205,8 +202,25 @@ Auch im DiceController wurden zusätzliche innere Klassen benötigt um den Würf
 Die Möglichkeit den Charakter zu importieren und auch zu exportieren war uns sehr wichtig, da die Charaktere auch auf anderen Geräten zur Verfügung stehen sollten. Da wir für das speichern in dem Projektrahmen keine eigene Infrastruktur zur Verfügung stellen konnten, haben wir uns über alternativen informiert. Schließlich ist die Wahl dann auf \hyperref[sdt:firebase]{Google Firebase} gefallen, da hier eine bereits bestehende Java Bibliothek angeboten wurde und der Dienst in vielen Android-Applikationen Anwendung findet. Um den Firebase nutzen zu können muss zunächst auf der entsprechenden Website ein neues Projekt angelegt werden. Um ein solches zu erstellen braucht man als Entwickler lediglich den Paketnamen und kann sich dann eine Konfigurationsdatei herunterladen. Anschließend werden die Abhängigkeiten in die \textit{build.gradle} Dateien eingetragen. Nun ist die Einrichtung abgeschlossen und im Quellcode kann auf die \textit{Firebase API} zugegriffen werden. Der Nutzer kann sich, sofern noch nicht geschehen, einloggen und dann seinen Charakter herunter- bzw. hochladen. Außerdem bekommt er eine Liste mit den gespeicherten Charakteren angezeigt. Das aussehen dieses Fenster wurde in der \textit{fragment\_import\_export.xml} festgelegt. Diese wird über den Standard \textit{LayoutInflater} eingelesen und dann als Fragment dargestellt. Abschließend sei zu dieser Funktion zu sagen, dass die Implementierung deutlich einfacherer war als ursprünglich angenommen. Durch die gute Unterstützung von \grqq Google Firebase\grqq{} konnten wir das geplante dann schnell umsetzen.
 
 \section{Test und Usability}
-\subsection{Test}
-\subsection{Usability}
+Der Code wurde während der Entwicklung auf den in der Tabelle aufgelisteten Geräten getestet.
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{Gerät} & \begin{tabular}[c]{@{}l@{}}Android\\ Version\end{tabular} \\ \hline
+Motorola Moto G4            & 7.1                                                       \\ \hline
+Samsumg Tab A               &                                                           \\ \hline
+Nexus 5X                    & 8.1                                                       \\ \hline
+Nexus 5X                    & 5.0                                                       \\ \hline
+Nexus 6P                    & 8.1                                                       \\ \hline
+\end{tabular}
+\caption{Testgeräte}
+\end{table}
+
+Da nicht genügend unterschiedliche Geräte als Hardware vorhanden waren, wurden die Nexus Smartphones emuliert. Hierbei haben wir auf eine große Varianz bei den Displayproportionen geachtet und verschiedene SDK Versionen verwendet. Nach jeder größeren Änderung im Programmcode wurde der Code im Emulator von Adroid Studio getestet. Wenn ein Feature fertiggestellt wurde, haben wir die Funktionen auf unseren Geräten ausgiebig getestet. Aufgrund der geringen Teamgröße von zwei Personen hatte jeder dauerhaft einen Überblick des aktuellen Implementierungstandes. Da das Konzept die Kapselung der Module bis zu einem gewissen Grad nicht erlaubt, konnte auf modulbeshränkte BlackBox Tests verzichtet werden.\\ 
+Um zusätzlich fachliche Mängel ausschließen zu können, haben wir verschiedene Iterationen der Applikation mit einer Anwendergruppe bestehend aus Personen der Zielgruppe getestet. Die 6 Personen haben unser Produkt in einem realistischen Szenario(Pen und Paper Abend) verwendet und anschließend ihre Erfahrungen in Einzelgesprächen mitgeteilt.
 
 \section{Zusammenfassung}
 In diesem Kapitel fassen wir zunächst einzeln unsere Erfahrungen zusammen, abschließend wird dann das Entwicklungspotenzial der Applikation bzw. Idee näher betrachtet.

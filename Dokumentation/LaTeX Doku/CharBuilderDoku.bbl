@@ -1,9 +1,14 @@
 \begin{thebibliography}{Goo13}
 
+\bibitem[Aue]{umlet}
+Martin Auer.
+\newblock {Free UML Tool for Fast UML Diagrams}.
+\newblock \url{http://www.umlet.com/}\\ Stand 22.01.2018.
+
 \bibitem[Goo13]{gson}
 Google.
-\newblock A java serialization/deserialization library to convert java objects
-  into json and back.
+\newblock {A Java serialization/deserialization library to convert Java Objects
+  into JSON and back}.
 \newblock 2013.
 \newblock \url{https://github.com/google/gson}\\ Stand: 18.01.2018.
 
@@ -11,6 +16,17 @@ Google.
 Sterling Hershey.
 \newblock {\em Star Wars: Edge of the Empire Core Rulebook}.
 \newblock Fantasy Flight Games, 2013.
+
+\bibitem[Kaz17]{kotlinrelease}
+Piotr Kazmierczak.
+\newblock {Why Kotlin Is the Hero Android Needs}.
+\newblock {\em 10clouds}, 2017.
+\newblock \url{https://10clouds.com/blog/kotlin-android/}\\ Stand 17.01.2018.
+
+\bibitem[kot16]{kotlin}
+{Statically typed programming language for modern multiplatform applications}.
+\newblock 2016.
+\newblock \url{https://kotlinlang.org/}\\ Stand 17.01.2018.
 
 \bibitem[Ost13]{adventurebook}
 Katrina Ostrander.
