@@ -113,7 +113,14 @@ Jedes der Fragmente in diesem Paket wird während der Charaktererstellung benöt
 Das Paket \grqq Help\grqq{} wurde erstellt, um Klassen zu sammeln, die eventuell mehrfach genutzte Programmlogik enthalten. So kann der Code aus dem \textit{DiceHelper} z.B. nicht nur im \textit{DiceController} angewendet werden, sondern bei Bedarf auch aus anderen Klassen heraus aufgerufen werden.
 
 \subsection{Model View Controller(MVC)}
-Normal erklären was mvc ist(easy)
+Model View Controller\cite{mvc} ist ein bekanntest Software Architektur \textit{Pattern}. In diesem wird der Quellcode in die 3 Bereiche Model(Datenrepräsentation), View(Darstellung) und Controller(Programmlogik) aufgeteilt. Das dient der Wiederverwendbarkeit von Code und unterstützt durch Kapselung die parallele Programmierung.
+\newline Das Anwenden des MVC-Patterns ist nicht unüblich bei Android Applikationen, so entschieden wir uns auch dafür. Ursprünglich war geplant das die jeweiligen Controllerklassen (\textit{CharCreationController}, \textit{DiceController} usw.) die Programmlogik darstellen und neben den Views(Layoutdateien) die Playerklasse das Model repräsentiert. Dies lies sich aufgrund der vielen Fragmente bei der Charaktererstellung nur bedingt einhalten, das parallele Programmieren wurde durch diese Struktur dennoch unterstützt.
+\newline Die Klasse \textit{Player} welche wie erwähnt als Model dient wurde von uns ebenfalls entwickelt damit alle Fragmente zu jeder Zeit die aktuellen Daten einsehen und so auf Veränderungen reagieren können. Insgesamt hatte das \textit{Pattern} einen positiven Einfluss auf unsere Softwarearchitektur. Um MVC umzusetzen mussten wir uns im Vorfeld bereits mit Struktur, Datenkapselung und Modellen beschäftigen, so dass von beginn an der Aufbau der Applikation festgelegt war.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/mvc.png}
+	\caption{Das Model View Controller Pattern}
+\end{figure}
 
 \newpage
 \section{Implementierung}
