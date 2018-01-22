@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.20)  22 JAN 2018 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.20)  22 JAN 2018 21:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2037,19 +2037,24 @@ File: images/mvc.png Graphic file (type png)
 Package pdftex.def Info: images/mvc.png  used on input line 121.
 (pdftex.def)             Requested size: 212.1024pt x 114.85239pt.
 
-Overfull \hbox (15.99728pt too wide) in paragraph at lines 116--124
+Overfull \hbox (15.99728pt too wide) in paragraph at lines 116--123
 \T1/lmr/m/n/12 (-20) sem wird der Quell-co-de in die 3 Be-rei-che Mo-del(Datenr
 epräsentation), View(Darstellung)
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--123
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 123.
 [11]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 125.
@@ -2496,10 +2501,10 @@ Package rerunfilecheck Info: File `CharBuilderDoku.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 68.
  ) 
 Here is how much of TeX's memory you used:
- 30725 strings out of 492985
- 547274 string characters out of 6136283
+ 30726 strings out of 492985
+ 547284 string characters out of 6136283
  720810 words of memory out of 5000000
- 33590 multiletter control sequences out of 15000+600000
+ 33591 multiletter control sequences out of 15000+600000
  610964 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,16n,54p,10394b,960s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2513,7 +2518,7 @@ pe1/public/lm/lmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri1
 2017/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2017/texmf-dist/fo
 nts/type1/public/lm/lmss17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/l
 m/lmssbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on CharBuilderDoku.pdf (24 pages, 477761 bytes).
+Output written on CharBuilderDoku.pdf (24 pages, 477768 bytes).
 PDF statistics:
  424 PDF objects out of 1000 (max. 8388607)
  380 compressed objects within 4 object streams
