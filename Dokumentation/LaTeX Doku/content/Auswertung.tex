@@ -88,7 +88,33 @@ Die App wird keine Gruppenverwaltung ermöglichen. Das bedeutet, dass ein Spiell
 
 \newpage
 \section{Architektur}
+Dieses Kapitel beschäftigt sich mit der Architektur unserer App. Dazu werden wir zunächst den Aufbau der Packages und die Beziehungen der einzelnen Klassen untereinander anhand des Klassendiagramms darstellen, bevor wir näher auf das Model View Controller Pattern eingehen.
+
 \subsection{Klassendiagramm}
+\includegraphics[scale=0.35]{images/klassendiagramm.jpg}
+
+Das oben zusehende Klassendiagramm zeigt alle für die Applikation gebrauchten Klassen und die Pakete, in die sie eingeteilt sind. In den nächsten Absätzen werden die einzelnen Pakete und ihre zugehörigen Klassen bescreiben.
+
+\subsubsection{com.chrisphil.charbuilder}
+Eine Einordnung in eindeutige Pakete ist nicht für jede Klasse möglich. Aus diesem Grund werden solche Klassen in diesem Paket zusammengefasst.\\
+
+Der \textit{MainNavigationDrawer} ist eine dieser Klassen. Als Mainactivity der App können von ihm die Klassen \textit{CharListController}, \textit{DiceController}, \textit{SettingsController} und \textit{ImportExportController} aufgerufen werden.\\
+
+Als meistgenutzte Klasse hat \textit{Player} die meisten Verbindungen zu anderen Klassen. Das Laden und Speichern der Charakterdaten wird in dieser Klasse umgesetzt. Außerdem werden Daten aus den \grqq CreationFragments\grqq{} in einer Instanz der \textit{Player}-Klasse während der Charaktererstellung zwischengespeichert. 
+
+Die letzten beiden Klassen dieses Pakets sind der \textit{CharAdapter} und die \textit{CharInfo}. Der \textit{CharAdapter} dient als Adapter, der für die Charakterliste des \textit{CharListControllers} eingesetzt wird. Den Inhalt dieser Liste bildet die \textit{CharInfo}, welche die geladenen Daten aus der \textit{Player}-Klasse mit den zugehörigen Bildern der Charaktere verbindet und an den \textit{CharAdapter} weitergibt.
+
+\subsubsection{com.chrisphil.charbuilder.controller}
+Unsere ursprüngliche Architektur sah vor, dass jedes Fragment, das durch den Nutzer über den \textit{MainNavigationDrawer} erreicht werden kann, einen eigenen Controller besitzen wird. Auf diese Weise sollten Darstellung und Datenverarbeitung getrennt werden. Alle benötigten Controller werden in diesem Paket gebündelt. Da diese Architektur sich als unpraktisch erwiesen hat, wurden alle mit dem \textit{MainNavigationDrawer} verbundenen Klassen zu eigenständigen Fragmenten ohne zugehörigen Controller.\\
+
+Die einzige Klasse, welche ihre Funktion als Controller mehr oder weniger behalten hat, ist der \textit{CharCreationController}. Sämtliche Navigation der Charaktererstellung wird durch diese Activity geleitet, weshalb sie eine Verbindung zu jedem der \grqq CreationFragments\grqq{} besitzt. Außerdem wird in ihr eine Instanz der \textit{Player}-Klasse erzeugt.
+
+\subsubsection{com.chrisphil.charbuilder.creationfragments}
+Jedes der Fragmente in diesem Paket wird während der Charaktererstellung benötigt. Einige verfügen über innere Adapter-Klassen zum Füllen von Listen. Fragmente mit \grqq Data Classes\grqq{} lesen Daten aus XML-Dateien ein. Die Daten der Fragmente werden während der Charaktererstellung in einem Objekt der \textit{Player}-Klasse zwischengespeichert, welche zur \textit{CharCreationController}-Activity gehört.
+
+\subsubsection{com.chrisphil.charbuilder.help}
+Das Paket \grqq Help\grqq{} wurde erstellt, um Klassen zu sammeln, die eventuell mehrfach genutzte Programmlogik enthalten. So kann der Code aus dem \textit{DiceHelper} z.B. nicht nur im \textit{DiceController} angewendet werden, sondern bei Bedarf auch aus anderen Klassen heraus aufgerufen werden.
+
 \subsection{Model View Controller(MVC)}
 Normal erklären was mvc ist(easy)
 
@@ -168,7 +194,7 @@ Zusammen mit dem \textit{GearFragment}, das im nächsten Absatz beschrieben wird
 Viel Programmlogik hat dieses Fragment nicht zu bieten, denn es dient lediglich als Eingabemöglichkeit der einzelnen Aussehensoptionen eines Charakters. Sobald eine Eingabe bestätigt wird, aktualisiert das Fragment das zugehörige Attribut des Player-Objekts der Activity.
 
 \subsubsection{GearFragment.kt}
-Ähnlich zum \textit{AppearanceFragment} ist dieses Fragment mit wenig Programmlogik ausgestattet und stellt dem Nutzer \textit{EditText}-Elemente zum Eintragen seiner Ausrüstung zur Verfügung. Der Nutzer kann bis zu drei Waffen und die zugehörigen Schadenswerte eintragen. Zusätzlich gibt es fünf freie Textfelder, in welche der Spieler seine Ausrüstungsge
+Ähnlich zum \textit{AppearanceFragment} ist dieses Fragment mit wenig Programmlogik ausgestattet und stellt dem Nutzer \textit{EditText}-Elemente zum Eintragen seiner Ausrüstung zur Verfügung. Der Nutzer kann bis zu drei Waffen und die zugehörigen Schadenswerte eintragen. Zusätzlich gibt es fünf freie Textfelder, in welchen der Spieler seine Ausrüstungsgegenstände und eine kurze Anmerkung zu jedem Gegenstand notieren kann. Da jeder Charakter auch eine gewisse Menge an Credits bei sich trägt, gibt es dazu auch ein eigenes Textfeld.
 
 \subsection{Würfeltool}
 Das Würfeltool stellt einen abgegrenzten Teil unserer Applikation dar. Es wird durch das Hauptmenü(\textit{MAIN\_NAVIGATION\_DRAWER}) aufgerufen. Wir haben uns auch hier für ein Fragment entschieden, da wir dieses gut in das bestehende System aus \textit{AppBarLayout} und \textit{NavigationView} einbinden konnten. Wir legten zunächst die Klasse \textit{DiceController} an. Diese erbt von Fragment und bildet damit die Hauptkomponente des Würfeltools. Da neben der Hauptansicht zusätzlich noch 2 Dialoge benötigt werden erstellten wir 3 Layout-Dateien(\textit{fragment\_dice.xml}, \textit{dice\_result\_display\_dialog.xml}, \textit{dice\_roll\_history.xml}). Um das Fragment strukturiert zu gestalten wurde der Inhalt durch CardViews in die drei Teile \grqq Verfügbare Würfel\grqq{}, \grqq Ausgewählte Würfel\grqq{} und \grqq Buttons\grqq{} aufgeteilt. Zum Beginn der Implementierung zeigte sich, dass aufgrund des Umfangs, eine weitere Klasse \textit{DiceHelper} angelegt werden muss. In dieser implementierten wir alle Methoden und Daten die für die Würfel benötigten wurden einschließlich aber nicht ausschließlich Wahrscheinlichkeiten, Würfelarten und Zufallsgenerierung. Hierbei stellt die innere Klasse \textit{DiceSide} eine Würfelseite da, sie hält für jedes Symbol einen Integer-Wert der die Anzahl beschreibt. Für jeden Würfel wurde dann ein Array angelegt welches die entsprechende Anzahl an Seiten in Form der oben genannten Klasse speichert. Insgesamt gibt es sieben verschiedene Würfel und 8 unterschiedliche Symbole. Zusätzlich gibt es eine Klasse \textit{Dice} welche diese Arrays verwendet um so mit einer Zufallsmethode eine Würfelseite zurückgeben zu können.\\
@@ -186,7 +212,8 @@ Die Möglichkeit den Charakter zu importieren und auch zu exportieren war uns se
 In diesem Kapitel fassen wir zunächst einzeln unsere Erfahrungen zusammen, abschließend wird dann das Entwicklungspotenzial der Applikation bzw. Idee näher betrachtet.
 \subsection{Fazit}
 \subsubsection{Christopher Kluck}
-I bims der Christopher und hier steht meine Meinung.
+Zu Beginn des Projekts war ich eher skeptisch der neuen Programmiersprache und der ungewohnten Plattform gegenüber. Inzwischen habe ich mich an Kotlin gewöhnt und würde es aufgrund der Vorteile Java gegenüber in der App-Entwicklung unter Android vorziehen. Durch Android-Studio wird einem der Einstieg in die Android-Programmierung deutlich erleichtert. Der eingebaute Emulator ließ sich auf meinem Laptop zwar nicht starten, aber am Desktop-PC hat er das Testen für mich überhaupt erst möglich gemacht, da ich kein Android Gerät besitze. Das Projekt hat mir gezeigt, dass das Programmieren für mobile Endgeräte zu einem großen Anteil aus GUI-Design besteht, schließlich soll die App auf möglichst vielen Smartphones gut aussehen und benutztbar sein. Normalerweise meide ich alles, was mit GUI-Design zutun hat, weswegen mir dieser Teil des Projekts eher weniger Spaß gemacht hat. Nachdem die GUI fertig war, ging es jedoch ans Schreiben der Funktionen, die im Hintergrund ablaufen. Dieser Teil der Entwicklung war für mich deutlich angenehmer. Während der Entwicklung habe ich ständig neue Dinge gelernt, auf die man während der Implementierung achten sollte, damit der Nutzer am Ende eine gut funktionierende App geliefert bekommt. Auch, wenn es während des Projekts Phasen gab, in denen ich wenig motiviert war an der App zuarbeiten, bin ich mit dem Verlauf der Entwicklung zufrieden. Abschließend kann ich sagen, dass ich viel über die App-Entwicklng gelernt habe, sei es durch die Vorträge während der Vorlesung, durch gezieltes Selbstudium zu bestimmten Bereichen oder durch zufällige Entdeckungen während der Fehlerbehebung mancher Probleme.
+
 \subsubsection{Philipp Clausing}
 Durch die Entwicklung der Applikation konnte ich sehr viel über Android erfahren. Ich habe mitbekommen wie aufwendig die Planungsphase, auch bei vermeintlich trivialen Funktionalitäten, sein kann. Eine Besonderheit bei der Erstellung von Mobilen Applikationen ist der Fokus auf die Benutzeroberfläche, so musste viel Zeit bei der Erstellung dieser aufgewendet werden. Eine weitere Hürde für mich war die \grqq Beständigkeit\grqq{} von Daten bzw. der Lebenszyklus von Activity's , Fragmenten, da dies im Kontrast steht mit der traditionellen Desktopentwicklung. Unsere Teamarbeit kann ich nur positiv bewerten, wir haben zu keinem Zeitpunkt große Unstimmigkeiten in unserer Vision der Applikation gehabt und konnten dem jeweils anderen immer mit Rat und konstruktiver Kritik zur Seite stehen. Schließlich ziehe ich eine positive Bilanz und kann mit neuem Wissen zukünftige Aufgaben angehen.
 
