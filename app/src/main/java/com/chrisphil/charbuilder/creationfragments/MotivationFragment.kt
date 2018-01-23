@@ -53,6 +53,12 @@ class MotivationFragment : Fragment() {
 
         view.motivation_list.setAdapter(MotivationListAdapter(context,motivationGroupArray))
 
+        view.motivation_list.setOnChildClickListener { _, _, groupPosition, childPosition, _ ->
+            view.selected_motivation.text = motivationGroupArray[groupPosition].motivationArray[childPosition].name
+            view.selected_motivation2.text = ""
+            false
+        }
+
         view.random_motivation_button.setOnClickListener{
             val motivationResult : Int = Random().nextInt(10)+1
             when(motivationResult) {
