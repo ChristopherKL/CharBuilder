@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "860363973374",
+    "firebase_url": "https://charbuilderapp.firebaseio.com",
+    "project_id": "charbuilderapp",
+    "storage_bucket": "charbuilderapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860363973374:android:be23c54819e6fcf2",
+        "android_client_info": {
+          "package_name": "com.chrisphil.charbuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860363973374-e84av2njlj2c005h983cth09n9dp2hgb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chrisphil.charbuilder",
+            "certificate_hash": "2e50dfb3036888a15fb9a54820a062abfd9e65e4"
+          }
+        },
+        {
+          "client_id": "860363973374-qabgkjb1b8bf5doq5r2op9j1knmlhgdn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnJHCpiOcNmTkYHyswiujxMQFLLrYTJwc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860363973374-qabgkjb1b8bf5doq5r2op9j1knmlhgdn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

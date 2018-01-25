@@ -9,7 +9,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.chrisphil.charbuilder.controller.CharListController
 import com.chrisphil.charbuilder.controller.DiceController
+import com.chrisphil.charbuilder.controller.ImportExportController
 import com.chrisphil.charbuilder.controller.SettingsController
+import com.chrisphil.charbuilder.importExportFragments.IEMenuFragment
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation_drawer.*
 
@@ -47,9 +50,6 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
                         .replace(R.id.content_frame, CharListController.newInstance(), "charListController")
                         .commit()
             }
-            R.id.nav_rulesets -> {
-                this.title = resources.getString(R.string.rulesets)
-            }
             R.id.nav_dice -> {
                 this.title = resources.getString(R.string.dices)
                 supportFragmentManager
@@ -66,6 +66,17 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
             }
             R.id.nav_importExport -> {
                 this.title = resources.getString(R.string.importExport)
+                if(FirebaseAuth.getInstance().currentUser == null) {
+                    supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.content_frame, ImportExportController.newInstance(), "importExportSignIn")
+                            .commit()
+                }else{
+                    supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.content_frame,IEMenuFragment.newInstance(),"importExport")
+                            .commit()
+                }
             }
         }
 
