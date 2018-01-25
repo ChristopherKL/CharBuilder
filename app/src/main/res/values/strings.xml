@@ -85,7 +85,7 @@
     <string name="cause_droid_rights">Droiden Rechte</string>
     <string name="cause_capitalism">Kapitalismus</string>
     <string name="cause_support_the_empire">Unterstüzung des Imperiums</string>
-    
+
     <!-- Character Creation Motivation Relationship-->
     <string name="relationship">Bindung</string>
     <string name="relation_place_of_origin">Herkunftsort</string>
@@ -112,7 +112,7 @@
     <string name="appearance_eyecolor">Augenfarbe:</string>
     <string name="appearance_skincolor">Hautfarbe:</string>
     <string name="appearance_features">Besondere Merkmale:</string>
-    
+
     <!-- Character Creation Gear -->
     <string name="gear_weapon_name">Waffe</string>
     <string name="gear_weapon_damage">Schaden</string>
@@ -123,7 +123,7 @@
     <string name="gear_damage_example">5 + W</string>
     <string name="gear_hint_stimpack">2 Stimpacks</string>
     <string name="gear_hint_comment">Heilt 4 Wunden</string>
-    
+
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
     <string name="pref_design_title">Aussehen</string>
@@ -136,4 +136,18 @@
     <string name="button_roll_dice">Würfeln</string>
     <string name="button_roll_history">Verlauf anzeigen</string>
     <string name="dice_result">Ergebnis</string>
+
+    <!-- Import/Export -->
+    <string name="importing">Herunterladen</string>
+    <string name="exporting">Hochladen</string>
+    <string name="local_chars">Lokale Charaktere</string>
+    <string name="cloud_chars">Cloud Charaktere</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="back">Zurück</string>
+    <string name="signup">Registrieren</string>
+    <string name="signup_message">Noch keinen Account? Jetzt <a href="#">registrieren!</a></string>
+    <string name="usersettings">Benutzerverwaltung</string>
+    <string name="iesettings">Funktionen</string>
+    <string name="resetpw">Password zurücksetzen</string>
 </resources>

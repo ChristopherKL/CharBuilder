@@ -9,10 +9,6 @@
             android:icon="@drawable/ic_menu_characterswitch"
             android:title="@string/characters" />
         <item
-            android:id="@+id/nav_rulesets"
-            android:icon="@drawable/ic_menu_rulesets"
-            android:title="@string/rulesets" />
-        <item
             android:id="@+id/nav_dice"
             android:icon="@drawable/ic_menu_dice"
             android:title="@string/dices" />
