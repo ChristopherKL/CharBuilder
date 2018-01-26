@@ -102,6 +102,12 @@
 
     <!-- Character Creation Species Dialog -->
     <string name="species_info_dialog_title">Spezies Information</string>
+    <string name="species">Ausgewählte Spezies:</string>
+    <string name="species_none">Keine</string>
+
+    <!-- Character Creation Career -->
+    <string name="career_selected">Ausgewählter Beruf:</string>
+    <string name="career_none">Keiner</string>
 
     <!-- Character Creation Appearance-->
     <string name="appearance_gender">Geschlecht:</string>

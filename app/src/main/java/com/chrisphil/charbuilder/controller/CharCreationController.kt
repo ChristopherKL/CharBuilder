@@ -21,11 +21,17 @@ import com.chrisphil.charbuilder.interfaces.OnDataPass
 
 import kotlinx.android.synthetic.main.char_creation.*
 import kotlinx.android.synthetic.main.fragment_char_creation.view.*
+import android.content.Intent
+import android.support.v4.content.LocalBroadcastManager
+
+
 
 class CharCreationController : AppCompatActivity(), OnDataPass{
 
     companion object {
         var playerObject : Player = Player()
+        var old_career = ""
+        var old_specialization = ""
 
         fun newPlayer(){
             this.playerObject = Player()
@@ -49,7 +55,6 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_obligation)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_species)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_career)))
-        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_specialization)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_experience)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_attributes)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_motivation)))
@@ -61,7 +66,6 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         char_tab_layout.tabMode = TabLayout.MODE_SCROLLABLE
 
         val adapter = PageAdapter(supportFragmentManager,char_tab_layout.tabCount)
-
         container.adapter = adapter
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(char_tab_layout))
         char_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
@@ -75,6 +79,11 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 container.currentItem = tab!!.position
+                if(tab!!.position == 3){ //When spec Fragment
+                    val lbm = LocalBroadcastManager.getInstance(applicationContext)
+                    val i = Intent("SPEC_REFRESH")
+                    lbm.sendBroadcast(i)
+                }
             }
         })
 
@@ -129,6 +138,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
                 0 -> return ObligationFragment.newInstance(position+1)
                 1 -> return SpeciesFragment.newInstance(position+1)
                 2 -> return CareerFragment.newInstance(position+1)
+                3 -> return ExperienceFragment.newInstance(position+1)
                 6 -> return MotivationFragment.newInstance(position+1)
                 7 -> return AppearanceFragment.newInstance(position+1)
                 8 -> return GearFragment.newInstance(position+1)

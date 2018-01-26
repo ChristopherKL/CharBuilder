@@ -4,11 +4,15 @@ import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.*
 import android.widget.AbsListView.CHOICE_MODE_SINGLE
+import android.widget.Adapter
+import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.controller.CharCreationController
 import com.chrisphil.charbuilder.interfaces.OnDataPass
 import kotlinx.android.synthetic.main.char_creation_listview.view.*
 import kotlinx.android.synthetic.main.char_creation_species.*
@@ -43,8 +47,17 @@ class SpeciesFragment : Fragment() {
         var species = loadSpecies()
 
         val adapter = SpeciesViewAdapter(context,species)
-
         liste.adapter = adapter
+
+        if(CharCreationController.playerObject.species != "") {
+            view.currentSpecies.text = CharCreationController.playerObject.species
+        }
+
+        liste.setOnItemClickListener{
+            _, _, position, _ ->
+            CharCreationController.playerObject.species = species[position].name
+            view.currentSpecies.text = species[position].name
+        }
 
         return view
     }
