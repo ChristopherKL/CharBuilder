@@ -33,4 +33,5 @@ class Player {
     var items : Array<String> = arrayOf("","","","","")
     var itemAnnotations : Array<String> = arrayOf("","","","","")
     var credits : Int = 0
+    var name : String = ""
 }
