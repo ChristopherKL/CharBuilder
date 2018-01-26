@@ -28,4 +28,8 @@ class Player {
     var eyecolor : String = ""
     var skincolor : String = ""
     var features : String = ""
+    var weapons : Array<String> = arrayOf("","","")
+    var weaponDamage : Array<String> = arrayOf("","","")
+    var items : Array<String> = arrayOf("","","","","")
+    var itemAnnotations : Array<String> = arrayOf("","","","","")
 }
