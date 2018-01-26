@@ -7,10 +7,10 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.controller.CharCreationController
 import com.chrisphil.charbuilder.interfaces.OnDataPass
 import kotlinx.android.synthetic.main.char_creation_obligation.*
 import kotlinx.android.synthetic.main.char_creation_obligation.view.*
@@ -43,6 +43,8 @@ class ObligationFragment : Fragment() {
             _, _, position, _ ->
             selected_obligation.text = obligationArray[position].name
             selected_obligation2.text = ""
+            CharCreationController.playerObject.obligation = obligationArray[position].name
+            CharCreationController.playerObject.obligation2 = ""
         }
 
         view.random_obligation_button.setOnClickListener{
@@ -52,6 +54,16 @@ class ObligationFragment : Fragment() {
                 in 97..100 -> chooseTwoObligations()
             }
         }
+
+        if(CharCreationController.playerObject.obligation != "" && CharCreationController.playerObject.obligation2 != ""){
+            view.selected_obligation.text = CharCreationController.playerObject.obligation
+            view.selected_obligation2.text = CharCreationController.playerObject.obligation2
+        }
+        else if(CharCreationController.playerObject.obligation != "" && CharCreationController.playerObject.obligation2 == ""){
+            view.selected_obligation.text = CharCreationController.playerObject.obligation
+            view.selected_obligation2.text = ""
+        }
+
         return view
     }
 
@@ -87,52 +99,88 @@ class ObligationFragment : Fragment() {
         when(result){
             in 1..8 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_addiction)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_addiction)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_addiction)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_addiction)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_addiction)}
             in 9..16 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_betrayal)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_betrayal)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_betrayal)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_betrayal)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_betrayal)}
             in 17..24 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_blackmail)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_blackmail)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_blackmail)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_blackmail)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_blackmail)}
             in 25..32 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_bounty)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_bounty)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_bounty)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_bounty)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_bounty)}
             in 33..40 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_criminal)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_criminal)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_criminal)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_criminal)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_criminal)}
             in 41..48 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_debt)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_debt)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_debt)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_debt)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_debt)}
             in 49..56 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_dutybound)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_dutybound)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_dutybound)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_dutybound)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_dutybound)}
             in 57..64 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_family)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_family)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_family)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_family)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_family)}
             in 65..72 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_favor)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_favor)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_favor)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_favor)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_favor)}
             in 73..80 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_oath)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_oath)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_oath)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_oath)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_oath)}
             in 81..88 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_obsession)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_obsession)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_obsession)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_obsession)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_obsession)}
             in 89..96 -> if(!isSecond) {
                 selected_obligation.text = getString(R.string.obligation_responsibility)
-                selected_obligation2.text = ""}
-                else selected_obligation2.text = getString(R.string.obligation_responsibility)
+                selected_obligation2.text = ""
+                CharCreationController.playerObject.obligation = getString(R.string.obligation_responsibility)
+                CharCreationController.playerObject.obligation2 = ""}
+            else {selected_obligation2.text = getString(R.string.obligation_responsibility)
+                CharCreationController.playerObject.obligation2 = getString(R.string.obligation_responsibility)}
         }
     }
 

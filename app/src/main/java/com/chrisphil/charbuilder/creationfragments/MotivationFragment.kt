@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.controller.CharCreationController
 import kotlinx.android.synthetic.main.char_creation_career_group_item.view.*
 import kotlinx.android.synthetic.main.char_creation_motivation.*
 import kotlinx.android.synthetic.main.char_creation_motivation.view.*
@@ -53,6 +54,14 @@ class MotivationFragment : Fragment() {
 
         view.motivation_list.setAdapter(MotivationListAdapter(context,motivationGroupArray))
 
+        view.motivation_list.setOnChildClickListener { _, _, groupPosition, childPosition, _ ->
+            view.selected_motivation.text = motivationGroupArray[groupPosition].motivationArray[childPosition].name
+            view.selected_motivation2.text = ""
+            CharCreationController.playerObject.motivation = motivationGroupArray[groupPosition].motivationArray[childPosition].name
+            CharCreationController.playerObject.motivation2 = ""
+            false
+        }
+
         view.random_motivation_button.setOnClickListener{
             val motivationResult : Int = Random().nextInt(10)+1
             when(motivationResult) {
@@ -61,6 +70,15 @@ class MotivationFragment : Fragment() {
                 in 7..9 -> chooseRelationship(false)
                 10 -> chooseTwoMotivations()
             }
+        }
+
+        if(CharCreationController.playerObject.motivation != "" && CharCreationController.playerObject.obligation2 != ""){
+            view.selected_motivation.text = CharCreationController.playerObject.motivation
+            view.selected_motivation2.text = CharCreationController.playerObject.motivation2
+        }
+        else if(CharCreationController.playerObject.motivation != "" && CharCreationController.playerObject.motivation2 == ""){
+            view.selected_motivation.text = CharCreationController.playerObject.motivation
+            view.selected_motivation2.text = ""
         }
         return view
     }
@@ -215,42 +233,83 @@ class MotivationFragment : Fragment() {
             in 1..10 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_friendship)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_friendship)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_friendship)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_friendship)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_friendship)}
             in 11..20 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_love)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_love)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_love)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_love)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_love)}
             in 21..30 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_freedom)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_freedom)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_freedom)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_freedom)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_freedom)}
             in 31..40 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_fame)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_fame)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_fame)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_fame)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_fame)}
             in 41..50 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_greed)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_greed)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_greed)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_greed)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_greed)}
             in 51..60 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_status)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_status)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_status)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_status)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_status)}
             in 61..70 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_expertise)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_expertise)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_expertise)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_expertise)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_expertise)}
             in 71..80 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_wanderlust_novelty)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_wanderlust_novelty)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_wanderlust_novelty)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_wanderlust_novelty)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_wanderlust_novelty)}
             in 81..90 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_power)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.ambition_power)
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_power)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_power)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_power)}
             in 91..100 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.ambition_religion_spirituality)
-                } else selected_motivation2.text = getString(R.string.ambition_religion_spirituality)
+                selected_motivation2.text = ""
+                CharCreationController.playerObject.motivation = getString(R.string.ambition_religion_spirituality)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.ambition_religion_spirituality)
+                CharCreationController.playerObject.motivation2 = getString(R.string.ambition_religion_spirituality)}
         }
     }
 
@@ -260,41 +319,93 @@ class MotivationFragment : Fragment() {
             in 1..10 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_religion_spirituality)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_religion_spirituality)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_religion_spirituality)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_religion_spirituality)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_religion_spirituality)
+            }
             in 11..20 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_theweak_charity)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_theweak_charity)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_theweak_charity)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_theweak_charity)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_theweak_charity)
+            }
             in 21..30 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_nonhuman_rights)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_nonhuman_rights)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_nonhuman_rights)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_nonhuman_rights)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_nonhuman_rights)
+            }
             in 31..40 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_local_politics)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_local_politics)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_local_politics)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_local_politics)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_local_politics)
+            }
             in 41..50 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_overthrow_the_empire)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_overthrow_the_empire)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_overthrow_the_empire)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_overthrow_the_empire)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_overthrow_the_empire)
+            }
             in 51..60 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_crime)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_crime)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_crime)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_crime)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_crime)
+            }
             in 61..70 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_emancipation)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_emancipation)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_emancipation)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_emancipation)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_emancipation)
+            }
             in 71..80 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_droid_rights)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.cause_droid_rights)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_droid_rights)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_droid_rights)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_droid_rights)
+            }
             in 81..90 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.cause_capitalism)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.cause_capitalism)
-            in 91..100 -> if(!isSecond) selected_motivation.text = getString(R.string.cause_support_the_empire)
-                        else selected_motivation2.text = getString(R.string.cause_support_the_empire)
+                CharCreationController.playerObject.motivation = getString(R.string.cause_capitalism)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_capitalism)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_capitalism)
+            }
+            in 91..100 -> if (!isSecond) {
+                selected_motivation.text = getString(R.string.cause_support_the_empire)
+                selected_motivation2.text = ""
+                CharCreationController.playerObject.motivation = getString(R.string.cause_support_the_empire)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.cause_support_the_empire)
+                CharCreationController.playerObject.motivation2 = getString(R.string.cause_support_the_empire)
+            }
         }
     }
 
@@ -304,43 +415,92 @@ class MotivationFragment : Fragment() {
             in 1..10 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.relation_place_of_origin)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.relation_place_of_origin)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_place_of_origin)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_place_of_origin)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_place_of_origin)}
             in 11..20 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.relation_pet)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.relation_pet)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_pet)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_pet)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_pet)
+            }
             in 21..30 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.relation_childhood_friend)
                 selected_motivation2.text = ""
-            } else selected_motivation2.text = getString(R.string.relation_childhood_friend)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_childhood_friend)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_childhood_friend)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_childhood_friend)
+            }
             in 31..40 -> if (!isSecond) {
                 selected_motivation.text = getString(R.string.relation_comrades)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.relation_comrades)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_comrades)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_comrades)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_comrades)
+            }
             in 41..50 -> if(!isSecond) {
                 selected_motivation.text = getString(R.string.relation_siblings)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.relation_siblings)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_siblings)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_siblings)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_siblings)
+            }
             in 51..60 -> if(!isSecond) {
                 selected_motivation.text = getString(R.string.relation_mentor)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.relation_mentor)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_mentor)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_mentor)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_mentor)
+            }
             in 61..70 -> if(!isSecond) {
                 selected_motivation.text = getString(R.string.relation_parents)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.relation_parents)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_parents)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_parents)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_parents)
+            }
             in 71..80 -> if(!isSecond) {
                 selected_motivation.text = getString(R.string.relation_extended_family_clan)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.relation_extended_family_clan)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_extended_family_clan)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_extended_family_clan)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_extended_family_clan)
+            }
             in 81..90 -> if(!isSecond) {
                 selected_motivation.text = getString(R.string.relation_droid_companion)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.relation_droid_companion)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_droid_companion)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_droid_companion)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_droid_companion)
+            }
             in 91..100 -> if(!isSecond) {
                 selected_motivation.text = getString(R.string.relation_former_nemesis)
                 selected_motivation2.text = ""
-                } else selected_motivation2.text = getString(R.string.relation_former_nemesis)
+                CharCreationController.playerObject.motivation = getString(R.string.relation_former_nemesis)
+                CharCreationController.playerObject.motivation2 = ""
+            } else {
+                selected_motivation2.text = getString(R.string.relation_former_nemesis)
+                CharCreationController.playerObject.motivation2 = getString(R.string.relation_former_nemesis)
+            }
         }
     }
 

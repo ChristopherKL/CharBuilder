@@ -4,7 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
         android:id="@+id/weaponLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/weaponLayout"
         android:orientation="vertical"
-        android:paddingTop="20dp"
+        android:paddingTop="15dp"
         android:paddingStart="5dp">
 
         <TextView
@@ -154,7 +160,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/weaponLayout"
         android:layout_toEndOf="@+id/itemLayout"
-        android:paddingTop="20dp"
+        android:paddingTop="15dp"
         android:orientation="vertical">
 
         <TextView
@@ -206,4 +212,31 @@
             android:ems="10"
             android:inputType="text"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/creditsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/itemLayout"
+        android:paddingStart="5dp">
+
+        <TextView
+            android:id="@+id/creditsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gear_credits"
+            android:textColor="@color/colorBlack"
+            android:paddingTop="15dp"/>
+
+        <EditText
+            android:id="@+id/creditsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:ems="5"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
+    </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

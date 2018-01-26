@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.chrisphil.charbuilder.Player
 import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.creationfragments.AppearanceFragment
 import com.chrisphil.charbuilder.creationfragments.AttributeFragment
@@ -30,6 +31,14 @@ import kotlinx.android.synthetic.main.char_creation.*
 import kotlinx.android.synthetic.main.fragment_char_creation.view.*
 
 class CharCreationController : AppCompatActivity(), OnDataPass{
+
+    companion object {
+        var playerObject : Player = Player()
+
+        fun newPlayer(){
+            this.playerObject = Player()
+        }
+    }
 
     override fun onDataPass(data: String) {
         Log.d("LOG","hello " + data);
