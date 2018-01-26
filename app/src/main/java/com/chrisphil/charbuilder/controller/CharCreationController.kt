@@ -16,13 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.chrisphil.charbuilder.Player
 import com.chrisphil.charbuilder.R
-import com.chrisphil.charbuilder.creationfragments.AppearanceFragment
-import com.chrisphil.charbuilder.creationfragments.CareerFragment
-import com.chrisphil.charbuilder.creationfragments.GearFragment
-import com.chrisphil.charbuilder.creationfragments.MotivationFragment
-import com.chrisphil.charbuilder.creationfragments.ObligationFragment
-import com.chrisphil.charbuilder.creationfragments.ExperienceFragment
-import com.chrisphil.charbuilder.creationfragments.SpeciesFragment
+import com.chrisphil.charbuilder.creationfragments.*
 import com.chrisphil.charbuilder.interfaces.OnDataPass
 
 import kotlinx.android.synthetic.main.char_creation.*
@@ -41,6 +35,10 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
 
         fun newPlayer(){
             this.playerObject = Player()
+        }
+
+        fun saveCurrentPlayer(){
+
         }
     }
 
@@ -62,6 +60,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_motivation)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_appearance)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_gear)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_completion)))
 
         char_tab_layout.tabGravity = TabLayout.GRAVITY_FILL
         char_tab_layout.tabMode = TabLayout.MODE_SCROLLABLE
@@ -143,13 +142,14 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
                 6 -> return MotivationFragment.newInstance(position+1)
                 7 -> return AppearanceFragment.newInstance(position+1)
                 8 -> return GearFragment.newInstance(position+1)
+                9 -> return CompletionFragment.newInstance(position+1)
             }
             return PlaceholderFragment.newInstance(99)
         }
 
         override fun getCount(): Int {
-            // Show 9 total pages.
-            return 9
+            // Show 10 total pages.
+            return 10
         }
     }
 

@@ -39,6 +39,7 @@
     <string name="cc_motivation">Motivation</string>
     <string name="cc_appearance">Aussehen</string>
     <string name="cc_gear">Ausrüstung</string>
+    <string name="cc_completion">Abschluss</string>
 
     <string name="selected_obligation">Ausgewählte Pflicht</string>
     <string name="second_selected_obligation">Zweite Pflicht</string>
@@ -129,6 +130,10 @@
     <string name="gear_damage_example">5 + W</string>
     <string name="gear_hint_stimpack">2 Stimpacks</string>
     <string name="gear_hint_comment">Heilt 4 Wunden</string>
+
+    <!-- Char Creation Completion -->
+    <string name="complete_charcreation">Charaktererstellung\n abschließen</string>
+    <string name="character_name">Name des Charakters</string>
 
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
