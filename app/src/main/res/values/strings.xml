@@ -104,6 +104,10 @@
     <string name="species">Ausgewählte Spezies:</string>
     <string name="species_none">Keine</string>
 
+    <!-- Character Creation Career -->
+    <string name="career_selected">Ausgewählter Beruf:</string>
+    <string name="career_none">Keiner</string>
+
     <!-- Character Creation Appearance-->
     <string name="appearance_gender">Geschlecht:</string>
     <string name="appearance_birthday">Geburtstag:</string>

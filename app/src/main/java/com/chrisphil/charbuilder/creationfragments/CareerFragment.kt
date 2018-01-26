@@ -3,11 +3,13 @@ package com.chrisphil.charbuilder.creationfragments
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import com.chrisphil.charbuilder.R
+import com.chrisphil.charbuilder.controller.CharCreationController
 import kotlinx.android.synthetic.main.char_creation_career.view.*
 import kotlinx.android.synthetic.main.char_creation_career_child_item.view.*
 import kotlinx.android.synthetic.main.char_creation_career_group_item.view.*
@@ -21,6 +23,23 @@ class CareerFragment : Fragment() {
 
         var careers = loadCareers()
         view.career_list.setAdapter(CareerListAdapter(context,careers))
+
+        if(CharCreationController.playerObject.career != "" && CharCreationController.playerObject.specialization != ""){
+            view.currentCareer.text = CharCreationController.playerObject.career + " - " + CharCreationController.playerObject.specialization
+        }
+
+        view.career_list.setOnChildClickListener { _, _, groupPosition, childPosition, _ ->
+            var subclass = ""
+            when(childPosition){
+                0 -> subclass = careers[groupPosition].subclass1
+                1 -> subclass = careers[groupPosition].subclass2
+                2 -> subclass = careers[groupPosition].subclass3
+            }
+            CharCreationController.playerObject.career = careers[groupPosition].name
+            CharCreationController.playerObject.specialization = subclass
+            view.currentCareer.text = careers[groupPosition].name + " - " + subclass
+            false
+        }
 
         return view
     }
