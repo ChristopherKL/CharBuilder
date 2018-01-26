@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/char_name_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/char_name_input_field"
+            android:hint="@string/character_name"
+            android:inputType="text"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/completion_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/complete_charcreation"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+</android.support.constraint.ConstraintLayout>
