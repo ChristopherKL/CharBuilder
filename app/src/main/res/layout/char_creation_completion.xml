@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/char_name_input_field"
             android:hint="@string/character_name"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
     </android.support.design.widget.TextInputLayout>
 

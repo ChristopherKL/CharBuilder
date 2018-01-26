@@ -139,17 +139,17 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
                 1 -> return SpeciesFragment.newInstance(position+1)
                 2 -> return CareerFragment.newInstance(position+1)
                 3 -> return ExperienceFragment.newInstance(position+1)
-                6 -> return MotivationFragment.newInstance(position+1)
-                7 -> return AppearanceFragment.newInstance(position+1)
-                8 -> return GearFragment.newInstance(position+1)
-                9 -> return CompletionFragment.newInstance(position+1)
+                5 -> return MotivationFragment.newInstance(position+1)
+                6 -> return AppearanceFragment.newInstance(position+1)
+                7 -> return GearFragment.newInstance(position+1)
+                8 -> return CompletionFragment.newInstance(position+1)
             }
             return PlaceholderFragment.newInstance(99)
         }
 
         override fun getCount(): Int {
-            // Show 10 total pages.
-            return 10
+            // Show 9 total pages.
+            return 9
         }
     }
 

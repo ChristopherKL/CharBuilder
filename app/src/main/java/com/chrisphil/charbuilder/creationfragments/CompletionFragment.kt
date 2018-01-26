@@ -25,11 +25,12 @@ class CompletionFragment : Fragment() {
                 CharCreationController.playerObject.name = view.char_name_input_field.text.toString()
             }
         }
-        if(CharCreationController.playerObject.name != ""){view?.char_name_input_field?.setText(CharCreationController.playerObject.credits, TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.name != ""){view?.char_name_input_field?.setText(CharCreationController.playerObject.name, TextView.BufferType.EDITABLE)}
 
         view.completion_button.setOnClickListener {
             val player : Player = CharCreationController.playerObject
-            if(player.obligation != "" && player.species != "" && player.career != "" && player.specialization != "" && player.motivation != "" && player.name != ""){
+            if(player.obligation != "" && player.species != "" && player.specialization != "" && player.motivation != "" && player.name != ""){
+                CharCreationController.saveCurrentPlayer()
                 activity.finish()
             }
             else{
@@ -42,6 +43,20 @@ class CompletionFragment : Fragment() {
 
     private fun showCompletionDialogue() {
         var dialogBuilder = AlertDialog.Builder(context)
+        dialogBuilder.setTitle(getString(R.string.dialog_missing_values_title))
+        var messageString : String = getString(R.string.dialog_missing_values_string)
+        if(CharCreationController.playerObject.obligation == ""){messageString += "- " + getString(R.string.cc_obligation) + "\n"}
+        if(CharCreationController.playerObject.species == ""){messageString += "- " + getString(R.string.cc_species) + "\n"}
+        if(CharCreationController.playerObject.specialization == ""){messageString += "- " + getString(R.string.cc_specialization) + "\n"}
+        if(CharCreationController.playerObject.motivation == ""){messageString += "- " + getString(R.string.cc_motivation) + "\n"}
+        if(CharCreationController.playerObject.name == ""){messageString += "- " + getString(R.string.character_name)}
+        dialogBuilder.setMessage(messageString)
+        val dialog = dialogBuilder.create()
+        dialog.setButton(AlertDialog.BUTTON_NEUTRAL,getString(R.string.dialog_ok),{
+            _, _ ->
+            dialog.dismiss()
+        })
+        dialog.show()
     }
 
     companion object {

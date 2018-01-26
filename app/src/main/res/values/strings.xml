@@ -134,6 +134,8 @@
     <!-- Char Creation Completion -->
     <string name="complete_charcreation">Charaktererstellung\n abschließen</string>
     <string name="character_name">Name des Charakters</string>
+    <string name="dialog_missing_values_title">Fehlende Werte</string>
+    <string name="dialog_missing_values_string">Zum Abschluss fehlen folgende Werte:\n</string>
 
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
