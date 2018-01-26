@@ -25,7 +25,7 @@ class DiceHelper {
         fun random(range: IntRange) = Random().nextInt(range.last - range.start) + range.start
 
         fun roll() : DiceSide {
-            return sites[random(IntRange(0,sites.count()-1))]
+            return sites[random(IntRange(0,sites.count()))]
         }
     }
 
