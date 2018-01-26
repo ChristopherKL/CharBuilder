@@ -25,7 +25,7 @@ class CompletionFragment : Fragment() {
                 CharCreationController.playerObject.name = view.char_name_input_field.text.toString()
             }
         }
-        if(CharCreationController.playerObject.name != ""){view?.char_name_input_field?.setText(CharCreationController.playerObject.credits, TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.name != ""){view?.char_name_input_field?.setText(CharCreationController.playerObject.name, TextView.BufferType.EDITABLE)}
 
         view.completion_button.setOnClickListener {
             val player : Player = CharCreationController.playerObject
