@@ -1,4 +1,4 @@
-package com.chrisphil.charbuilder.creationfragments
+package com.chrisphil.charbuilder.detailsfragments
 
 import android.support.v7.app.AlertDialog
 import android.os.Bundle
@@ -10,13 +10,12 @@ import com.chrisphil.charbuilder.R
 import android.widget.BaseAdapter
 import android.widget.Toast
 import com.chrisphil.charbuilder.controller.CharDetailsController
+import com.chrisphil.charbuilder.creationfragments.ExperienceFragment
+import kotlinx.android.synthetic.main.char_creation_specialization.view.*
 import kotlinx.android.synthetic.main.char_creation_specialization_edit_dialog.view.*
 import kotlinx.android.synthetic.main.skill_list_element.view.*
 
 class ExperienceDetailFragment : Fragment() {
-
-    data class Skill(var name : String,
-                     var description : String)
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater!!.inflate(R.layout.char_creation_specialization, container, false)
@@ -25,7 +24,7 @@ class ExperienceDetailFragment : Fragment() {
 
         view.add_skill_button.setOnClickListener {
             if(view.tw_skill.text.toString() != "" && view.et_skill_desc.text.toString() != ""){
-                CharDetailsController.playerObject.skills.add(Skill(view.tw_skill.text.toString(),view.et_skill_desc.text.toString()))
+                CharDetailsController.playerObject.skills.add(ExperienceFragment.Skill(view.tw_skill.text.toString(),view.et_skill_desc.text.toString()))
                 view.tw_skill.text.clear()
                 view.et_skill_desc.text.clear()
             }else{
@@ -70,7 +69,7 @@ class ExperienceDetailFragment : Fragment() {
         }
     }
 
-    inner class SkillListAdapter(var skills: ArrayList<Skill>) : BaseAdapter() {
+    inner class SkillListAdapter(var skills: ArrayList<ExperienceFragment.Skill>) : BaseAdapter() {
 
         override fun getItem(p0: Int): Any {
             return skills[p0]

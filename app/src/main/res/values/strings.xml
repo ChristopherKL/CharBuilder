@@ -155,10 +155,23 @@
     <!-- Char Details -->
     <string name="title_activity_char_details_controller">CharDetailsController</string>
     <string name="cd_general">Allgemein</string>
+    <string name="cd_general_info">Allgemeine Informationen</string>
     <string name="cancel_details_dialog_message">Möchten sie die Bearbeitung wirklich abbrechen?
         Alle nicht gespeicherten Daten gehen verloren.</string>
     <string name="cancel_details_dialog_title">Bearbeitung abbrechen</string>
 
+    <!-- Char Details Attributes-->
+    <string name="attribute_brawn">Stärke</string>
+    <string name="attribute_agility">Gewandheit</string>
+    <string name="attribute_intellect">Intelligenz</string>
+    <string name="attribute_cunning">List</string>
+    <string name="attribute_willpower">Willenskraft</string>
+    <string name="attribute_presence">Charisma</string>
+    <string name="attribute_woundthreshold">Wundschwelle</string>
+    <string name="attribute_strainthreshold">Erschöpfungsschwelle</string>
+    <string name="attribute_defense">Verteidigung</string>
+    <string name="attribute_soakvalue">Absorption</string>
+    
     <!-- Import/Export -->
     <string name="importing">Herunterladen</string>
     <string name="exporting">Hochladen</string>
