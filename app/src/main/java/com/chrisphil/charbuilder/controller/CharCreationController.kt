@@ -55,7 +55,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_obligation)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_species)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_career)))
-        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_experience)))
+        char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_skills)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_attributes)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_motivation)))
         char_tab_layout.addTab(char_tab_layout.newTab().setText(resources.getString(R.string.cc_appearance)))
@@ -122,6 +122,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
 
         dialog.setButton(AlertDialog.BUTTON_POSITIVE,resources.getString(R.string.cancel_dialog_yes),{
             _, _ ->
+            newPlayer()
             finish()
         })
 

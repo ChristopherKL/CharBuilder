@@ -39,6 +39,7 @@
     <string name="cc_attributes">Attribute</string>
     <string name="cc_motivation">Motivation</string>
     <string name="cc_appearance">Aussehen</string>
+    <string name="cc_skills">Skills</string>
     <string name="cc_gear">Ausrüstung</string>
     <string name="cc_completion">Abschluss</string>
 
@@ -152,6 +153,7 @@
     <string name="dice_result">Ergebnis</string>
     
     <!-- Char Details -->
+    <string name="title_activity_char_details_controller">CharDetailsController</string>
     <string name="cd_general">Allgemein</string>
     <string name="cancel_details_dialog_message">Möchten sie die Bearbeitung wirklich abbrechen?
         Alle nicht gespeicherten Daten gehen verloren.</string>
@@ -170,5 +172,11 @@
     <string name="usersettings">Benutzerverwaltung</string>
     <string name="iesettings">Funktionen</string>
     <string name="resetpw">Password zurücksetzen</string>
-    <string name="title_activity_char_details_controller">CharDetailsController</string>
+  
+    <!-- Skill -->
+    <string name="add_skill">Skill hinzufügen</string>
+    <string name="name">Name:</string>
+    <string name="skill_description">Beschreibung:</string>
+    <string name="skill_edit_dialog_title">Skill bearbeiten</string>
+    <string name="complete_skill_edit">Änderungen übernehmen</string>
 </resources>

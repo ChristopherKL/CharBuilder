@@ -1,5 +1,7 @@
 package com.chrisphil.charbuilder
 
+import com.chrisphil.charbuilder.creationfragments.ExperienceFragment
+
 class Player {
     var obligation: String = ""
     var obligation2 : String = ""
@@ -17,6 +19,7 @@ class Player {
     var experience : Int = 0
     var career : String = ""
     var specialization : String = ""
+    var skills : ArrayList<ExperienceFragment.Skill> = ArrayList()
     var motivation : String = ""
     var motivation2 : String = ""
     var gender : String = ""
