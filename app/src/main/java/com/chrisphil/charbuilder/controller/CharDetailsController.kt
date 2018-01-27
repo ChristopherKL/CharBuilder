@@ -12,7 +12,6 @@ import com.chrisphil.charbuilder.Player
 import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.creationfragments.ExperienceDetailFragment
 import com.chrisphil.charbuilder.detailsfragments.AppearanceDetailFragment
-import com.chrisphil.charbuilder.detailsfragments.AttributeDetailFragment
 import com.chrisphil.charbuilder.detailsfragments.GearDetailFragment
 import com.chrisphil.charbuilder.detailsfragments.GeneralDetailFragment
 import kotlinx.android.synthetic.main.char_details.*
@@ -45,10 +44,9 @@ class CharDetailsController : AppCompatActivity(){
         setSupportActionBar(char_details_toolbar)
 
         char_details_tab_layout.addTab(char_details_tab_layout.newTab().setText(resources.getString(R.string.cd_general)))
+        char_details_tab_layout.addTab(char_details_tab_layout.newTab().setText(resources.getString(R.string.cc_skills)))
         char_details_tab_layout.addTab(char_details_tab_layout.newTab().setText(resources.getString(R.string.cc_gear)))
-        char_details_tab_layout.addTab(char_details_tab_layout.newTab().setText(resources.getString(R.string.cc_attributes)))
         char_details_tab_layout.addTab(char_details_tab_layout.newTab().setText(resources.getString(R.string.cc_appearance)))
-        //char_details_tab_layout.addTab(char_details_tab_layout.newTab().setText(resources.getString(R.string.cc_skills)))
 
         char_details_tab_layout.tabGravity = TabLayout.GRAVITY_FILL
         char_details_tab_layout.tabMode = TabLayout.MODE_SCROLLABLE
@@ -123,17 +121,16 @@ class CharDetailsController : AppCompatActivity(){
         override fun getItem(position: Int): Fragment {
             when(position){
                 0 -> return GeneralDetailFragment.newInstance(position+1)
-                1 -> return AttributeDetailFragment.newInstance(position+1)
-                2 -> return ExperienceDetailFragment.newInstance(position+1)
-                3 -> return GearDetailFragment.newInstance(position+1)
-                4 -> return AppearanceDetailFragment.newInstance(position+1)
+                1 -> return ExperienceDetailFragment.newInstance(position+1)
+                2 -> return GearDetailFragment.newInstance(position+1)
+                3 -> return AppearanceDetailFragment.newInstance(position+1)
             }
             return CharCreationController.PlaceholderFragment.newInstance(99)
         }
 
         override fun getCount(): Int {
-            // Show 5 total pages.
-            return 5
+            // Show 4 total pages.
+            return 4
         }
     }
 }
