@@ -4,7 +4,8 @@
     <string name="description">und das nicht</string>
     <string name="title_activity_main_navigation_drawer">CharBuilder</string>
     <string name="cancel">Abbrechen</string>
-    <string name="dialog_ok">Ok</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="dialog_ok">OK</string>
 
     <!-- Main Navigation Drawer Menu -->
     <string name="action_settings">Einstellungen</string>
@@ -14,9 +15,9 @@
     <string name="dices">Würfeltool</string>
 
     <!-- Character Creation Cancel Dialog -->
-    <string name="cancel_dialog_message">Möchten sie die Erstellung wirklich abbrechen?
+    <string name="cancel_creation_dialog_message">Möchten sie die Erstellung wirklich abbrechen?
         Alle nicht gespeicherten Daten gehen verloren.</string>
-    <string name="cancel_dialog_title">Erstellung abbrechen</string>
+    <string name="cancel_creation_dialog_title">Erstellung abbrechen</string>
     <string name="cancel_dialog_yes">Ja</string>
     <string name="cancel_dialog_no">Nein</string>
 
@@ -135,6 +136,8 @@
     <!-- Char Creation Completion -->
     <string name="complete_charcreation">Charaktererstellung\n abschließen</string>
     <string name="character_name">Name des Charakters</string>
+    <string name="dialog_missing_values_title">Fehlende Werte</string>
+    <string name="dialog_missing_values_string">Zum Abschluss fehlen folgende Werte:\n</string>
 
     <!-- Preferences -->
     <string name="pref_general_title">Allgemein</string>
@@ -148,6 +151,13 @@
     <string name="button_roll_dice">Würfeln</string>
     <string name="button_roll_history">Verlauf anzeigen</string>
     <string name="dice_result">Ergebnis</string>
+    
+    <!-- Char Details -->
+    <string name="title_activity_char_details_controller">CharDetailsController</string>
+    <string name="cd_general">Allgemein</string>
+    <string name="cancel_details_dialog_message">Möchten sie die Bearbeitung wirklich abbrechen?
+        Alle nicht gespeicherten Daten gehen verloren.</string>
+    <string name="cancel_details_dialog_title">Bearbeitung abbrechen</string>
 
     <!-- Import/Export -->
     <string name="importing">Herunterladen</string>
@@ -162,7 +172,7 @@
     <string name="usersettings">Benutzerverwaltung</string>
     <string name="iesettings">Funktionen</string>
     <string name="resetpw">Password zurücksetzen</string>
-
+  
     <!-- Skill -->
     <string name="add_skill">Skill hinzufügen</string>
     <string name="name">Name:</string>

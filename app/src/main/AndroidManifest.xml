@@ -28,7 +28,10 @@
             android:name=".controller.CharCreationController"
             android:label="@string/title_activity_char_creation_controller"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <activity
+            android:name=".controller.CharDetailsController"
+            android:label="@string/title_activity_char_details_controller"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

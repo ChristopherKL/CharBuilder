@@ -115,8 +115,8 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
 
     private fun showCancelDialog(){
         val builder = AlertDialog.Builder(this)
-        builder.setMessage(R.string.cancel_dialog_message)
-                .setTitle(R.string.cancel_dialog_title)
+        builder.setMessage(R.string.cancel_creation_dialog_message)
+                .setTitle(R.string.cancel_creation_dialog_title)
 
         val dialog = builder.create()
 
@@ -149,7 +149,7 @@ class CharCreationController : AppCompatActivity(), OnDataPass{
         }
 
         override fun getCount(): Int {
-            // Show 10 total pages.
+            // Show 9 total pages.
             return 9
         }
     }
