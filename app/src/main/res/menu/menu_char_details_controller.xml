@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.chrisphil.charbuilder.controller.CharDetailsController">
+    <item
+        android:id="@+id/action_confirm_details"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_toolbar_confirm"
+        android:title="@string/confirm"/>
+    <item
+        android:id="@+id/action_abort_details"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_toolbar_cancel"
+        android:title="@string/cancel"/>
+</menu>
+

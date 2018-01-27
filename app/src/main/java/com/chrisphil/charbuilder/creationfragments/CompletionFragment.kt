@@ -31,6 +31,7 @@ class CompletionFragment : Fragment() {
             val player : Player = CharCreationController.playerObject
             if(player.obligation != "" && player.species != "" && player.specialization != "" && player.motivation != "" && player.name != ""){
                 CharCreationController.saveCurrentPlayer()
+                CharCreationController.newPlayer()
                 activity.finish()
             }
             else{
