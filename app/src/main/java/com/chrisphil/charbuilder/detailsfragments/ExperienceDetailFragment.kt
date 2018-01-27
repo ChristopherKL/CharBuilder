@@ -1,4 +1,4 @@
-package com.chrisphil.charbuilder.creationfragments
+package com.chrisphil.charbuilder.detailsfragments
 
 import android.support.v7.app.AlertDialog
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.chrisphil.charbuilder.R
 import android.widget.BaseAdapter
 import android.widget.Toast
 import com.chrisphil.charbuilder.controller.CharDetailsController
+import com.chrisphil.charbuilder.creationfragments.ExperienceFragment
 import kotlinx.android.synthetic.main.char_creation_specialization.view.*
 import kotlinx.android.synthetic.main.char_creation_specialization_edit_dialog.view.*
 import kotlinx.android.synthetic.main.skill_list_element.view.*

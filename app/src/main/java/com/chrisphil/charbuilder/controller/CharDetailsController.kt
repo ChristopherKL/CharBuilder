@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.*
 import com.chrisphil.charbuilder.Player
 import com.chrisphil.charbuilder.R
-import com.chrisphil.charbuilder.creationfragments.ExperienceDetailFragment
+import com.chrisphil.charbuilder.detailsfragments.ExperienceDetailFragment
 import com.chrisphil.charbuilder.detailsfragments.AppearanceDetailFragment
 import com.chrisphil.charbuilder.detailsfragments.GearDetailFragment
 import com.chrisphil.charbuilder.detailsfragments.GeneralDetailFragment
