@@ -6,20 +6,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView
 import android.widget.TextView;
+import kotlinx.android.synthetic.main.char_list.view.*
 
 /**
  * Created by Phil on 09.11.2017.
  */
-class CharAdapter (private val charList:List<CharInfo> ) :  RecyclerView.Adapter<CharAdapter.CharViewHolder>(){
+class CharAdapter (private val charList:ArrayList<Player> ) :  RecyclerView.Adapter<CharAdapter.CharViewHolder>(){
 
     override fun getItemCount(): Int {
         return charList.size
     }
 
     override fun onBindViewHolder(holder: CharViewHolder, position: Int) {
-        val ci : CharInfo = charList.get(position)
+        val ci : Player = MainNavigationDrawer.characterList.get(position)
         holder.vName.text = ci.name
-        holder.vRPG.text = ci.rpg
+        holder.vSpecies.text = ci.species
+        holder.vBeruf.text = ci.career
+        holder.vSpec.text = ci.specialization
+        when(ci.species){
+            "Droide" -> holder.vSpeciesImage.setImageResource(R.drawable.droide_trans)
+            "Gand" -> holder.vSpeciesImage.setImageResource(R.drawable.gand_trans)
+            "Rodianer" -> holder.vSpeciesImage.setImageResource(R.drawable.rodian_trans)
+            "Twi'lek" -> holder.vSpeciesImage.setImageResource(R.drawable.twi_lek)
+            "Trandoshaner" -> holder.vSpeciesImage.setImageResource(R.drawable.trandoshan)
+            "Mensch" -> holder.vSpeciesImage.setImageResource(R.drawable.human_trans)
+            "Bothaner" -> holder.vSpeciesImage.setImageResource(R.drawable.bothan_trans)
+            "Wookiee" -> holder.vSpeciesImage.setImageResource(R.drawable.wookie_trans)
+        }
+
     }
 
     override fun  onCreateViewHolder(viewGroup: ViewGroup, i : Int) : CharViewHolder {
@@ -28,8 +42,10 @@ class CharAdapter (private val charList:List<CharInfo> ) :  RecyclerView.Adapter
     }
 
     class CharViewHolder constructor(v: View) : RecyclerView.ViewHolder(v) {
-        val vImage : ImageView  = v.findViewById(R.id.charPicture)
-        val vName : TextView = v.findViewById(R.id.charName)
-        val vRPG : TextView = v.findViewById(R.id.charRuleset)
+        val vName : TextView = v.charName
+        val vSpecies : TextView = v.charSpezies
+        val vBeruf : TextView = v.charBeruf
+        val vSpec : TextView = v.charSpec
+        val vSpeciesImage : ImageView = v.species_picture
     }
 }

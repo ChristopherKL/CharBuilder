@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.chrisphil.charbuilder.MainNavigationDrawer
 import com.chrisphil.charbuilder.Player
 import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.controller.CharCreationController
@@ -28,10 +29,13 @@ class CompletionFragment : Fragment() {
         if(CharCreationController.playerObject.name != ""){view?.char_name_input_field?.setText(CharCreationController.playerObject.name, TextView.BufferType.EDITABLE)}
 
         view.completion_button.setOnClickListener {
+            if(!view.char_name_input_field.text.isEmpty())
+                CharCreationController.playerObject.name = view.char_name_input_field.text.toString()
             val player : Player = CharCreationController.playerObject
             if(player.obligation != "" && player.species != "" && player.specialization != "" && player.motivation != "" && player.name != ""){
-                CharCreationController.saveCurrentPlayer()
+                CharCreationController.saveCurrentPlayer(context)
                 CharCreationController.newPlayer()
+                view.char_name_input_field.text.clear()
                 activity.finish()
             }
             else{

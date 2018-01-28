@@ -32,7 +32,7 @@ class AppearanceFragment : Fragment(){
 
         view?.ageEditText?.setOnFocusChangeListener{ _, _ ->
             if(!view.ageEditText.hasFocus() && !view.ageEditText.text.isEmpty()) {
-                CharCreationController.playerObject.age = view.birthdayEditText?.text.toString().toInt()
+                CharCreationController.playerObject.age = view.ageEditText?.text.toString().toInt()
             }
         }
 
