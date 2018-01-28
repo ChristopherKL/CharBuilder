@@ -2,6 +2,8 @@ package com.chrisphil.charbuilder.creationfragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,107 +20,214 @@ class GearFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.char_creation_gear, container, false)
 
-        view?.weaponName1?.setOnFocusChangeListener { _, _ ->
-            if (!view.weaponName1.hasFocus()) {
+        view.weaponName1?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.weapons[0] = view.weaponName1.text.toString()
             }
-        }
+        })
 
-        view?.weaponName2?.setOnFocusChangeListener { _, _ ->
-            if (!view.weaponName1.hasFocus()) {
+        view.weaponName2?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.weapons[1] = view.weaponName2.text.toString()
             }
-        }
+        })
 
-        view?.weaponName3?.setOnFocusChangeListener { _, _ ->
-            if (!view.weaponName3.hasFocus()) {
+        view?.weaponName3?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.weapons[2] = view.weaponName3.text.toString()
             }
-        }
+        })
 
-        view?.weaponDamage1?.setOnFocusChangeListener { _, _ ->
-            if (!view.weaponDamage1.hasFocus()) {
+        view.weaponDamage1?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.weaponDamage[0] = view.weaponDamage1.text.toString()
             }
-        }
+        })
 
-        view?.weaponDamage2?.setOnFocusChangeListener { _, _ ->
-            if (!view.weaponDamage2.hasFocus()) {
+        view.weaponDamage2?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.weaponDamage[1] = view.weaponDamage2.text.toString()
             }
-        }
+        })
 
-        view?.weaponDamage3?.setOnFocusChangeListener { _, _ ->
-            if (!view.weaponDamage3.hasFocus()) {
+        view.weaponDamage3?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.weaponDamage[2] = view.weaponDamage3.text.toString()
             }
-        }
+        })
 
-        view?.itemName1?.setOnFocusChangeListener { _, _ ->
-            if (!view.itemName1.hasFocus()) {
+        view.itemName1?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.items[0] = view.itemName1.text.toString()
             }
-        }
+        })
 
-        view?.itemName2?.setOnFocusChangeListener { _, _ ->
-            if (!view.itemName2.hasFocus()) {
+        view.itemName2?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.items[1] = view.itemName2.text.toString()
             }
-        }
+        })
 
-        view?.itemName3?.setOnFocusChangeListener { _, _ ->
-            if (!view.itemName3.hasFocus()) {
+        view.itemName3?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.items[2] = view.itemName3.text.toString()
             }
-        }
+        })
 
-        view?.itemName4?.setOnFocusChangeListener { _, _ ->
-            if (!view.itemName4.hasFocus()) {
+        view.itemName4?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.items[3] = view.itemName4.text.toString()
             }
-        }
+        })
 
-        view?.itemName5?.setOnFocusChangeListener { _, _ ->
-            if (!view.itemName5.hasFocus()) {
+        view.itemName5?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.items[4] = view.itemName5.text.toString()
             }
-        }
+        })
 
-        view?.commentText1?.setOnFocusChangeListener { _, _ ->
-            if (!view.commentText1.hasFocus()) {
+        view.commentText1?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.itemAnnotations[0] = view.commentText1.text.toString()
             }
-        }
+        })
 
-        view?.commentText2?.setOnFocusChangeListener { _, _ ->
-            if (!view.commentText2.hasFocus()) {
+        view?.commentText2?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.itemAnnotations[1] = view.commentText2.text.toString()
             }
-        }
+        })
 
-        view?.commentText3?.setOnFocusChangeListener { _, _ ->
-            if (!view.commentText3.hasFocus()) {
+        view.commentText3?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.itemAnnotations[2] = view.commentText3.text.toString()
             }
-        }
+        })
 
-        view?.commentText4?.setOnFocusChangeListener { _, _ ->
-            if (!view.commentText4.hasFocus()) {
+        view.commentText4?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.itemAnnotations[3] = view.commentText4.text.toString()
             }
-        }
+        })
 
-        view?.commentText5?.setOnFocusChangeListener { _, _ ->
-            if (!view.commentText5.hasFocus()) {
+        view.commentText5?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharCreationController.playerObject.itemAnnotations[4] = view.commentText5.text.toString()
             }
-        }
+        })
 
-        view?.creditsText?.setOnFocusChangeListener { _, _ ->
-            if (!view.creditsText.hasFocus() && !view.creditsText.text.isEmpty()) {
-                CharCreationController.playerObject.credits = view.creditsText.text.toString().toInt()
+        view.creditsText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
             }
-        }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(view.creditsText.text.isEmpty()){
+                    CharCreationController.playerObject.credits = 0
+                }
+                else{
+                    CharCreationController.playerObject.credits = view.creditsText.text.toString().toInt()
+                }
+            }
+        })
 
         checkEditText(view)
 
