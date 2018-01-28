@@ -32,7 +32,7 @@ class CharListController : Fragment(){
 
         var recList = view.findViewById<RecyclerView>(R.id.cardList) as RecyclerView
         recList.layoutManager = LinearLayoutManager(activity)
-        recList.adapter = CharAdapter(MainNavigationDrawer.characterList)
+        recList.adapter = CharAdapter(MainNavigationDrawer.characterList,context)
 
         var fab = view.findViewById<FloatingActionButton>(R.id.newCharButton) as FloatingActionButton
         fab.setOnClickListener{

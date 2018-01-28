@@ -1,17 +1,21 @@
 package com.chrisphil.charbuilder
 
+import android.content.Intent
+import android.content.Context
 import android.view.ViewGroup
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
+import android.support.v7.widget.RecyclerView
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.ImageView
-import android.widget.TextView;
+import android.widget.TextView
+import com.chrisphil.charbuilder.controller.CharDetailsController
 import kotlinx.android.synthetic.main.char_list.view.*
 
 /**
  * Created by Phil on 09.11.2017.
  */
-class CharAdapter (private val charList:ArrayList<Player> ) :  RecyclerView.Adapter<CharAdapter.CharViewHolder>(){
+class CharAdapter (private val charList:ArrayList<Player>,val context: Context ) :  RecyclerView.Adapter<CharAdapter.CharViewHolder>(){
 
     override fun getItemCount(): Int {
         return charList.size
@@ -32,6 +36,17 @@ class CharAdapter (private val charList:ArrayList<Player> ) :  RecyclerView.Adap
             "Mensch" -> holder.vSpeciesImage.setImageResource(R.drawable.human_trans)
             "Bothaner" -> holder.vSpeciesImage.setImageResource(R.drawable.bothan_trans)
             "Wookiee" -> holder.vSpeciesImage.setImageResource(R.drawable.wookie_trans)
+        }
+
+        holder.itemView.setOnClickListener {
+            CharDetailsController.playerObject = ci
+            val intent = Intent(context,CharDetailsController::class.java)
+            context.startActivity(intent)
+        }
+
+        holder.itemView.setOnLongClickListener {
+            Log.d("Test","Du geiler Drücker")
+            true
         }
 
     }
