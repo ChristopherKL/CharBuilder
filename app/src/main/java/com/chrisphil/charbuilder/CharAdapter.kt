@@ -9,7 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.chrisphil.charbuilder.controller.CharDetailsController
+import com.chrisphil.charbuilder.help.PdfExport
 import kotlinx.android.synthetic.main.char_list.view.*
 
 /**
@@ -46,6 +48,8 @@ class CharAdapter (private val charList:ArrayList<Player>,val context: Context )
 
         holder.itemView.setOnLongClickListener {
             Log.d("Test","Du geiler Drücker")
+            PdfExport.exportPlayerPdf(ci)
+            Toast.makeText(context, "PDF im Downloadsordner gespeichert", Toast.LENGTH_LONG).show()
             true
         }
 
