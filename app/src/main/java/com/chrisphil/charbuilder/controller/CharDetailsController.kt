@@ -39,7 +39,7 @@ class CharDetailsController : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.char_creation)
+        setContentView(R.layout.char_details)
 
         setSupportActionBar(char_details_toolbar)
 
@@ -75,7 +75,7 @@ class CharDetailsController : AppCompatActivity(){
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_char_creation_controller, menu)
+        menuInflater.inflate(R.menu.menu_char_details_controller, menu)
         return true
     }
 
