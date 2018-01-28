@@ -192,4 +192,16 @@
     <string name="skill_description">Beschreibung:</string>
     <string name="skill_edit_dialog_title">Skill bearbeiten</string>
     <string name="complete_skill_edit">Änderungen übernehmen</string>
+
+    <!-- Welcome -->
+    <string name="character_count">verschiedene Charaktere</string>
+    <string name="dice_throw_count">sind die Würfel gefallen</string>
+    <string name="credit_count">Credits insgesamt</string>
+    <string name="favorite_species">lieblings Spezies</string>
+    <string name="welcome_message_title">Willkommen!</string>
+    <string name="quickstart_menu_title">Schnellauswahl:</string>
+    <string name="quickstart_create_character">Neuen Charakter erstellen</string>
+    <string name="quickstart_dice_tool">Würfeln</string>
+    <string name="welcome_message_end">Weiter unten kannst du noch ein paar Statistiken einsehen.</string>
+    <string name="welcome_message_text">Dies ist eine App um dir deine eigenen Charaktere für dein lieblings Star Wars - Rollenspiel zu erstellen!</string>
 </resources>
