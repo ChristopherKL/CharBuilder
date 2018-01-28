@@ -1,5 +1,6 @@
 package com.chrisphil.charbuilder
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.Context
 import android.view.ViewGroup
@@ -9,8 +10,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.chrisphil.charbuilder.controller.CharDetailsController
+import com.chrisphil.charbuilder.help.PdfExport
 import kotlinx.android.synthetic.main.char_list.view.*
+import kotlinx.android.synthetic.main.char_list_longclick_dialog.view.*
 
 /**
  * Created by Phil on 09.11.2017.
@@ -40,12 +44,32 @@ class CharAdapter (private val charList:ArrayList<Player>,val context: Context )
 
         holder.itemView.setOnClickListener {
             CharDetailsController.playerObject = ci
+            CharDetailsController.currentPlayerID = position
             val intent = Intent(context,CharDetailsController::class.java)
             context.startActivity(intent)
         }
 
         holder.itemView.setOnLongClickListener {
             Log.d("Test","Du geiler Drücker")
+            var dialogBuilder = AlertDialog.Builder(context)
+            var view = LayoutInflater.from(context).inflate(R.layout.char_list_longclick_dialog,null)
+            dialogBuilder.setView(view)
+            var dialog = dialogBuilder.create()
+            view.deleteButton.setOnClickListener {
+                MainNavigationDrawer.characterList.removeAt(position)
+                this.notifyDataSetChanged()
+                Toast.makeText(context,"Charakter gelöscht",Toast.LENGTH_LONG)
+                dialog.dismiss()
+            }
+            view.exportPDFButton.setOnClickListener {
+                PdfExport.exportPlayerPdf(ci)
+                dialog.dismiss()
+            }
+            dialog.setButton("Abbrechen", {
+                _, _ ->
+                dialog.dismiss()
+            })
+            dialog.show()
             true
         }
 

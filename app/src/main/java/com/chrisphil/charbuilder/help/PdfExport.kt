@@ -18,7 +18,7 @@ class PdfExport {
     companion object {
 
         @Throws(DocumentException::class)
-        private fun exportPlayerPdf(exportPlayer: Player) {
+        fun exportPlayerPdf(exportPlayer: Player) {
             val dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
             val file = File(dir, exportPlayer.name)
 

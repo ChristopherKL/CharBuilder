@@ -1,5 +1,6 @@
 package com.chrisphil.charbuilder.controller
 
+import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.*
+import com.chrisphil.charbuilder.MainNavigationDrawer
 import com.chrisphil.charbuilder.Player
 import com.chrisphil.charbuilder.R
 import com.chrisphil.charbuilder.detailsfragments.ExperienceDetailFragment
@@ -22,19 +24,20 @@ import kotlinx.android.synthetic.main.char_details.*
 class CharDetailsController : AppCompatActivity(){
 
     companion object {
+        var currentPlayerID : Int = -1
         var playerObject : Player = Player()
 
         fun newPlayer(){
             this.playerObject = Player()
         }
 
-        fun saveCurrentPlayer(){
-
+        fun saveCurrentPlayer(context : Context){
+            MainNavigationDrawer.loadPlayerList(context)
+            MainNavigationDrawer.characterList.removeAt(currentPlayerID)
+            MainNavigationDrawer.characterList.add(currentPlayerID, playerObject)
+            MainNavigationDrawer.savePlayerList(context)
         }
 
-        fun loadCurrentPlayer(){
-
-        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,7 +86,7 @@ class CharDetailsController : AppCompatActivity(){
         val id = item.itemId
 
         if(id == R.id.action_confirm_details) {
-            saveCurrentPlayer()
+            saveCurrentPlayer(applicationContext)
             newPlayer()
             finish()
             return true
