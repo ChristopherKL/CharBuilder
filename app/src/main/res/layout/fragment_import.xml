@@ -26,17 +26,11 @@
             android:layout_weight="4"
             android:paddingLeft="10dp">
 
-            <ScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
                 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/listviewOnline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:choiceMode="singleChoice"
                     android:listSelector="@color/listSelectColor" />
-            </ScrollView>
         </android.support.v7.widget.CardView>
 
         <Button

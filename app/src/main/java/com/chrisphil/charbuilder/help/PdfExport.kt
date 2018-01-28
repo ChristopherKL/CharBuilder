@@ -140,6 +140,7 @@ class PdfExport {
                 table.addCell(getCell(exportPlayer.itemAnnotations[3], normalFont))
                 table.addCell(getCell(exportPlayer.items[4], normalFont))
                 table.addCell(getCell(exportPlayer.itemAnnotations[4], normalFont))
+                document.add(table)
 
                 document.add(p)
                 document.add(Paragraph("Credits:   " + exportPlayer.credits.toString()))
@@ -155,7 +156,7 @@ class PdfExport {
                     table.addCell(getCell(i.name, normalFont))
                     table.addCell(getCell(i.description, normalFont))
                 }
-
+                document.add(table)
 
                 document.close()
             } catch (e: Exception) {
