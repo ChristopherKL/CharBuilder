@@ -50,7 +50,6 @@ class CharAdapter (private val charList:ArrayList<Player>,val context: Context )
         }
 
         holder.itemView.setOnLongClickListener {
-            Log.d("Test","Du geiler Drücker")
             var dialogBuilder = AlertDialog.Builder(context)
             var view = LayoutInflater.from(context).inflate(R.layout.char_list_longclick_dialog,null)
             dialogBuilder.setView(view)
@@ -63,6 +62,7 @@ class CharAdapter (private val charList:ArrayList<Player>,val context: Context )
             }
             view.exportPDFButton.setOnClickListener {
                 PdfExport.exportPlayerPdf(ci)
+                Toast.makeText(context, "PDF im Downloadsordner gespeichert", Toast.LENGTH_LONG).show()
                 dialog.dismiss()
             }
             dialog.setButton("Abbrechen", {
