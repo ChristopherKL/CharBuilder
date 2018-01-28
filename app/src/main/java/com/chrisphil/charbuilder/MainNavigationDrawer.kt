@@ -37,6 +37,11 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
             saveArrayToPreference(context,characterList,"player_data","player_list")
         }
 
+        fun savePlayerListCloud(context: Context,chars:String){
+            var settings = context.getSharedPreferences("player_data",0)
+            settings.edit().putString("player_list", chars ).apply()
+        }
+
         fun loadPlayerList(context: Context){
             characterList = loadArrayFromPreference(context,"player_data","player_list")
         }

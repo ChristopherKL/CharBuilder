@@ -175,8 +175,8 @@
     <!-- Import/Export -->
     <string name="importing">Herunterladen</string>
     <string name="exporting">Hochladen</string>
-    <string name="local_chars">Lokale Charaktere</string>
-    <string name="cloud_chars">Cloud Charaktere</string>
+    <string name="local_chars">Charaktere</string>
+    <string name="cloud_chars">Importierte Charaktere</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="back">Zurück</string>
@@ -184,7 +184,7 @@
     <string name="signup_message">Noch keinen Account? Jetzt <a href="#">registrieren!</a></string>
     <string name="usersettings">Benutzerverwaltung</string>
     <string name="iesettings">Funktionen</string>
-    <string name="resetpw">Password zurücksetzen</string>
+    <string name="resetpw">Passwort zurücksetzen</string>
   
     <!-- Skill -->
     <string name="add_skill">Skill hinzufügen</string>
