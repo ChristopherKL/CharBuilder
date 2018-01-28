@@ -34,7 +34,8 @@
             android:textColor="@color/colorBlack"
             android:ems="13"
             android:inputType="text"
-            android:hint="@string/gear_hint_lightsaber"/>
+            android:hint="@string/gear_hint_lightsaber"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/weaponName2"
@@ -42,7 +43,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="13"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/weaponName3"
@@ -50,7 +52,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="13"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
     </LinearLayout>
 
     <LinearLayout
@@ -77,7 +80,8 @@
             android:textColor="@color/colorBlack"
             android:ems="4"
             android:inputType="text"
-            android:hint="@string/gear_damage_example"/>
+            android:hint="@string/gear_damage_example"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/weaponDamage2"
@@ -85,7 +89,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="4"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/weaponDamage3"
@@ -93,7 +98,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="4"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
     </LinearLayout>
 
     <LinearLayout
@@ -120,7 +126,8 @@
             android:textColor="@color/colorBlack"
             android:ems="7"
             android:inputType="text"
-            android:hint="@string/gear_hint_stimpack"/>
+            android:hint="@string/gear_hint_stimpack"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/itemName2"
@@ -128,7 +135,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="7"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/itemName3"
@@ -136,7 +144,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="7"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/itemName4"
@@ -144,7 +153,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="7"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/itemName5"
@@ -152,7 +162,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="7"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
     </LinearLayout>
 
     <LinearLayout
@@ -178,7 +189,8 @@
             android:textColor="@color/colorBlack"
             android:ems="10"
             android:inputType="text"
-            android:hint="@string/gear_hint_comment"/>
+            android:hint="@string/gear_hint_comment"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/commentText2"
@@ -186,7 +198,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="10"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/commentText3"
@@ -194,7 +207,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="10"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/commentText4"
@@ -202,7 +216,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="10"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <EditText
             android:id="@+id/commentText5"
@@ -210,7 +225,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="10"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
     </LinearLayout>
 
     <LinearLayout
@@ -235,7 +251,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:ems="5"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:imeOptions="actionDone"/>
     </LinearLayout>
     </RelativeLayout>
     </ScrollView>

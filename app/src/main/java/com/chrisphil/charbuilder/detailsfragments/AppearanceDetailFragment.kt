@@ -2,6 +2,8 @@ package com.chrisphil.charbuilder.detailsfragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,53 +20,129 @@ class AppearanceDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.char_creation_appearance, container, false)
 
-        view?.genderEditText?.setOnFocusChangeListener { _, _ ->
-            if (!view.genderEditText.hasFocus()) {
+        view.genderEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharDetailsController.playerObject.gender = view.genderEditText.text.toString()
             }
-        }
+        })
 
-        view?.birthdayEditText?.setOnFocusChangeListener { _, _ ->
-            if(!view.birthdayEditText.hasFocus()){
+        view.birthdayEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharDetailsController.playerObject.birthday = view.birthdayEditText?.text.toString()
             }
-        }
+        })
 
-        view?.ageEditText?.setOnFocusChangeListener{ _, _ ->
-            if(!view.ageEditText.hasFocus() && !view.ageEditText.text.isEmpty()) {
-                CharDetailsController.playerObject.age = view.ageEditText?.text.toString().toInt()
+        view.ageEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
             }
-        }
 
-        view?.heightEditText?.setOnFocusChangeListener{ _, _ ->
-            if(!view.heightEditText.hasFocus() && !view.heightEditText.text.isEmpty()){
-                CharDetailsController.playerObject.height = view.heightEditText?.text.toString().toDouble()
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
-        }
 
-        view?.weightEditText?.setOnFocusChangeListener { _, _ ->
-            if(!view.heightEditText.hasFocus() && !view.weightEditText.text.isEmpty()){
-                CharDetailsController.playerObject.weight = view.weightEditText?.text.toString().toDouble()
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(view.heightEditText.text.isEmpty()){
+                    CharDetailsController.playerObject.age = 0
+                }
+                else{
+                    CharDetailsController.playerObject.age = view.ageEditText?.text.toString().toInt()
+                }
             }
-        }
+        })
 
-        view?.haircolorEditText?.setOnFocusChangeListener { _, _ ->
-            if(!view.haircolorEditText.hasFocus()){
+        view.heightEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(view.heightEditText.text.isEmpty()){
+                    CharDetailsController.playerObject.height = 0.0
+                }
+                else{
+                    CharDetailsController.playerObject.height = view.heightEditText?.text.toString().toDouble()
+                }
+            }
+        })
+
+        view.weightEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(view.weightEditText.text.isEmpty()){
+                    CharDetailsController.playerObject.weight = 0.0
+                }
+                else{
+                    CharDetailsController.playerObject.weight = view.weightEditText?.text.toString().toDouble()
+                }
+            }
+        })
+
+
+        view.haircolorEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharDetailsController.playerObject.haircolor = view.haircolorEditText?.text.toString()
             }
-        }
+        })
 
-        view?.eyecolorEditText?.setOnFocusChangeListener { _, _ ->
-            if(!view.eyecolorEditText.hasFocus()){
+        view.eyecolorEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharDetailsController.playerObject.eyecolor = view.eyecolorEditText?.text.toString()
             }
-        }
+        })
 
-        view?.skincolorEditText?.setOnFocusChangeListener { _, _ ->
-            if(!view.skincolorEditText.hasFocus()){
+        view.skincolorEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 CharDetailsController.playerObject.skincolor = view.skincolorEditText?.text.toString()
             }
-        }
+        })
+
+        view.featuresEditText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                CharDetailsController.playerObject.features = view.featuresEditText?.text.toString()
+            }
+        })
 
         checkEditText(view)
 
