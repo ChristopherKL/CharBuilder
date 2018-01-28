@@ -5,7 +5,7 @@
     <color name="colorCardBG">#666464</color>
     <color name="colorAccent">#14223b</color>
     <color name="colorBlack">#000000</color>
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite">#ffffff</color>
     <color name="colorGrey">#696969</color>
     <color name="colorLightGrey">#bebebe</color>
     <color name="listSelectColor">#a6cdf4</color>

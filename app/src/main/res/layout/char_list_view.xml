@@ -24,7 +24,7 @@
         android:layout_margin="16dp"
         android:clickable="true"
         android:src="@drawable/ic_fab_newcharbutton"
-        app:backgroundTint="@color/colorPrimary"
+        app:backgroundTint="@color/colorAccent"
         app:fabSize="normal"
         app:layout_anchorGravity="bottom|right|end"
         app:layout_anchor="@id/cardList">

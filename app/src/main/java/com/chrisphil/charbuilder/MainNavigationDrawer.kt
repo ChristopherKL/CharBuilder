@@ -1,11 +1,13 @@
 package com.chrisphil.charbuilder
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MenuItem
 import com.chrisphil.charbuilder.controller.CharListController
 import com.chrisphil.charbuilder.controller.DiceController
@@ -13,10 +15,46 @@ import com.chrisphil.charbuilder.controller.ImportExportController
 import com.chrisphil.charbuilder.controller.SettingsController
 import com.chrisphil.charbuilder.importExportFragments.IEMenuFragment
 import com.google.firebase.auth.FirebaseAuth
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation_drawer.*
 
 class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    companion object {
+        var characterList : ArrayList<Player>  = ArrayList()
+
+        fun addPlayerToCharList(player: Player){
+            characterList.add(player)
+        }
+
+        fun removePlayerFromCharList(id: Int){
+
+        }
+
+        fun savePlayerList(context: Context){
+            saveArrayToPreference(context,characterList,"player_data","player_list")
+        }
+
+        fun loadPlayerList(context: Context){
+            characterList = loadArrayFromPreference(context,"player_data","player_list")
+        }
+
+        private fun saveArrayToPreference(context: Context, array: ArrayList<Player>, prefName : String, stringName : String){
+            var settings = context.getSharedPreferences(prefName,0)
+            settings.edit().putString(stringName, Gson().toJson(array)).apply()
+        }
+
+        private fun loadArrayFromPreference(context: Context,prefName : String,stringName : String) : ArrayList<Player>{
+            var settings = context.getSharedPreferences(prefName,0)
+            val arrayJson = settings.getString(stringName, Gson().toJson(characterList))
+            val turnsType = object : TypeToken<ArrayList<Player>>() {}.type
+            return Gson().fromJson(arrayJson,turnsType)
+        }
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +68,31 @@ class MainNavigationDrawer : AppCompatActivity(), NavigationView.OnNavigationIte
 
         nav_view.setNavigationItemSelectedListener(this)
 
+        loadPlayerList(applicationContext)
+
+        updateUI()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Test","Character anzahl: " + characterList.count())
+        loadPlayerList(applicationContext)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Test","onStop")
+        savePlayerList(applicationContext)
+    }
+
+    fun updateUI(){
+        var c : Int = 0
+        for(i in characterList){
+            c += i.credits
+        }
+
+        overall_credit_count_tv.text = c.toString()
     }
 
     override fun onBackPressed() {
