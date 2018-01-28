@@ -32,7 +32,7 @@ class AppearanceDetailFragment : Fragment() {
 
         view?.ageEditText?.setOnFocusChangeListener{ _, _ ->
             if(!view.ageEditText.hasFocus() && !view.ageEditText.text.isEmpty()) {
-                CharDetailsController.playerObject.age = view.birthdayEditText?.text.toString().toInt()
+                CharDetailsController.playerObject.age = view.ageEditText?.text.toString().toInt()
             }
         }
 
@@ -66,21 +66,21 @@ class AppearanceDetailFragment : Fragment() {
             }
         }
 
-        checkEditText()
+        checkEditText(view)
 
         return view
     }
 
-    private fun checkEditText(){
-        if(CharDetailsController.playerObject.gender != ""){view?.genderEditText?.setText(CharDetailsController.playerObject.gender, TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.birthday != ""){view?.birthdayEditText?.setText(CharDetailsController.playerObject.birthday, TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.age != 0){view?.ageEditText?.setText(CharDetailsController.playerObject.age, TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.height != 0.0){view?.heightEditText?.setText(CharDetailsController.playerObject.height.toString(), TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.weight != 0.0){view?.weightEditText?.setText(CharDetailsController.playerObject.weight.toString(), TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.haircolor != ""){view?.haircolorEditText?.setText(CharDetailsController.playerObject.haircolor, TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.eyecolor != ""){view?.eyecolorEditText?.setText(CharDetailsController.playerObject.eyecolor, TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.skincolor != ""){view?.skincolorEditText?.setText(CharDetailsController.playerObject.skincolor, TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.features != ""){view?.featuresEditText?.setText(CharDetailsController.playerObject.features, TextView.BufferType.EDITABLE)}
+    private fun checkEditText(view : View){
+        if(CharDetailsController.playerObject.gender != ""){view.genderEditText?.setText(CharDetailsController.playerObject.gender, TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.birthday != ""){view.birthdayEditText?.setText(CharDetailsController.playerObject.birthday, TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.age != 0){view.ageEditText?.setText(CharDetailsController.playerObject.age.toString(), TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.height != 0.0){view.heightEditText?.setText(CharDetailsController.playerObject.height.toString(), TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.weight != 0.0){view.weightEditText?.setText(CharDetailsController.playerObject.weight.toString(), TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.haircolor != ""){view.haircolorEditText?.setText(CharDetailsController.playerObject.haircolor, TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.eyecolor != ""){view.eyecolorEditText?.setText(CharDetailsController.playerObject.eyecolor, TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.skincolor != ""){view.skincolorEditText?.setText(CharDetailsController.playerObject.skincolor, TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.features != ""){view.featuresEditText?.setText(CharDetailsController.playerObject.features, TextView.BufferType.EDITABLE)}
     }
 
     companion object {

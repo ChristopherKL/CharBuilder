@@ -120,29 +120,29 @@ class GearFragment : Fragment() {
             }
         }
 
-        checkEditText()
+        checkEditText(view)
 
         return view
     }
 
-    private fun checkEditText(){
-        if(CharCreationController.playerObject.weapons[0] != ""){view?.weaponName1?.setText(CharCreationController.playerObject.weapons[0], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.weapons[1] != ""){view?.weaponName2?.setText(CharCreationController.playerObject.weapons[1], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.weapons[2] != ""){view?.weaponName3?.setText(CharCreationController.playerObject.weapons[2], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.weaponDamage[0] != ""){view?.weaponDamage1?.setText(CharCreationController.playerObject.weaponDamage[0], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.weaponDamage[1] != ""){view?.weaponDamage2?.setText(CharCreationController.playerObject.weaponDamage[1], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.weaponDamage[2] != ""){view?.weaponDamage3?.setText(CharCreationController.playerObject.weaponDamage[2], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.items[0] != ""){view?.itemName1?.setText(CharCreationController.playerObject.items[0], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.items[1] != ""){view?.itemName2?.setText(CharCreationController.playerObject.items[1], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.items[2] != ""){view?.itemName3?.setText(CharCreationController.playerObject.items[2], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.items[3] != ""){view?.itemName4?.setText(CharCreationController.playerObject.items[3], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.items[4] != ""){view?.itemName5?.setText(CharCreationController.playerObject.items[4], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.itemAnnotations[0] != ""){view?.commentText1?.setText(CharCreationController.playerObject.itemAnnotations[0], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.itemAnnotations[1] != ""){view?.commentText2?.setText(CharCreationController.playerObject.itemAnnotations[1], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.itemAnnotations[2] != ""){view?.commentText3?.setText(CharCreationController.playerObject.itemAnnotations[2], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.itemAnnotations[3] != ""){view?.commentText4?.setText(CharCreationController.playerObject.itemAnnotations[3], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.itemAnnotations[4] != ""){view?.commentText5?.setText(CharCreationController.playerObject.itemAnnotations[4], TextView.BufferType.EDITABLE)}
-        if(CharCreationController.playerObject.credits != 0){view?.creditsText?.setText(CharCreationController.playerObject.credits, TextView.BufferType.EDITABLE)}
+    private fun checkEditText(view : View){
+        if(CharCreationController.playerObject.weapons[0] != ""){view.weaponName1?.setText(CharCreationController.playerObject.weapons[0], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.weapons[1] != ""){view.weaponName2?.setText(CharCreationController.playerObject.weapons[1], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.weapons[2] != ""){view.weaponName3?.setText(CharCreationController.playerObject.weapons[2], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.weaponDamage[0] != ""){view.weaponDamage1?.setText(CharCreationController.playerObject.weaponDamage[0], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.weaponDamage[1] != ""){view.weaponDamage2?.setText(CharCreationController.playerObject.weaponDamage[1], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.weaponDamage[2] != ""){view.weaponDamage3?.setText(CharCreationController.playerObject.weaponDamage[2], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.items[0] != ""){view.itemName1?.setText(CharCreationController.playerObject.items[0], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.items[1] != ""){view.itemName2?.setText(CharCreationController.playerObject.items[1], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.items[2] != ""){view.itemName3?.setText(CharCreationController.playerObject.items[2], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.items[3] != ""){view.itemName4?.setText(CharCreationController.playerObject.items[3], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.items[4] != ""){view.itemName5?.setText(CharCreationController.playerObject.items[4], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.itemAnnotations[0] != ""){view.commentText1?.setText(CharCreationController.playerObject.itemAnnotations[0], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.itemAnnotations[1] != ""){view.commentText2?.setText(CharCreationController.playerObject.itemAnnotations[1], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.itemAnnotations[2] != ""){view.commentText3?.setText(CharCreationController.playerObject.itemAnnotations[2], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.itemAnnotations[3] != ""){view.commentText4?.setText(CharCreationController.playerObject.itemAnnotations[3], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.itemAnnotations[4] != ""){view.commentText5?.setText(CharCreationController.playerObject.itemAnnotations[4], TextView.BufferType.EDITABLE)}
+        if(CharCreationController.playerObject.credits != 0){view.creditsText?.setText(CharCreationController.playerObject.credits.toString(), TextView.BufferType.EDITABLE)}
     }
 
     companion object {

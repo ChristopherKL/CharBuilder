@@ -120,12 +120,12 @@ class GearDetailFragment : Fragment() {
             }
         }
 
-        checkEditText()
+        checkEditText(view)
 
         return view
     }
 
-    private fun checkEditText(){
+    private fun checkEditText(view : View){
         if(CharDetailsController.playerObject.weapons[0] != ""){view?.weaponName1?.setText(CharDetailsController.playerObject.weapons[0], TextView.BufferType.EDITABLE)}
         if(CharDetailsController.playerObject.weapons[1] != ""){view?.weaponName2?.setText(CharDetailsController.playerObject.weapons[1], TextView.BufferType.EDITABLE)}
         if(CharDetailsController.playerObject.weapons[2] != ""){view?.weaponName3?.setText(CharDetailsController.playerObject.weapons[2], TextView.BufferType.EDITABLE)}
@@ -142,7 +142,7 @@ class GearDetailFragment : Fragment() {
         if(CharDetailsController.playerObject.itemAnnotations[2] != ""){view?.commentText3?.setText(CharDetailsController.playerObject.itemAnnotations[2], TextView.BufferType.EDITABLE)}
         if(CharDetailsController.playerObject.itemAnnotations[3] != ""){view?.commentText4?.setText(CharDetailsController.playerObject.itemAnnotations[3], TextView.BufferType.EDITABLE)}
         if(CharDetailsController.playerObject.itemAnnotations[4] != ""){view?.commentText5?.setText(CharDetailsController.playerObject.itemAnnotations[4], TextView.BufferType.EDITABLE)}
-        if(CharDetailsController.playerObject.credits != 0){view?.creditsText?.setText(CharDetailsController.playerObject.credits, TextView.BufferType.EDITABLE)}
+        if(CharDetailsController.playerObject.credits != 0){view?.creditsText?.setText(CharDetailsController.playerObject.credits.toString(), TextView.BufferType.EDITABLE)}
     }
 
     companion object {
