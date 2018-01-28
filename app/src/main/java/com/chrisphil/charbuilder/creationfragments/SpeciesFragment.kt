@@ -4,11 +4,8 @@ import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.*
 import android.widget.AbsListView.CHOICE_MODE_SINGLE
-import android.widget.Adapter
-import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
 import com.chrisphil.charbuilder.R
@@ -17,7 +14,6 @@ import com.chrisphil.charbuilder.interfaces.OnDataPass
 import kotlinx.android.synthetic.main.char_creation_listview.view.*
 import kotlinx.android.synthetic.main.char_creation_species.*
 import kotlinx.android.synthetic.main.char_creation_species.view.*
-import kotlinx.android.synthetic.main.char_species_information_dialog.view.*
 import org.xmlpull.v1.XmlPullParser
 
 class SpeciesFragment : Fragment() {
@@ -33,8 +29,8 @@ class SpeciesFragment : Fragment() {
                        val cunning : Int,
                        val willpower : Int,
                        val presence : Int,
-                       val wound_threshold : String,
-                       val strain_threshold : String,
+                       val wound_threshold : Int,
+                       val strain_threshold : Int,
                        val start_exp : Int,
                        val special : String)
 
@@ -56,6 +52,15 @@ class SpeciesFragment : Fragment() {
         liste.setOnItemClickListener{
             _, _, position, _ ->
             CharCreationController.playerObject.species = species[position].name
+            CharCreationController.playerObject.brawn = species[position].brawn
+            CharCreationController.playerObject.agility = species[position].agility
+            CharCreationController.playerObject.intellect = species[position].intellect
+            CharCreationController.playerObject.cunning = species[position].cunning
+            CharCreationController.playerObject.willpower = species[position].willpower
+            CharCreationController.playerObject.presence = species[position].presence
+            CharCreationController.playerObject.woundThreshold = species[position].wound_threshold + species[position].brawn
+            CharCreationController.playerObject.strainThreshold = species[position].strain_threshold + species[position].willpower
+            CharCreationController.playerObject.experience = species[position].start_exp
             view.currentSpecies.text = species[position].name
         }
 
@@ -80,8 +85,8 @@ class SpeciesFragment : Fragment() {
                             xml.getAttributeValue(null,"cunning_stat").toInt(),            //Cunning
                             xml.getAttributeValue(null,"willpower_stat").toInt(),          //Willpower
                             xml.getAttributeValue(null,"presence_stat").toInt(),           //Presence
-                            xml.getAttributeValue(null,"wound_threshold"),                 //Wound Threshold
-                            xml.getAttributeValue(null,"strain_threshold"),                //Strain Threshold
+                            xml.getAttributeValue(null,"wound_threshold").toInt(),         //Wound Threshold
+                            xml.getAttributeValue(null,"strain_threshold").toInt(),        //Strain Threshold
                             xml.getAttributeValue(null,"starting_exp").toInt(),            //Start Exp
                             xml.getAttributeValue(null,"special")                          //Special
                             )
@@ -130,21 +135,9 @@ class SpeciesFragment : Fragment() {
 
     fun createSpeciesInfoDialog(species : Species){
         var dialogBuilder = AlertDialog.Builder(context)
-        val inflater = this.layoutInflater
-        val view = inflater.inflate(R.layout.char_species_information_dialog,null)
-        dialogBuilder.setView(view)
-
-        val species_name = view.speciesName
-        val species_desc = view.speciesDesc
-        val species_brawn = view.speciesBrawn
-        val species_agility = view.speciesAgility
 
         dialogBuilder.setTitle(resources.getString(R.string.species_info_dialog_title))
-
-        species_name.text = species.name
-        species_desc.text = species.description
-        species_brawn.text = species.brawn.toString()
-        species_agility.text = species.agility.toString()
+                .setMessage(species.special)
 
         val b = dialogBuilder.create()
         b.show()

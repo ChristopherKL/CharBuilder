@@ -17,7 +17,9 @@
         <activity
             android:name=".MainNavigationDrawer"
             android:label="@string/title_activity_main_navigation_drawer"
-            android:theme="@style/AppTheme.SettingsTheme">
+            android:theme="@style/AppTheme.SettingsTheme"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,11 +29,15 @@
         <activity
             android:name=".controller.CharCreationController"
             android:label="@string/title_activity_char_creation_controller"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"/>
         <activity
             android:name=".controller.CharDetailsController"
             android:label="@string/title_activity_char_details_controller"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"/>
     </application>
 
 </manifest>

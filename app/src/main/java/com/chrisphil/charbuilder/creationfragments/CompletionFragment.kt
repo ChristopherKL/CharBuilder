@@ -14,10 +14,16 @@ import com.chrisphil.charbuilder.controller.CharCreationController
 import kotlinx.android.synthetic.main.char_creation_completion.view.*
 
 /**
- * Created by Christopher on 26.01.2018.
+ * This is the last Fragment of the character creation.
+ *
+ *
+ * @author Christopher Kluck
  */
 class CompletionFragment : Fragment() {
 
+    /**
+     * Inflates the layout and sets listeners
+     */
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.char_creation_completion, container, false)
 
@@ -46,6 +52,9 @@ class CompletionFragment : Fragment() {
         return view
     }
 
+    /**
+     * Builds a dialogue showing every step, that's not finished to complete the creation
+     */
     private fun showCompletionDialogue() {
         var dialogBuilder = AlertDialog.Builder(context)
         dialogBuilder.setTitle(getString(R.string.dialog_missing_values_title))
