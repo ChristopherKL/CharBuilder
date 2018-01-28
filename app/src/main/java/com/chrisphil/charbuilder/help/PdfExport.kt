@@ -33,7 +33,11 @@ class PdfExport {
                 document.open()
 
                 // Left
-                var leftParagraph = Paragraph("Spezies: " + exportPlayer.species)
+                var leftParagraph = Paragraph("Name: " + exportPlayer.name)
+                leftParagraph.alignment = Element.ALIGN_LEFT
+                document.add(leftParagraph)
+
+                leftParagraph = Paragraph("Spezies: " + exportPlayer.species)
                 leftParagraph.alignment = Element.ALIGN_LEFT
                 document.add(leftParagraph)
 
