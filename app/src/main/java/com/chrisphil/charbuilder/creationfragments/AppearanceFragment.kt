@@ -11,10 +11,16 @@ import com.chrisphil.charbuilder.controller.CharCreationController
 import kotlinx.android.synthetic.main.char_creation_appearance.view.*
 
 /**
- * Created by Christopher on 04.12.2017.
+ * This Fragment contains every info of the characters appearance during character creation.
+ * The user can choose the character's gender, birthday, age, height, weight, haircolor, eyecolor and skincolor
+ *
+ * @author Christopher Kluck
  */
 class AppearanceFragment : Fragment(){
 
+    /**
+     * Inflates the layout and sets OnFocusChangeListeners for every EditText
+     */
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.char_creation_appearance, container, false)
 
@@ -32,7 +38,7 @@ class AppearanceFragment : Fragment(){
 
         view?.ageEditText?.setOnFocusChangeListener{ _, _ ->
             if(!view.ageEditText.hasFocus() && !view.ageEditText.text.isEmpty()) {
-                CharCreationController.playerObject.age = view.birthdayEditText?.text.toString().toInt()
+                CharCreationController.playerObject.age = view.ageEditText?.text.toString().toInt()
             }
         }
 
@@ -66,11 +72,20 @@ class AppearanceFragment : Fragment(){
             }
         }
 
+        view?.featuresEditText?.setOnFocusChangeListener { _, _ ->
+            if(!view.featuresEditText.hasFocus()){
+                CharCreationController.playerObject.features = view.featuresEditText?.text.toString()
+            }
+        }
+
         checkEditText()
 
         return view
     }
 
+    /**
+     * User input for EditTexts gets restored if the according attributes of playerObject are set
+     */
     private fun checkEditText(){
         if(CharCreationController.playerObject.gender != ""){view?.genderEditText?.setText(CharCreationController.playerObject.gender, TextView.BufferType.EDITABLE)}
         if(CharCreationController.playerObject.birthday != ""){view?.birthdayEditText?.setText(CharCreationController.playerObject.birthday, TextView.BufferType.EDITABLE)}

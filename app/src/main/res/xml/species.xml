@@ -2,42 +2,112 @@
 <species_list>
     <species
         name="Droide"
-        description="Hier könnte ihre Werbung stehen"
+        description="Intelligenter Roboter"
         brawn_stat="1"
         agility_stat="1"
         intellect_stat="1"
         cunning_stat="1"
         willpower_stat="1"
         presence_stat="1"
-        wound_threshold="10 + Brawn"
-        strain_threshold="10 + Willpower"
+        wound_threshold="10"
+        strain_threshold="10"
         starting_exp="175"
-        special="Droids do not need to eat, sleep, or breathe, and are unaffected by toxins or poisons.Droids have a cybernetic implant cap of 6 instead of their Brawn rating." />
+        special="A typical fringer may ridicule his droid to no end. yet without it, he is usually lost. Droids serve a variety of roles on the fringe, including security and conflict resolution, surgery and medicine, mechanical repairs, construction, astrogation and piloting, and mechanical labor. While many of these droids have only rudimentary intelligence, some are capable of independent thought" />
 
     <species
         name="Gand"
-        description="Ist halt so ein Ding"
+        description="Insektoide Spezies"
         brawn_stat="2"
         agility_stat="2"
         intellect_stat="2"
         cunning_stat="2"
         willpower_stat="3"
         presence_stat="1"
-        wound_threshold="10 + Brawn"
-        strain_threshold="10 + Willpower"
+        wound_threshold="10"
+        strain_threshold="10"
         starting_exp="100"
-        special="Gands begin the game with one rank in Discipline. They still may not train Discipline above rank 2 during character creation"/>
+        special="Gands are a mysterious insectoid species whose 'findsmen' treat tracking quarry as a religious duty. They are exceptionally good at divining the location of individuals through ritualistic methods that offworlders might consider backward and barbaric."/>
     <species
-        name="Rodians"
-        description="Der ist heeeeslig"
+        name="Rodianer"
+        description="Facettenäugige Reptiloiden"
         brawn_stat="2"
         agility_stat="3"
         intellect_stat="2"
         cunning_stat="2"
         willpower_stat="1"
         presence_stat="2"
-        wound_threshold="10 + Brawn"
-        strain_threshold="10 + Willpower"
+        wound_threshold="10"
+        strain_threshold="10"
         starting_exp="100"
-        special="Rodians begin the game with one rank in Survival. They still may not train Survival above rank 2 during character creation. Rodians start with one rank in the Expert Tracker talent"/>
+        special="Rodians are born to hunt, coming from a hostile world that breeds killer instincts. For those with a price on their heads, a glimpse of a tapered green snout or an unmistakably putrid odor means a Rodian bounty hunter is on their tail"/>
+
+    <species
+        name="Mensch"
+        description="Normale Menschen"
+        brawn_stat="2"
+        agility_stat="2"
+        intellect_stat="2"
+        cunning_stat="2"
+        willpower_stat="2"
+        presence_stat="2"
+        wound_threshold="10"
+        strain_threshold="10"
+        starting_exp="110"
+        special="Humans are the most populous and gregarious of the galaxy's sapient species. They seem to be present on almost every open planet that harbors life while traveling the spacelanes looking for more."/>
+
+    <species
+        name="Bothaner"
+        description="Listige pelzige Humanoiden"
+        brawn_stat="1"
+        agility_stat="2"
+        intellect_stat="2"
+        cunning_stat="3"
+        willpower_stat="2"
+        presence_stat="2"
+        wound_threshold="10"
+        strain_threshold="11"
+        starting_exp="100"
+        special="Bothans are the galaxy's information brokers. Adept at picking up on secrets or seeing things other species ignore, Bothans can be valuable assets in any endeavor—or untrustworthy partners."/>
+
+    <species
+        name="Trandoshaner"
+        description="Reptilienartige Humanoide"
+        brawn_stat="3"
+        agility_stat="1"
+        intellect_stat="2"
+        cunning_stat="2"
+        willpower_stat="2"
+        presence_stat="2"
+        wound_threshold="12"
+        strain_threshold="9"
+        starting_exp="90"
+        special="Trandoshans are belligerent, lizard-like humanoids who have an avowed hatred of Wookiees. They can be found wherever a strong hand or a big gun is desired."/>
+
+    <species
+        name="Twi'lek"
+        description="Intelligente Humanoiden"
+        brawn_stat="1"
+        agility_stat="2"
+        intellect_stat="2"
+        cunning_stat="2"
+        willpower_stat="2"
+        presence_stat="3"
+        wound_threshold="10"
+        strain_threshold="11"
+        starting_exp="100"
+        special="The Twi'leks are among the most prominent non-human species in the galaxy. They are expert bargainers, sly at reading other species and using cunning to get what they want."/>
+
+    <species
+        name="Wookiees"
+        description="Kräftige pelzige Humanoiden"
+        brawn_stat="3"
+        agility_stat="2"
+        intellect_stat="2"
+        cunning_stat="2"
+        willpower_stat="1"
+        presence_stat="2"
+        wound_threshold="14"
+        strain_threshold="8"
+        starting_exp="90"
+        special="Strong, intelligent, and fierce in battle, Wookiees make the best of friends for those to whom they are loyal—and the worst of enemies for anyone to whom they are not. Unfortunately, Wookiees have virtually disappeared from the population at large and are becoming a faded memory of the Old Republic."/>
 </species_list>
