@@ -168,7 +168,7 @@
     <string name="attribute_willpower">Willenskraft</string>
     <string name="attribute_presence">Charisma</string>
     <string name="attribute_woundthreshold">Wundschwelle</string>
-    <string name="attribute_strainthreshold">Erschöpfungsschwelle</string>
+    <string name="attribute_strainthreshold">Erschöpfung</string>
     <string name="attribute_defense">Verteidigung</string>
     <string name="attribute_soakvalue">Absorption</string>
     
