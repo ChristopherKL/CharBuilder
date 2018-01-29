@@ -33,7 +33,11 @@ class PdfExport {
                 document.open()
 
                 // Left
-                var leftParagraph = Paragraph("Spezies: " + exportPlayer.species)
+                var leftParagraph = Paragraph("Name: " + exportPlayer.name)
+                leftParagraph.alignment = Element.ALIGN_LEFT
+                document.add(leftParagraph)
+
+                leftParagraph = Paragraph("Spezies: " + exportPlayer.species)
                 leftParagraph.alignment = Element.ALIGN_LEFT
                 document.add(leftParagraph)
 
@@ -140,6 +144,7 @@ class PdfExport {
                 table.addCell(getCell(exportPlayer.itemAnnotations[3], normalFont))
                 table.addCell(getCell(exportPlayer.items[4], normalFont))
                 table.addCell(getCell(exportPlayer.itemAnnotations[4], normalFont))
+                document.add(table)
 
                 document.add(p)
                 document.add(Paragraph("Credits:   " + exportPlayer.credits.toString()))
@@ -155,7 +160,7 @@ class PdfExport {
                     table.addCell(getCell(i.name, normalFont))
                     table.addCell(getCell(i.description, normalFont))
                 }
-
+                document.add(table)
 
                 document.close()
             } catch (e: Exception) {
